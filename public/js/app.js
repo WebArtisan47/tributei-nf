@@ -19549,7 +19549,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
 
+var _hoisted_1 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h1", {
+  "class": "font-weight-light"
+}, " Emissão de notas fiscais", -1 /* HOISTED */);
+
 function render(_ctx, _cache, $props, $setup, $data, $options) {
+  var _component_v_list_item = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("v-list-item");
+  var _component_v_list = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("v-list");
+  var _component_v_navigation_drawer = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("v-navigation-drawer");
+  var _component_v_app_bar = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("v-app-bar");
   var _component_v_main = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("v-main");
   var _component_v_layout = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("v-layout");
   var _component_v_app = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("v-app");
@@ -19559,9 +19567,61 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
       return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_v_layout, null, {
         "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
-          return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_v_main, {
+          return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_v_navigation_drawer, {
+            "expand-on-hover": "",
+            rail: "",
             style: {
-              "height": "250px"
+              "z-index": "2",
+              "border-right-color": "transparent"
+            }
+          }, {
+            "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
+              return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_v_list, null, {
+                "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
+                  return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_v_list_item, {
+                    "prepend-avatar": "https://randomuser.me/api/portraits/women/85.jpg",
+                    title: "Sandra Adams",
+                    subtitle: "sandra_a88@gmailcom"
+                  })];
+                }),
+                _: 1 /* STABLE */
+              }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_v_list, {
+                density: "compact",
+                nav: ""
+              }, {
+                "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
+                  return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_v_list_item, {
+                    "prepend-icon": "mdi-folder",
+                    title: "My Files",
+                    value: "myfiles"
+                  }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_v_list_item, {
+                    "prepend-icon": "mdi-account-multiple",
+                    title: "Shared with me",
+                    value: "shared"
+                  }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_v_list_item, {
+                    "prepend-icon": "mdi-star",
+                    title: "Starred",
+                    value: "starred"
+                  })];
+                }),
+                _: 1 /* STABLE */
+              })];
+            }),
+
+            _: 1 /* STABLE */
+          }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_v_app_bar, {
+            "scroll-threshold": "0",
+            style: {
+              "z-index": "1"
+            }
+          }, {
+            "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
+              return [_hoisted_1];
+            }),
+            _: 1 /* STABLE */
+          }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_v_main, {
+            style: {
+              "background-color": "#FAFAFA"
             }
           }, {
             "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
