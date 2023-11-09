@@ -2,6 +2,7 @@
     <layout-authenticated>
 
         <section class="my-1 w-100 h-100">
+            <v-data-table />
             <div class="text-start mx-8 mt-4">
                 <v-row justify="start">
                     <v-col cols="4">
@@ -37,8 +38,20 @@
                         </v-card>
                     </v-col>
                     <v-col cols="auto">
-                        <v-btn block elevated color="info" append-icon="mdi-plus" size="large"
-                            style="text-transform: capitalize;">Adicionar</v-btn>
+
+                        <v-row justify="center">
+                            <v-dialog v-model="dialog" persistent width="1024">
+                                <template v-slot:activator="{ props }">
+                                    <v-btn block elevated color="info" v-bind="props" append-icon="mdi-file-document-arrow-right-outline" size="large"
+                                        style="text-transform: capitalize;">Emissão</v-btn>
+
+                                </template>
+                                <v-card>
+                                 <steppers/>
+                                </v-card>
+                                
+                            </v-dialog>
+                        </v-row>
                     </v-col>
                     <v-col cols="12">
                         <v-card class="w-100 ">
@@ -145,20 +158,23 @@
 </style>
 <script>
 import LayoutAuthenticated from '../Layout/LayoutAuthenticated.vue'
+import Steppers from '../components/Steppers.vue'
+
 
 export default {
     components: {
-        LayoutAuthenticated
-
-
-    },
+    LayoutAuthenticated,
+    Steppers
+},
     data() {
         return {
+            dialog: true,
             select: 5,
             quantidade: 0,
             num: [],
             limit: 5,
             page: 1,
+            
             items: [
                 {
                     empresa: 'Tiger LTDA',
