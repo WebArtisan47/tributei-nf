@@ -42,14 +42,17 @@
                         <v-row justify="center">
                             <v-dialog v-model="dialog" persistent width="1024">
                                 <template v-slot:activator="{ props }">
-                                    <v-btn block elevated color="info" v-bind="props" append-icon="mdi-file-document-arrow-right-outline" size="large"
+                                    <v-btn block elevated color="info" v-bind="props"
+                                        append-icon="mdi-file-document-arrow-right-outline" size="large"
                                         style="text-transform: capitalize;">Emissão</v-btn>
 
                                 </template>
-                                <v-card>
-                                 <steppers/>
-                                </v-card>
-                                
+                                <div class="w-100 d-flex flex-column " style="background-color: transparent; border: none;">
+                                    <v-btn icon="mdi-close" color="white" class="ml-auto" @click="dialog = !dialog" variant="text">
+                                    </v-btn>
+                                    <steppers />
+                                </div>
+
                             </v-dialog>
                         </v-row>
                     </v-col>
@@ -163,18 +166,18 @@ import Steppers from '../components/Steppers.vue'
 
 export default {
     components: {
-    LayoutAuthenticated,
-    Steppers
-},
+        LayoutAuthenticated,
+        Steppers
+    },
     data() {
         return {
-            dialog: true,
+            dialog: false,
             select: 5,
             quantidade: 0,
             num: [],
             limit: 5,
             page: 1,
-            
+
             items: [
                 {
                     empresa: 'Tiger LTDA',
