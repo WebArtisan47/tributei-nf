@@ -266,13 +266,16 @@
                                             <td class="text-center">{{ item.valorNFe }}</td>
                                             <td class="text-center">{{ item.pedido }}</td>
                                             <td class="text-center">
-                                                <v-tooltip text="Tooltip" location="top">
+                                                <v-tooltip :text="item.error" v-if="item.color === 'red'" location="top">
                                                     <template v-slot:activator="{ props }">
                                                         <v-chip class="ma-2 text-white" v-bind="props" :color="item.color">
                                                             {{ item.status }}
                                                         </v-chip>
                                                     </template>
                                                 </v-tooltip>
+                                                <v-chip v-else class="ma-2 text-white"  :color="item.color">
+                                                            {{ item.status }}
+                                                </v-chip>
                                             </td>
                                             <td class="text-center">
                                                 <v-icon icon="mdi-progress-download"></v-icon>
@@ -383,6 +386,7 @@ export default {
                     pedido: '28',
                     color: 'red',
                     status: 'Falha na emissão',
+                    error: 'NFe foi cancelada',
                     link: 'https://example3.com'
                 },
                 {
