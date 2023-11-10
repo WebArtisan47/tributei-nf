@@ -112,9 +112,15 @@
                                             <td class="text-center">{{ item.fornecedores }}</td>
                                             <td class="text-center">{{ item.valorNFe }}</td>
                                             <td class="text-center">{{ item.pedido }}</td>
-                                            <td class="text-center"> <v-chip class="ma-2 text-white" :color="item.color">
+                                            <td class="text-center"> 
+                                                <v-tooltip text="Tooltip" location="top">
+  <template v-slot:activator="{ props }">
+    <v-chip class="ma-2 text-white" v-bind="props" :color="item.color">
                                                     {{ item.status }}
-                                                </v-chip></td>
+                                                </v-chip>
+  </template>
+</v-tooltip>
+                                                </td>
                                             <td class="text-center">
                                                 <v-icon icon="mdi-progress-download"></v-icon>
                                             </td>

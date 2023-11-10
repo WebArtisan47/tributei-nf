@@ -93,7 +93,10 @@
                     </div>
                     <div v-else>
                         <v-card-title>
-                            Adicionar dados complementares
+                            <v-text-field label="Marca" variant="outlined" ></v-text-field>
+                            <v-text-field label="Produção" variant="outlined"></v-text-field>
+                            <v-text-field label="Altura" variant="outlined"></v-text-field>
+                            <v-text-field label="Largura" variant="outlined"></v-text-field>
                         </v-card-title>
                         <section class="w-50 px-3">
                             <v-btn class="text-white ml-3" color="red" @click="complementares = false">Fechar</v-btn>
