@@ -1,7 +1,7 @@
 <template>
     <v-stepper prev-text="voltar" next-text="proximo" alt-labels color="#00796B" :items="Steps">
         <template v-slot:item.1>
-            <v-card flat>
+            <v-card flat class="my-4">
                 <div>
                     <v-card-title>
                         <h3 class="text-h5">Simulador de Pedidos</h3>
@@ -18,37 +18,9 @@
 
                 </div>
             </v-card>
-        </template>
-        <template v-slot:item.2>
-            <v-card class="pa-5">
-                <v-card-title>
-                    <h3 class="text-h5">Condição do produto</h3>
-                    <v-card-subtitle class="pa-0">
-                        Informe se o prodto é novo ou usado.
-                    </v-card-subtitle>
-                </v-card-title>
-                <section class="d-flex flex-wrap w-50 my-8">
-                    <div class="justify-space-around align-center w-50  d-flex">
-                        <div>
-                        <v-icon v-show="condicao === 'novo'" color="success" icon="mdi-check-circle" size="large"></v-icon>
-                        <v-btn :color="condicao === 'novo' ? 'green' : '#02a996f4'" @click="condicao = 'novo'"
-                            class="ml-2 text-white">
-                            Novo
-                        </v-btn>
-                    </div>
-                    <div>
-                        <v-btn class="text-white mr-2" @click="condicao = 'usado'"
-                            :color="condicao === 'usado' ? 'green' : '#02a996f4'">Usado</v-btn>
-                        <v-icon v-show="condicao === 'usado'" color="success" icon="mdi-check-circle" size="large"></v-icon>
-                    </div>
-                    </div>
-                  
-
-                </section>
-
-            </v-card>
+            <v-divider></v-divider>
             <v-card title="" subtitle="">
-                <section class="ml-5">
+                <section class="">
                     <div v-if="AltValor === false">
                         <v-card-title>
                             Deseja alterar o preço de venda?
@@ -77,8 +49,7 @@
 
             </v-card>
         </template>
-
-        <template v-slot:item.3>
+        <template v-slot:item.2>
             <v-card  flat>
                 <section>
                     <div v-if="complementares === false">
@@ -108,7 +79,7 @@
             </v-card>
         </template>
 
-        <template v-slot:item.4>
+        <template v-slot:item.3>
             <v-card class="pa-5 text-center">
                 <v-card-title>
                     <h3 class="text-h5">Emitir NFe</h3>
@@ -160,7 +131,6 @@ export default {
             PrecoVenda: 300,
             Steps: [
                 "Simulação do tributei",
-                "Dados Basicos do produto",
                 "Dados complementares",
                 "Emissão"
             ]

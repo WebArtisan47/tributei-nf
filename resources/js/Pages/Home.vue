@@ -3,58 +3,211 @@
 
         <section class="my-1 w-100 h-100">
             <v-data-table />
-            <div class="text-start mx-8 mt-4">
+            <div class="text-start mx-8 mt-16">
                 <v-row justify="start">
-                    <v-col cols="4">
-                        <v-card elevation="9" style="position: relative;"
-                            class="w-75 mx-auto text-white py-2 pr-5 bg-green">
-                            <v-card-title class="ml-3 pa-0 pl-4 pt-2" style="font-size: 25px;">Emitidos</v-card-title>
-                            <div class="w-100">
-                                <p style="font-weight: 600; font-size: 80px; height: 30px; position: relative; top: -55px; right: 10px;"
-                                    class="text-end ml-6">2</p>
-                            </div>
-                        </v-card>
-                    </v-col>
-                    <v-col cols="4">
-                        <v-card elevation="9" style="position: relative;"
-                            class="w-75 mx-auto text-white py-2 pr-5 bg-yellow-darken-3">
-                            <v-card-title class="ml-3 pa-0 pl-4 pt-2" style="font-size: 25px;">Aguardando
-                                retorno</v-card-title>
-                            <div class="w-100">
-                                <p style="font-weight: 600; font-size: 80px; height: 30px; position: relative; top: -55px; right: 10px;"
-                                    class="text-end ml-6">2</p>
-                            </div>
-                        </v-card>
-                    </v-col>
-                    <v-col cols="4">
-
-                        <v-card elevation="9" style="position: relative;" class="w-75 mx-auto text-white py-2 pr-5 bg-red">
-                            <v-card-title class="ml-3 pa-0 pl-4 pt-2" style="font-size: 25px;">Falha na
-                                emissão</v-card-title>
-                            <div class="w-100">
-                                <p style="font-weight: 600; font-size: 80px; height: 30px; position: relative; top: -55px; right: 10px;"
-                                    class="text-end ml-6">1</p>
-                            </div>
-                        </v-card>
-                    </v-col>
                     <v-col cols="auto">
+                        <section class="d-flex">
+                            <v-row justify="center">
+                                <v-col cols="6">
+                                    <v-dialog v-model="dialog" width="1024">
+                                        <template v-slot:activator="{ props }">
+                                            <v-btn block elevated color="info" v-bind="props"
+                                                append-icon="mdi-file-document-arrow-right-outline" size="large"
+                                                style="text-transform: capitalize;">Emissão</v-btn>
 
-                        <v-row justify="center">
-                            <v-dialog v-model="dialog" persistent width="1024">
-                                <template v-slot:activator="{ props }">
-                                    <v-btn block elevated color="info" v-bind="props"
-                                        append-icon="mdi-file-document-arrow-right-outline" size="large"
-                                        style="text-transform: capitalize;">Emissão</v-btn>
+                                        </template>
+                                        <div class="w-100 d-flex flex-column "
+                                            style="background-color: transparent; border: none;">
+                                            <v-btn icon="mdi-close" color="white" class="ml-auto" @click="dialog = !dialog"
+                                                variant="text">
+                                            </v-btn>
+                                            <steppers />
+                                        </div>
 
-                                </template>
-                                <div class="w-100 d-flex flex-column " style="background-color: transparent; border: none;">
-                                    <v-btn icon="mdi-close" color="white" class="ml-auto" @click="dialog = !dialog" variant="text">
-                                    </v-btn>
-                                    <steppers />
-                                </div>
+                                    </v-dialog>
+                                </v-col>
+                                <v-col cols="6">
+                                    <v-dialog fullscreen :scrim="false" v-model="tributei"
+                                        transition="dialog-bottom-transition">
+                                        <template v-slot:activator="{ props }">
+                                            <v-btn block elevated color="#00a540" v-bind="props" size="large"
+                                                style="text-transform: capitalize;">
+                                                <v-tooltip activator="parent" color="white" location="top">Simulador
+                                                    pedidos</v-tooltip>
+                                                <v-avatar style="width: 90px !important;" rounded="0">
+                                                    <v-img src="img/tributei.png"></v-img>
+                                                </v-avatar></v-btn>
 
-                            </v-dialog>
-                        </v-row>
+                                        </template>
+                                        <v-card color="#f7f7f7">
+                                            <v-toolbar dark color="#0a4">
+
+                                                <v-toolbar-title> <v-avatar style="width: 90px !important;" rounded="0">
+                                                        <v-img src="img/tributei.png"></v-img>
+                                                    </v-avatar></v-toolbar-title>
+                                                <v-spacer></v-spacer>
+
+                                                <v-btn icon dark @click="tributei = !tributei">
+                                                    <v-icon>mdi-close</v-icon>
+                                                </v-btn>
+
+                                            </v-toolbar>
+                                            <section class="px-7 mt-3">
+                                                <v-card-title class="title-tributei px-0" style="font-size: 24px;">
+                                                    Pedido de venda | Novo pedido
+                                                </v-card-title>
+                                                <v-row>
+                                                    <v-col cols="12" class="">
+                                                        <v-card>
+                                                            <v-card-title class="ml-4 my-7 tributei-title"
+                                                                style="font-size: 28px;">
+                                                                Cenário de Simulação
+                                                            </v-card-title>
+
+                                                            <v-divider class="mx-7"></v-divider>
+                                                            <v-row class="mx-5 mt-6 mb-4">
+                                                                <v-col cols="6">
+                                                                    <label class="my-2">
+                                                                        Cliente
+                                                                    </label>
+                                                                    <v-select v-model="cliente" placeholder="Selecione uma cliente"
+                                                                        density="compact"
+                                                                        :items="['JENNIFER MARCAL DOS SANTOS 05681000184']"
+                                                                        variant="outlined"></v-select>
+                                                                </v-col>
+                                                                <v-col cols="6">
+                                                                    <label for="">
+                                                                        Tipo de operação
+                                                                    </label>
+                                                                    <section>
+                                                                        <div class="my-4">
+                                                                            <v-btn icon="" flat
+                                                                                :color="tipo === true ? '#0a4' : '#999'"
+                                                                                class="mx-2"
+                                                                                @click="tipo = true" size="25px"
+                                                                                :style="tipo === true ?  'border: 1px solid #0a4;' : 'border: 1px solid #999;'" />
+                                                                            <span>Uso, consumo ou ativo imobilizado</span>
+                                                                        </div>
+                                                                        <div>
+                                                                            <v-btn icon="" @click="tipo = false"
+                                                                                :color="tipo === false ? '#0a4' : '#999'"
+                                                                                class="mx-2"
+                                                                                size="25px"
+                                                                                :style="tipo === false ? 'border: 1px solid #0a4;' : 'border: 1px solid #999;'" />
+                                                                                <span class="">Revenda</span>
+                                                                        </div>
+                                                                    </section>
+                                                                </v-col>
+                                                            </v-row>
+                                                        </v-card>
+                                                    </v-col>
+                                                </v-row>
+                                                <v-row v-show="cliente != null">
+                                                    <v-col cols="12" class="">
+                                                        <v-card>
+                                                            <v-card-title class="ml-4 my-7 tributei-title"
+                                                                style="font-size: 28px;">
+                                                                Produto
+                                                            </v-card-title>
+
+                                                            <v-divider class="mx-7"></v-divider>
+                                                            <v-row class="mx-5 mt-6 mb-4">
+                                                                <v-col cols="6">
+                                                                    <label class="my-2">
+                                                                        Produtos
+                                                                    </label>
+                                                                    <v-select placeholder="Selecione um produto"
+                                                                        density="compact"
+                                                                        :items="['California', 'Colorado', 'Florida', 'Georgia', 'Texas', 'Wyoming']"
+                                                                        variant="outlined"></v-select>
+                                                                </v-col>
+                                                                <v-col cols="2">
+                                                                    <label class="my-2" for="">
+                                                                        Quantidade
+                                                                    </label>
+                                                                    <section>
+                                                                        <v-text-field density="compact" placeholder="0,00" variant="outlined"></v-text-field>
+                                                                    </section>
+                                                                </v-col>
+                                                                <v-col cols="2">
+                                                                    <label class="my-2" for="">
+                                                                        Custo Unitário
+                                                                    </label>
+                                                                    <section>
+                                                                        <v-text-field density="compact" placeholder="0,00" variant="outlined"></v-text-field>
+                                                                    </section>
+                                                                </v-col>
+                                                                <v-col cols="2">
+                                                                    <label class="my-2" for="">
+                                                                        Desconto incondicional
+                                                                    </label>
+                                                                    <section>
+                                                                        <v-text-field density="compact" placeholder="0,00" variant="outlined"></v-text-field>
+                                                                    </section>
+                                                                </v-col>
+                                                                <v-col cols="2">
+                                                                    <label class="my-2" for="">
+                                                                        Desconto condicional
+                                                                    </label>
+                                                                    <section>
+                                                                        <v-text-field density="compact" placeholder="0,00" variant="outlined"></v-text-field>
+                                                                    </section>
+                                                                </v-col>
+                                                                <v-col cols="2">
+                                                                    <label class="my-2" for="">
+                                                                        ICMS desonerado
+                                                                    </label>
+                                                                    <section>
+                                                                        <v-text-field density="compact" placeholder="0,00" variant="outlined"></v-text-field>
+                                                                    </section>
+                                                                </v-col>
+                                                                <v-col cols="2">
+                                                                    <label class="my-2" for="">
+                                                                        Outras Despesas
+                                                                    </label>
+                                                                    <section>
+                                                                        <v-text-field density="compact" placeholder="0,00" variant="outlined"></v-text-field>
+                                                                    </section>
+                                                                </v-col>
+                                                                <v-col cols="2">
+                                                                    <label class="my-2" for="">
+                                                                        IPI
+                                                                    </label>
+                                                                    <section>
+                                                                        <v-text-field density="compact" placeholder="0,00" variant="outlined"></v-text-field>
+                                                                    </section>
+                                                                </v-col>
+                                                                <v-col cols="2">
+                                                                    <label class="my-2" for="">
+                                                                        Seguro
+                                                                    </label>
+                                                                    <section>
+                                                                        <v-text-field density="compact" placeholder="0,00" variant="outlined"></v-text-field>
+                                                                    </section>
+                                                                </v-col>
+                                                                <v-col cols="2">
+                                                                    <label class="my-2" for="">
+                                                                        Frete
+                                                                    </label>
+                                                                    <section>
+                                                                        <v-text-field density="compact" placeholder="0,00" variant="outlined"></v-text-field>
+                                                                    </section>
+                                                                </v-col>
+                                                                <v-col cols="6">
+                                                                    <v-btn prepend-icon="mdi-plus" color="#0a4" size="large" style="box-shadow: 0 8px 25px -8px #0a4;">Adicionar produto ao pedido</v-btn>
+                                                                </v-col>
+                                                            </v-row>
+                                                        </v-card>
+                                                    </v-col>
+                                                </v-row>
+                                            </section>
+                                        </v-card>
+                                    </v-dialog>
+                                </v-col>
+
+                            </v-row>
+                        </section>
+
                     </v-col>
                     <v-col cols="12">
                         <v-card class="w-100 ">
@@ -112,15 +265,15 @@
                                             <td class="text-center">{{ item.fornecedores }}</td>
                                             <td class="text-center">{{ item.valorNFe }}</td>
                                             <td class="text-center">{{ item.pedido }}</td>
-                                            <td class="text-center"> 
+                                            <td class="text-center">
                                                 <v-tooltip text="Tooltip" location="top">
-  <template v-slot:activator="{ props }">
-    <v-chip class="ma-2 text-white" v-bind="props" :color="item.color">
-                                                    {{ item.status }}
-                                                </v-chip>
-  </template>
-</v-tooltip>
-                                                </td>
+                                                    <template v-slot:activator="{ props }">
+                                                        <v-chip class="ma-2 text-white" v-bind="props" :color="item.color">
+                                                            {{ item.status }}
+                                                        </v-chip>
+                                                    </template>
+                                                </v-tooltip>
+                                            </td>
                                             <td class="text-center">
                                                 <v-icon icon="mdi-progress-download"></v-icon>
                                             </td>
@@ -141,7 +294,24 @@
         </section>
     </layout-authenticated>
 </template>
-<style>
+<style scoped>
+label {
+    color: #111827 !important;
+    font-size: 21px !important;
+    font-weight: 600;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.title-tributei {
+    color: #111827;
+    font-weight: 500 !important;
+    font-size: 1.4rem;
+    line-height: 1.2;
+    margin-bottom: 0.5rem;
+    margin-top: 0;
+    font-family: inherit;
+}
+
 .card {
     background-color: #283043;
 
@@ -177,9 +347,12 @@ export default {
     },
     data() {
         return {
+            tipo: null,
+            tributei: false,
             dialog: false,
             select: 5,
             quantidade: 0,
+            cliente: null,
             num: [],
             limit: 5,
             page: 1,

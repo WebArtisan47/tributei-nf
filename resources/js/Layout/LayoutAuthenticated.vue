@@ -2,7 +2,7 @@
   <v-app id="inspire">
     <v-layout>
       <header >
-        <v-navigation-drawer color="#00796B" class="mx-2 my-2" rounded="1"  expand-on-hover :rail="rail" :permanent="!rail" style="z-index: 2; border-right-color: transparent ;">
+        <v-navigation-drawer elevation="2" color="#00796B" class="mx-2 my-2" rounded="1"  expand-on-hover :rail="rail" :permanent="!rail" style="z-index: 2; border-right-color: transparent ;">
         <v-list>
           <v-list-item prepend-avatar="https://randomuser.me/api/portraits/women/85.jpg" class="text-white" title="Sandra Adams"
             subtitle="sandra_a88@gmailcom"></v-list-item>
@@ -15,8 +15,8 @@
         </v-list>
       </v-navigation-drawer>
      
-      <v-app-bar class="ml-2" style=" z-index: 1; border: none; background-color: transparent; box-shadow: none; ">
-        <v-card scroll-threshold="0" color="#00796B" class="ml-2" >
+      <v-app-bar  class="ml-2" style=" z-index: 1; border: none; background-color: transparent; box-shadow: none; ">
+        <v-card elevation="2" scroll-threshold="0" color="#00796B" class="ml-2" >
           <v-app-bar-nav-icon @click="rail = !rail" color="#FAFAFA" style="width: 55px !important;"/>
         </v-card>
       
