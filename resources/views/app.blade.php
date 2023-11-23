@@ -13,6 +13,7 @@
       overflow-y: hidden !important;
       }
     </style>
+    @inertiaHead
   </head>
   <body>
     @inertia

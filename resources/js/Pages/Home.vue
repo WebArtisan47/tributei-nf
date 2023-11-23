@@ -2,7 +2,7 @@
     <layout-authenticated>
 
         <section class="my-1 w-100 h-100">
-            <v-data-table />
+
             <div class="text-start mx-8 mt-16">
                 <v-row justify="start">
                     <v-col cols="auto">
@@ -14,14 +14,13 @@
                                             <v-btn block elevated color="info" v-bind="props"
                                                 append-icon="mdi-file-document-arrow-right-outline" size="large"
                                                 style="text-transform: capitalize;">Emissão</v-btn>
-
                                         </template>
                                         <div class="w-100 d-flex flex-column "
                                             style="background-color: transparent; border: none;">
                                             <v-btn icon="mdi-close" color="white" class="ml-auto" @click="dialog = !dialog"
                                                 variant="text">
                                             </v-btn>
-                                            <steppers />
+                                            <steppers :pedidos="pedidos" />
                                         </div>
 
                                     </v-dialog>
@@ -70,9 +69,9 @@
                                                                     <label class="my-2">
                                                                         Cliente
                                                                     </label>
-                                                                    <v-select v-model="cliente" placeholder="Selecione uma cliente"
-                                                                        density="compact"
-                                                                        :items="['JENNIFER MARCAL DOS SANTOS 05681000184']"
+                                                                    <v-select v-model="cliente"
+                                                                        placeholder="Selecione uma cliente"
+                                                                        density="compact" :items="clientes"
                                                                         variant="outlined"></v-select>
                                                                 </v-col>
                                                                 <v-col cols="6">
@@ -83,18 +82,17 @@
                                                                         <div class="my-4">
                                                                             <v-btn icon="" flat
                                                                                 :color="tipo === true ? '#0a4' : '#999'"
-                                                                                class="mx-2"
-                                                                                @click="tipo = true" size="25px"
-                                                                                :style="tipo === true ?  'border: 1px solid #0a4;' : 'border: 1px solid #999;'" />
+                                                                                class="mx-2" @click="tipo = true"
+                                                                                size="25px"
+                                                                                :style="tipo === true ? 'border: 1px solid #0a4;' : 'border: 1px solid #999;'" />
                                                                             <span>Uso, consumo ou ativo imobilizado</span>
                                                                         </div>
                                                                         <div>
                                                                             <v-btn icon="" @click="tipo = false"
                                                                                 :color="tipo === false ? '#0a4' : '#999'"
-                                                                                class="mx-2"
-                                                                                size="25px"
+                                                                                class="mx-2" size="25px"
                                                                                 :style="tipo === false ? 'border: 1px solid #0a4;' : 'border: 1px solid #999;'" />
-                                                                                <span class="">Revenda</span>
+                                                                            <span class="">Revenda</span>
                                                                         </div>
                                                                     </section>
                                                                 </v-col>
@@ -117,16 +115,17 @@
                                                                         Produtos
                                                                     </label>
                                                                     <v-select placeholder="Selecione um produto"
-                                                                        density="compact"
-                                                                        :items="['California', 'Colorado', 'Florida', 'Georgia', 'Texas', 'Wyoming']"
-                                                                        variant="outlined"></v-select>
+                                                                        density="compact" variant="outlined"
+                                                                        :items="produtos"
+                                                                        :item-props="produtoProps"></v-select>
                                                                 </v-col>
                                                                 <v-col cols="2">
                                                                     <label class="my-2" for="">
                                                                         Quantidade
                                                                     </label>
                                                                     <section>
-                                                                        <v-text-field density="compact" placeholder="0,00" variant="outlined"></v-text-field>
+                                                                        <v-text-field density="compact" placeholder="0,00"
+                                                                            variant="outlined"></v-text-field>
                                                                     </section>
                                                                 </v-col>
                                                                 <v-col cols="2">
@@ -134,7 +133,8 @@
                                                                         Custo Unitário
                                                                     </label>
                                                                     <section>
-                                                                        <v-text-field density="compact" placeholder="0,00" variant="outlined"></v-text-field>
+                                                                        <v-text-field density="compact" placeholder="0,00"
+                                                                            variant="outlined"></v-text-field>
                                                                     </section>
                                                                 </v-col>
                                                                 <v-col cols="2">
@@ -142,7 +142,8 @@
                                                                         Desconto incondicional
                                                                     </label>
                                                                     <section>
-                                                                        <v-text-field density="compact" placeholder="0,00" variant="outlined"></v-text-field>
+                                                                        <v-text-field density="compact" placeholder="0,00"
+                                                                            variant="outlined"></v-text-field>
                                                                     </section>
                                                                 </v-col>
                                                                 <v-col cols="2">
@@ -150,7 +151,8 @@
                                                                         Desconto condicional
                                                                     </label>
                                                                     <section>
-                                                                        <v-text-field density="compact" placeholder="0,00" variant="outlined"></v-text-field>
+                                                                        <v-text-field density="compact" placeholder="0,00"
+                                                                            variant="outlined"></v-text-field>
                                                                     </section>
                                                                 </v-col>
                                                                 <v-col cols="2">
@@ -158,7 +160,8 @@
                                                                         ICMS desonerado
                                                                     </label>
                                                                     <section>
-                                                                        <v-text-field density="compact" placeholder="0,00" variant="outlined"></v-text-field>
+                                                                        <v-text-field density="compact" placeholder="0,00"
+                                                                            variant="outlined"></v-text-field>
                                                                     </section>
                                                                 </v-col>
                                                                 <v-col cols="2">
@@ -166,7 +169,8 @@
                                                                         Outras Despesas
                                                                     </label>
                                                                     <section>
-                                                                        <v-text-field density="compact" placeholder="0,00" variant="outlined"></v-text-field>
+                                                                        <v-text-field density="compact" placeholder="0,00"
+                                                                            variant="outlined"></v-text-field>
                                                                     </section>
                                                                 </v-col>
                                                                 <v-col cols="2">
@@ -174,7 +178,8 @@
                                                                         IPI
                                                                     </label>
                                                                     <section>
-                                                                        <v-text-field density="compact" placeholder="0,00" variant="outlined"></v-text-field>
+                                                                        <v-text-field density="compact" placeholder="0,00"
+                                                                            variant="outlined"></v-text-field>
                                                                     </section>
                                                                 </v-col>
                                                                 <v-col cols="2">
@@ -182,7 +187,8 @@
                                                                         Seguro
                                                                     </label>
                                                                     <section>
-                                                                        <v-text-field density="compact" placeholder="0,00" variant="outlined"></v-text-field>
+                                                                        <v-text-field density="compact" placeholder="0,00"
+                                                                            variant="outlined"></v-text-field>
                                                                     </section>
                                                                 </v-col>
                                                                 <v-col cols="2">
@@ -190,11 +196,14 @@
                                                                         Frete
                                                                     </label>
                                                                     <section>
-                                                                        <v-text-field density="compact" placeholder="0,00" variant="outlined"></v-text-field>
+                                                                        <v-text-field density="compact" placeholder="0,00"
+                                                                            variant="outlined"></v-text-field>
                                                                     </section>
                                                                 </v-col>
                                                                 <v-col cols="6">
-                                                                    <v-btn prepend-icon="mdi-plus" color="#0a4" size="large" style="box-shadow: 0 8px 25px -8px #0a4;">Adicionar produto ao pedido</v-btn>
+                                                                    <v-btn prepend-icon="mdi-plus" color="#0a4" size="large"
+                                                                        style="box-shadow: 0 8px 25px -8px #0a4;">Adicionar
+                                                                        produto ao pedido</v-btn>
                                                                 </v-col>
                                                             </v-row>
                                                         </v-card>
@@ -273,8 +282,8 @@
                                                         </v-chip>
                                                     </template>
                                                 </v-tooltip>
-                                                <v-chip v-else class="ma-2 text-white"  :color="item.color">
-                                                            {{ item.status }}
+                                                <v-chip v-else class="ma-2 text-white" :color="item.color">
+                                                    {{ item.status }}
                                                 </v-chip>
                                             </td>
                                             <td class="text-center">
@@ -359,7 +368,9 @@ export default {
             num: [],
             limit: 5,
             page: 1,
-
+            clientes: [],
+            produtos: [],
+            pedidos: this.$page.props.pedidos.data,
             items: [
                 {
                     empresa: 'Tiger LTDA',
@@ -433,11 +444,37 @@ export default {
         },
     },
     mounted() {
+        console.log(this.pedidos)
+        let data = this.$page.props.clientes.data
+        this.clientes = this.clientes.concat(data.map(cliente => cliente.nome))
+        this.produtos = this.produtos.concat(
+                this.$page.props.produtos.map(produto => ({
+                    descricao: produto.descricao,
+                    ncm: produto.ncm,
+                    cest: produto.cest
+                }))
+            );
+        // this.getTributei()
+        // console.log(this.$page.props.clientes.map(item => item.data));
         for (let i = 1; i <= 5; i++) {
             this.num.push(i);
 
         }
 
-    }
+    },
+    methods: {
+        getTributei() {
+             let data = this.$page.props.clientes.data
+            this.clientes = this.clientes.concat(data.map(cliente => cliente.nome));
+            
+        },
+        produtoProps(produto) {
+
+            return {
+                title: produto.descricao,
+                subtitle: "NCM " + produto.ncm + " | " + "CEST " + produto.cest,
+            }
+        },
+    },
 }
 </script>

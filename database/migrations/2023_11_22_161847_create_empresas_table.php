@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateUsersTable extends Migration
+class CreateEmpresasTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,15 +13,13 @@ class CreateUsersTable extends Migration
      */
     public function up()
     {
-        Schema::create('users', function (Blueprint $table) {
+        Schema::create('empresas', function (Blueprint $table) {
             $table->id();
-            $table->string('nome');
-            $table->string('email')->unique();
-            $table->timestamp('email_verified_at')->nullable();
-            $table->string('api_token_tributei');
-            $table->string('api_token_focus');  
-            $table->string('cpf');
+            $table->string('razão_social');
+            $table->string('nome_fantasia')->nullable();
             $table->string('cnpj');
+            $table->unsignedBigInteger('user_id');
+            $table->foreign('user_id')->references('id')->on('users');
             $table->string('telefone');
             $table->string('endereco');
             $table->string('numero');
@@ -29,14 +27,7 @@ class CreateUsersTable extends Migration
             $table->string('cidade');
             $table->string('estado');
             $table->string('cep');
-            $table->string('user');
-            $table->string('ramo');
-            $table->string('status');
-            $table->string('emissoes');
-            $table->string('qtdemissoes');
-            $table->string('password');
             $table->softDeletes();
-            $table->rememberToken();
             $table->timestamps();
         });
     }
@@ -48,6 +39,6 @@ class CreateUsersTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('users');
+        Schema::dropIfExists('empresas');
     }
 }
