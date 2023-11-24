@@ -25,6 +25,15 @@
                     </div>
                     <v-divider></v-divider>
                     <div v-if="AltProdutos === false">
+                        <div>
+                            <p class="text-h6 pl-4">Produtos Selecionados: </p>
+                            <div class="pl-4">
+                                <v-chip v-for="prod in produto" color="green">
+                                {{ prod }}
+                            </v-chip>
+                            </div>
+                            
+                        </div>
                         <v-card-title>
                             Selecionar produtos?
                         </v-card-title>

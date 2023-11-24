@@ -2,7 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Entidade;
+
+use App\Models\User;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
 
@@ -16,7 +17,7 @@ class UserController extends Controller
 
     public function show(){
         $id = routeId();
-        $user = Entidade::where('id',$id)->first();
+        $user = User::where('id',$id)->first();
         return Inertia::render('User/Show', ['user' => $user]);
     }
 }

@@ -20,13 +20,13 @@ class CreateEmpresasTable extends Migration
             $table->string('cnpj');
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users');
-            $table->string('telefone');
+            $table->string('telefone')->nullable();
             $table->string('endereco');
-            $table->string('numero');
+            $table->string('numero')->nullable();
             $table->string('bairro');
             $table->string('cidade');
             $table->string('estado');
-            $table->string('cep');
+            $table->string('cep')->nullable();
             $table->softDeletes();
             $table->timestamps();
         });
