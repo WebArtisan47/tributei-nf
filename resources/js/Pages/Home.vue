@@ -11,7 +11,7 @@
                                 <v-col cols="6">
                                     <v-dialog v-model="dialog" width="1024">
                                         <template v-slot:activator="{ props }">
-                                            <v-btn block elevated color="info" v-bind="props"
+                                            <v-btn block elevated v-bind="props" color="#03a996"
                                                 append-icon="mdi-file-document-arrow-right-outline" size="large"
                                                 style="text-transform: capitalize;">Emissão</v-btn>
                                         </template>
@@ -39,6 +39,7 @@
 
                                         </template>
                                         <v-card color="#f7f7f7">
+
                                             <v-toolbar dark color="#0a4">
 
                                                 <v-toolbar-title> <v-avatar style="width: 90px !important;" rounded="0">
@@ -52,6 +53,32 @@
 
                                             </v-toolbar>
                                             <section class="px-7 mt-3">
+                                                <div v-show="cadastrando" class="w-100 h-100"
+                                                    style="z-index: 4; position: absolute; text-align: center; display: flex; align-items: center; backdrop-filter: blur(2px); background: #fff0; justify-content: center;">
+                                                    <v-progress-circular :size="70" :width="7" color="green"
+                                                        indeterminate></v-progress-circular>
+                                                </div>
+                                                <div class="w-100 h-100 pb-5" v-show="produtoCadastrado"
+                                                    style="z-index: 4; position: absolute; text-align: center; display: flex; align-items: center; backdrop-filter: blur(2px); background: #fff0; justify-content: center;">
+                                                    <v-card class="mx-auto w-25 pa-4">
+                                                        <v-icon color="success" icon="mdi-check-circle"
+                                                            size="200px"></v-icon>
+                                                        <v-toolbar color="transparent" class="text-center">
+                                                            <v-toolbar-title class="text-h5">
+                                                                Pedido cadastrado!
+                                                            </v-toolbar-title>
+                                                        </v-toolbar>
+                                                        <div class="d-flex w-100 mx-auto justify-space-around">
+                                                            <v-btn color="#00a540" @click="produtoCadastrado = false">
+                                                                Simular pedidos
+                                                            </v-btn>
+                                                            <v-btn color="#00796b"
+                                                                @click="produtoCadastrado = false, tributei = false, dialog = true">
+                                                                Emitir Nota
+                                                            </v-btn>
+                                                        </div>
+                                                    </v-card>
+                                                </div>
                                                 <v-card-title class="title-tributei px-0" style="font-size: 24px;">
                                                     Pedido de venda | Novo pedido
                                                 </v-card-title>
@@ -139,7 +166,8 @@
                                                                     </label>
                                                                     <section>
                                                                         <v-text-field density="compact" v-model="vUnit"
-                                                                            placeholder="0,00" @input="formatarValor('vUnit')"
+                                                                            placeholder="0,00"
+                                                                            @input="formatarValor('vUnit')"
                                                                             variant="outlined"></v-text-field>
                                                                     </section>
                                                                 </v-col>
@@ -171,7 +199,8 @@
                                                                     </label>
                                                                     <section>
                                                                         <v-text-field density="compact" v-model="vICMS"
-                                                                            placeholder="0,00" @input="formatarValor('vICMS')"
+                                                                            placeholder="0,00"
+                                                                            @input="formatarValor('vICMS')"
                                                                             variant="outlined"></v-text-field>
                                                                     </section>
                                                                 </v-col>
@@ -325,7 +354,7 @@
 <style scoped>
 label {
     color: #111827 !important;
-    font-size: 21px !important;
+    font-size: 18px !important;
     font-weight: 600;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
@@ -364,6 +393,7 @@ label {
 }
 </style>
 <script>
+import axios from 'axios'
 import LayoutAuthenticated from '../Layout/LayoutAuthenticated.vue'
 import Steppers from '../components/Steppers.vue'
 
@@ -375,6 +405,10 @@ export default {
     },
     data() {
         return {
+            http: axios.create({
+                headers: { 'Authorization': 'Bearer YDWauEpovnjBQ-YDVPOPAh4ta.E-YDhdCjkazwv6A' }
+            }),
+            cadastrando: false,
             tipo: null,
             tributei: false,
             dialog: false,
@@ -387,8 +421,9 @@ export default {
             clientes: [],
             produtos: [],
             produto: null,
-            pedidos: this.$page.props.pedidos.data,
+            pedidos: this.$page.props.pedidos.data ?? null,
             cliente_id: "",
+            produtoCadastrado: false,
             tipoCalculo: "DIFAL",
             ipi: "",
             cOutro: "",
@@ -504,12 +539,12 @@ export default {
     },
     methods: {
         formatarValor(campo) {
-            // Remove caracteres não numéricos, exceto ponto e vírgula
-            this[campo] = this[campo].replace(/[^0-9,.]/g, '');
+            // // Remove caracteres não numéricos, exceto ponto e vírgula
+            // this[campo] = this[campo].replace(/[^0-9,.]/g, '');
 
-            // Adiciona vírgula antes dos dois últimos dígitos, garantindo que haja pelo menos um dígito antes
-            this[campo] = this[campo].replace(/^(\d*)(\d{2})$/, '$1,$2');
-            console.log(this[campo])
+            // // Adiciona vírgula antes dos dois últimos dígitos, garantindo que haja pelo menos um dígito antes
+            // this[campo] = this[campo].replace(/^(\d*)(\d{2})$/, '$1,$2');
+            // console.log(this[campo])
         },
 
         produtoProps(produto) {
@@ -519,22 +554,42 @@ export default {
             }
         },
         simuladorTributei() {
-            console.log(this.cliente, this.produto)
-            console.log(
-                this.cliente_id,
-                this.tipoCalculo,
-                this.ipi,
-                this.cOutro,
-                this.pedido_id,
-                this.produto_id,
-                this.quantidade,
-                this.vDescC,
-                this.vDescIC,
-                this.vFrete,
-                this.vICMS,
-                this.vSeg,
-                this.vUnit)
-        },
-    },
+            this.cadastrando = true;
+            this.cliente_id = this.cliente.id;
+            this.produto_id = this.produto.id;
+            if (this.cliente_id, this.produto_id, this.quantidade, this.vDescIC, this.vUnit) {
+                this.http.post('https://apisaidas.tributei.net/api/05995840000155/simulador/pedidos', {
+                    cliente_id: this.cliente_id,
+                    tipoCalculo: this.tipoCalculo
+                })
+                    .then(response => {
+                        this.http.post('https://apisaidas.tributei.net/api/05995840000155/simulador/pedidos/produtos', {
+                            IPI: this.ipi,
+                            cOutro: this.cOutro,
+                            pedido_id: response.data.id,
+                            produto_id: this.produto_id,
+                            quantidade: this.quantidade,
+                            vDescC: this.vDescC,
+                            vDescIC: this.vDescIC,
+                            vFrete: this.vFrete,
+                            vICMS: this.vICMS,
+                            vSeg: this.vSeg,
+                            vUnit: this.vUnit
+                        }).then(response => {
+                            if (response.status === 201) {
+                                this.cadastrando = false;
+                                this.produtoCadastrado = true;
+
+                            }
+                        }).catch(error => {
+                            console.error('Erro na requisição:', error);
+                        });
+                    }).catch(error => {
+                        console.error('Erro na requisição:', error);
+                    });
+            }
+
+        }
+    }
 }
 </script>

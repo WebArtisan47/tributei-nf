@@ -58,7 +58,7 @@ class HomeController extends Controller
     
             ])->getBody()->getContents();
         }
-        //dd( ['clientes' => json_decode($clientes), 'produtos' => json_decode($produtos), 'pedidos' => json_decode($pedidos), 'user' => $user]);
+        // dd( ['clientes' => json_decode($clientes), 'produtos' => json_decode($produtos), 'pedidos' => json_decode($pedidos), 'user' => $user]);
         return Inertia::render('Home', ['clientes' => json_decode($clientes), 'produtos' => json_decode($produtos), 'pedidos' => json_decode($pedidos), 'user' => $user]);
         
     }
