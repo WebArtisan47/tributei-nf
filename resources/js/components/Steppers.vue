@@ -16,23 +16,23 @@
                             Essa são simulações feitas no simulador de pedidos do tributei
                         </v-card-subtitle>
                     </v-card-title>
-                    <p class="ml-4 font-weight-medium" style="font-family: 'Roboto', sans-serif; font-size: 17px;">Simulação
-                        escolhida: <span class="font-weight-light">{{ simulacao }}</span></p>
+                    <p v-if="simulacao != null" class="ml-4 font-weight-medium" style="font-family: 'Roboto', sans-serif; font-size: 17px;">Simulação
+                        escolhida: <span class="font-weight-light">{{ simulacao.id }}</span></p>
                     <div class="w-75 ml-3">
                         <v-select label="Simulações" v-model="simulacao" :items="gerarOpcoesPedidos" item-title="text"
-                            item-value="value" :hint="`Pedido: ${simulacao === null ? '' : simulacao}`" persistent-hint
+                            item-value="value" :hint="`Pedido: ${simulacao === null ? '' : simulacao.id}`" persistent-hint
                             variant="outlined"></v-select>
                     </div>
                     <v-divider></v-divider>
                     <div v-if="AltProdutos === false">
-                        <div>
-                            <p class="text-h6 pl-4">Produtos Selecionados: </p>
+                        <div v-show="prod && prod.length > 0">
+                            <p class="text-h6 pl-5">Produtos Selecionados: </p>
                             <div class="pl-4">
-                                <v-chip v-for="prod in produto" color="green">
-                                {{ prod }}
-                            </v-chip>
+                                <v-chip v-for="produto in prod" color="green">
+                                    {{ produto.produto.nome_produto }}
+                                </v-chip>
                             </div>
-                            
+
                         </div>
                         <v-card-title>
                             Selecionar produtos?
@@ -49,7 +49,7 @@
                         </v-card-title>
                         <section class="px-3">
                             <div class="w-75 ml-3">
-                                <v-select label="Produtos" chips v-model="produto" :items="gerarOpcoesProdutos"
+                                <v-select label="Produtos" chips v-model="prod" :items="gerarOpcoesProdutos"
                                     item-title="text" item-value="value" hint="Selecione os produtos" multiple
                                     persistent-hint variant="outlined"></v-select>
                             </div>
@@ -73,7 +73,7 @@
                         </v-card-subtitle>
                     </v-card-title>
                     <p class="ml-4 font-weight-bold" style="font-family: 'Roboto', sans-serif; font-size: 17px;">Valor
-                        Atual: <span class="font-weight-light">R$ {{ PrecoVenda }},00</span></p>
+                        Atual: <span class="font-weight-light">{{ PrecoVenda }}</span></p>
                     <v-btn class="text-white ml-3" color="#02a996f4" @click="AltValor = true">Sim</v-btn>
                 </div>
                 <div v-else>
@@ -127,15 +127,15 @@
         <template v-slot:item.3>
             <v-card class="pa-5 text-center">
                 <v-card-title>
-                    <h3 class="text-h5">Emitir NFe</h3>
+                    <h3 class="text-h5">Emissão NFe</h3>
                 </v-card-title>
                 <section class="d-flex justify-content-center flex-wrap w-100 my-8">
                     <div class="">
                         <div>
-                            <v-btn append-icon="mdi-progress-download" size="large"
+                            <v-btn append-icon="mdi-receipt-text-plus" size="large"
                                 :color="download === true ? 'green' : '#02a996f4'" @click="download = true"
                                 class="ml-2 text-white">
-                                DOWNLOAD NFe
+                                Emitir
                             </v-btn>
                         </div>
 
@@ -167,18 +167,19 @@ export default {
     data() {
         return {
             http: axios.create({
-                headers: { 'Authorization': 'Bearer YDmFIAkdQ4wm6-YDJZVb4pKo9Fk-YDWfuJEVPI.Zc' }
+                headers: { 'Authorization': 'Bearer YDWauEpovnjBQ-YDVPOPAh4ta.E-YDhdCjkazwv6A' }
             }),
             load: false,
-            produto: [],
+            prod: null,
             produtos: [],
+            todos: false,
             AltProdutos: false,
             complementares: false,
             download: false,
             simulacao: null,
             AltValor: false,
             condicao: "",
-            PrecoVenda: 300,
+            PrecoVenda: 0,
             Steps: [
                 "Simulação do tributei",
                 "Dados complementares",
@@ -187,11 +188,26 @@ export default {
         }
     },
     watch: {
+        prod() {
+            if (this.prod) {
+                if (this.prod.length <= this.produtos.length) {
+                    
+                    this.todos = false
+                }
+            }
+
+        },
+        todos() {
+            if (this.todos === true) {
+                this.prod = this.produtos
+            }
+        },
         simulacao() {
             this.load = true
             this.produto = []
-
-            this.http.get(`https://apisaidas.tributei.net/api/05995840000155/simulador/pedidos/produtos/${this.simulacao}`)
+            this.PrecoVenda = this.formatReal(this.simulacao.total_pedido)
+            console.log(this.simulacao)
+            this.http.get(`https://apisaidas.tributei.net/api/05995840000155/simulador/pedidos/produtos/${this.simulacao.id}`)
                 .then(response => {
                     // Acesse os dados da resposta aqui
                     this.produtos = response.data.data; // Ou ajuste conforme a estrutura da resposta
@@ -206,22 +222,22 @@ export default {
     computed: {
         gerarOpcoesPedidos() {
             return this.pedidos.map(pedido => ({
-                value: pedido.id,
+                value: pedido,
                 text: `${pedido.cliente.nome} | ${pedido.cliente.estado} | Valor: ${this.formatReal(pedido.total_pedido)}`
             }));
         },
         gerarOpcoesProdutos() {
             let produtos = this.produtos.map(produtos => ({
-                value: produtos.id,
+                value: produtos,
                 text: produtos.produto.nome_produto
             }))
+
             this.load = false
             return produtos
         }
     },
 
     methods: {
-
         formatReal(valor) {
             if (typeof valor !== 'number') {
                 return 'Valor inválido';

@@ -38,9 +38,9 @@
                 </v-badge>
               </v-col>
               <v-col cols="7">
-                <Link href="/view/user/3dapNM34mQnB">
+                <Link :href="`/view/user/${$page.props.user.data.id}`">
                   <v-avatar class="text-white">
-                  <v-img  src="https://randomuser.me/api/portraits/women/85.jpg"></v-img>
+                  <v-img  src="/img/tributei.png"></v-img>
                 </v-avatar>
                 </Link>
               </v-col>
@@ -73,6 +73,7 @@ export default {
       drawer: true,
       rail: true,
     }
-  }
+  },
+
 }
 </script>

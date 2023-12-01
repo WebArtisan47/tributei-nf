@@ -9,7 +9,7 @@
                             <v-col cols="3" class="pa-0" >
                                 <v-card class="w-100 h-100" style="z-index: 4;">
                                     <v-card-title class="text-h3 text-center my-3" style="font-family: 'Roboto', sans-serif !important;">
-                                        {{ $page.props.user.nome }}
+                                        {{ $page.props.user.data.nome }}
                                     </v-card-title>
                                     
                                 </v-card>
