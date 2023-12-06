@@ -1,9 +1,9 @@
 <template>
     <layout-authenticated>
 
-        <section class="my-1 w-100 h-100">
+        <section class="my-1 w-100 h-100 overflow-y-auto">
 
-            <div class="text-start mx-8 mt-16">
+            <div class="text-start mx-8 mt-8">
                 <v-row justify="start">
                     <v-col cols="auto">
                         <section class="d-flex">
@@ -332,15 +332,21 @@
                                                 </v-chip>
                                             </td>
                                             <td class="text-center">
-                                                <v-icon icon="mdi-progress-download"></v-icon>
+                                                <v-btn icon v-if="item.color === 'green'" variant="plain">
+                                                    <v-icon  color="green" icon="mdi-progress-download"></v-icon>
+                                                </v-btn>
+                                                
+                                                <v-icon v-if="item.color === 'orange'" color="orange" icon="mdi-alert"></v-icon>
+                                                <v-icon v-if="item.color === 'red'" color="red" icon="mdi-cancel"></v-icon>
+
                                             </td>
                                         </tr>
                                     </tbody>
                                 </v-table>
 
                             </section>
-                            <section class="h-25">
-                                <v-pagination v-model="page" :length="2" rounded="circle"></v-pagination>
+                            <section class="h-25 w-50 ml-auto d-flex justify-content-end">
+                                <v-pagination v-model="page" class="w-50 mr-6"  :length="1" rounded="circle"></v-pagination>
                             </section>
                         </v-card>
                     </v-col>
@@ -406,7 +412,7 @@ export default {
     data() {
         return {
             http: axios.create({
-                headers: { 'Authorization': 'Bearer YDWauEpovnjBQ-YDVPOPAh4ta.E-YDhdCjkazwv6A' }
+                headers: { 'Authorization': 'Bearer YDmFIAkdQ4wm6-YDJZVb4pKo9Fk-YDWfuJEVPI.Zc' }
             }),
             cadastrando: false,
             tipo: null,
@@ -579,7 +585,6 @@ export default {
                             if (response.status === 201) {
                                 this.cadastrando = false;
                                 this.produtoCadastrado = true;
-
                             }
                         }).catch(error => {
                             console.error('Erro na requisição:', error);

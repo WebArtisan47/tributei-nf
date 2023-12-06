@@ -35,7 +35,7 @@ class HomeController extends Controller
                 'headers' => [
                     'Accept' => '*/*',
                     'Content-Type' => 'application/json',
-                    'Authorization' => 'Bearer YDWauEpovnjBQ-YDVPOPAh4ta.E-YDhdCjkazwv6A'
+                    'Authorization' => 'Bearer YDmFIAkdQ4wm6-YDJZVb4pKo9Fk-YDWfuJEVPI.Zc'
                 ]
             ])->getBody()->getContents();
             
@@ -43,7 +43,7 @@ class HomeController extends Controller
                 'headers' => [
                     'Accept' => '*/*',
                     'Content-Type' => 'application/json',
-                    'Authorization' => 'Bearer YDWauEpovnjBQ-YDVPOPAh4ta.E-YDhdCjkazwv6A'
+                    'Authorization' => 'Bearer YDmFIAkdQ4wm6-YDJZVb4pKo9Fk-YDWfuJEVPI.Zc'
                 ]
             ])->getBody()->getContents();
             $produtos = $this->http->post('https://api.tributei.net/api/05995840000155/produtos/search', [
@@ -58,7 +58,7 @@ class HomeController extends Controller
     
             ])->getBody()->getContents();
         }
-        // dd( ['clientes' => json_decode($clientes), 'produtos' => json_decode($produtos), 'pedidos' => json_decode($pedidos), 'user' => $user]);
+        //  dd( ['clientes' => json_decode($clientes), 'produtos' => json_decode($produtos), 'pedidos' => json_decode($pedidos), 'user' => $user]);
         return Inertia::render('Home', ['clientes' => json_decode($clientes), 'produtos' => json_decode($produtos), 'pedidos' => json_decode($pedidos), 'user' => $user]);
         
     }

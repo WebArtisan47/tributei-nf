@@ -1,4 +1,4 @@
-<template>
+<template >
     <v-stepper prev-text="voltar" next-text="proximo" alt-labels color="#00796B" :items="Steps">
         <template v-slot:item.1>
 
@@ -16,15 +16,16 @@
                             Essa são simulações feitas no simulador de pedidos do tributei
                         </v-card-subtitle>
                     </v-card-title>
-                    <p v-if="simulacao != null" class="ml-4 font-weight-medium" style="font-family: 'Roboto', sans-serif; font-size: 17px;">Simulação
+                    <p v-if="simulacao != null" class="ml-4 font-weight-medium"
+                        style="font-family: 'Roboto', sans-serif; font-size: 17px;">Simulação
                         escolhida: <span class="font-weight-light">{{ simulacao.id }}</span></p>
                     <div class="w-75 ml-3">
                         <v-select label="Simulações" v-model="simulacao" :items="gerarOpcoesPedidos" item-title="text"
                             item-value="value" :hint="`Pedido: ${simulacao === null ? '' : simulacao.id}`" persistent-hint
                             variant="outlined"></v-select>
                     </div>
-                    <v-divider></v-divider>
-                    <div v-if="AltProdutos === false">
+                    <!-- <v-divider></v-divider> -->
+                    <!-- <div v-if="AltProdutos === false">
                         <div v-show="prod && prod.length > 0">
                             <p class="text-h6 pl-5">Produtos Selecionados: </p>
                             <div class="pl-4">
@@ -55,16 +56,16 @@
                             </div>
                         </section>
                         <v-btn class="text-white ml-3" color="red" @click="AltProdutos = false">Fechar</v-btn>
-                    </div>
+                    </div> -->
 
                 </div>
             </v-card>
 
 
         </template>
-        <template v-slot:item.2>
-
-            <section class="">
+        <template v-slot:item.2  >
+            <section style="max-height: 350px !important; overflow-y: auto;">
+                <section class="">
                 <div v-if="AltValor === false">
                     <v-card-title>
                         Deseja alterar o preço de venda?
@@ -92,8 +93,8 @@
             </section>
 
 
-            <v-divider></v-divider>
-            <v-card flat>
+            <!-- <v-divider></v-divider> -->
+            <!-- <v-card >
                 <section>
                     <div v-if="complementares === false">
                         <v-card-title>
@@ -121,7 +122,9 @@
                     </div>
 
                 </section>
-            </v-card>
+            </v-card> -->
+            </section>
+          
         </template>
 
         <template v-slot:item.3>
@@ -133,7 +136,7 @@
                     <div class="">
                         <div>
                             <v-btn append-icon="mdi-receipt-text-plus" size="large"
-                                :color="download === true ? 'green' : '#02a996f4'" @click="download = true"
+                                :color="download === true ? 'green' : '#02a996f4'" @click="Emitir"
                                 class="ml-2 text-white">
                                 Emitir
                             </v-btn>
@@ -191,7 +194,7 @@ export default {
         prod() {
             if (this.prod) {
                 if (this.prod.length <= this.produtos.length) {
-                    
+
                     this.todos = false
                 }
             }
@@ -203,19 +206,19 @@ export default {
             }
         },
         simulacao() {
-            this.load = true
-            this.produto = []
+            // this.load = true
+            // this.produto = []
             this.PrecoVenda = this.formatReal(this.simulacao.total_pedido)
-            console.log(this.simulacao)
-            this.http.get(`https://apisaidas.tributei.net/api/05995840000155/simulador/pedidos/produtos/${this.simulacao.id}`)
-                .then(response => {
-                    // Acesse os dados da resposta aqui
-                    this.produtos = response.data.data; // Ou ajuste conforme a estrutura da resposta
-                    this.gerarOpcoesProdutos
-                })
-                .catch(error => {
-                    console.error('Erro na requisição:', error);
-                });
+            // console.log(this.simulacao)
+            // this.http.get(`https://apisaidas.tributei.net/api/05995840000155/simulador/pedidos/produtos/${this.simulacao.id}`)
+            //     .then(response => {
+            //         // Acesse os dados da resposta aqui
+            //         this.produtos = response.data.data; // Ou ajuste conforme a estrutura da resposta
+            //         this.gerarOpcoesProdutos
+            //     })
+            //     .catch(error => {
+            //         console.error('Erro na requisição:', error);
+            //     });
         }
 
     },
@@ -238,6 +241,10 @@ export default {
     },
 
     methods: {
+        Emitir(){
+            this.download = true
+            console.log(this.simulacao)
+        },
         formatReal(valor) {
             if (typeof valor !== 'number') {
                 return 'Valor inválido';
