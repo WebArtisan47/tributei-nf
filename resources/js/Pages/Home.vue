@@ -333,10 +333,11 @@
                                             </td>
                                             <td class="text-center">
                                                 <v-btn icon v-if="item.color === 'green'" variant="plain">
-                                                    <v-icon  color="green" icon="mdi-progress-download"></v-icon>
+                                                    <v-icon color="green" icon="mdi-progress-download"></v-icon>
                                                 </v-btn>
-                                                
-                                                <v-icon v-if="item.color === 'orange'" color="orange" icon="mdi-alert"></v-icon>
+
+                                                <v-icon v-if="item.color === 'orange'" color="orange"
+                                                    icon="mdi-alert"></v-icon>
                                                 <v-icon v-if="item.color === 'red'" color="red" icon="mdi-cancel"></v-icon>
 
                                             </td>
@@ -346,7 +347,7 @@
 
                             </section>
                             <section class="h-25 w-50 ml-auto d-flex justify-content-end">
-                                <v-pagination v-model="page" class="w-50 mr-6"  :length="1" rounded="circle"></v-pagination>
+                                <v-pagination v-model="page" class="w-50 mr-6" :length="1" rounded="circle"></v-pagination>
                             </section>
                         </v-card>
                     </v-col>
@@ -569,6 +570,23 @@ export default {
                     tipoCalculo: this.tipoCalculo
                 })
                     .then(response => {
+                        this.http.post('http://127.0.0.1:8000/api/cadastrar-request', [
+                            {
+                                user_id : 1,
+                                empresa_id : 1,
+                                ipi: this.ipi,
+                                cOutro: this.cOutro,
+                                pedido_id: response.data.id,
+                                produto_id: this.produto_id,
+                                quantidade: this.quantidade,
+                                vDescC: this.vDescC,
+                                vDescIC: this.vDescIC,
+                                vFrete: this.vFrete,
+                                vICMS: this.vICMS,
+                                vSeg: this.vSeg,
+                                vUnit: this.vUnit
+                            }
+                        ]);
                         this.http.post('https://apisaidas.tributei.net/api/05995840000155/simulador/pedidos/produtos', {
                             IPI: this.ipi,
                             cOutro: this.cOutro,

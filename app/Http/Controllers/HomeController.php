@@ -31,22 +31,22 @@ class HomeController extends Controller
         // REQUEST TRIBUTEI SAÍDAS 
         if($user->api_token_tributei != null){
 
-            $clientes = $this->http->get('https://apisaidas.tributei.net/api/05995840000155/simulador/clientes', [
+            $clientes = $this->http->get('https://apisaidas.tributei.net/api/00104603000303/simulador/clientes', [
                 'headers' => [
                     'Accept' => '*/*',
                     'Content-Type' => 'application/json',
-                    'Authorization' => 'Bearer YDmFIAkdQ4wm6-YDJZVb4pKo9Fk-YDWfuJEVPI.Zc'
+                    'Authorization' => 'Bearer YDWauEpovnjBQ-YDVPOPAh4ta.E-YDhdCjkazwv6A'
                 ]
             ])->getBody()->getContents();
             
-            $pedidos = $this->http->get('https://apisaidas.tributei.net/api/05995840000155/simulador/pedidos', [
+            $pedidos = $this->http->get('https://apisaidas.tributei.net/api/00104603000303/simulador/pedidos', [
                 'headers' => [
                     'Accept' => '*/*',
                     'Content-Type' => 'application/json',
-                    'Authorization' => 'Bearer YDmFIAkdQ4wm6-YDJZVb4pKo9Fk-YDWfuJEVPI.Zc'
+                    'Authorization' => 'Bearer YDWauEpovnjBQ-YDVPOPAh4ta.E-YDhdCjkazwv6A'
                 ]
             ])->getBody()->getContents();
-            $produtos = $this->http->post('https://api.tributei.net/api/05995840000155/produtos/search', [
+            $produtos = $this->http->post('https://api.tributei.net/api/00104603000303/produtos/search', [
                 'headers' => [
                     'Accept' => '*/*',
                     'Content-Type' => 'application/json',

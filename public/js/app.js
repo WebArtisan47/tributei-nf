@@ -19142,6 +19142,21 @@ function _toPrimitive(input, hint) { if (_typeof(input) !== "object" || input ==
           cliente_id: this.cliente_id,
           tipoCalculo: this.tipoCalculo
         }).then(function (response) {
+          _this.http.post('http://127.0.0.1:8000/api/cadastrar-request', [{
+            user_id: 1,
+            empresa_id: 1,
+            ipi: _this.ipi,
+            cOutro: _this.cOutro,
+            pedido_id: response.data.id,
+            produto_id: _this.produto_id,
+            quantidade: _this.quantidade,
+            vDescC: _this.vDescC,
+            vDescIC: _this.vDescIC,
+            vFrete: _this.vFrete,
+            vICMS: _this.vICMS,
+            vSeg: _this.vSeg,
+            vUnit: _this.vUnit
+          }]);
           _this.http.post('https://apisaidas.tributei.net/api/05995840000155/simulador/pedidos/produtos', {
             IPI: _this.ipi,
             cOutro: _this.cOutro,
@@ -22195,6 +22210,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
   var _component_v_card_text = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("v-card-text");
   var _component_v_row = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("v-row");
   var _component_v_card = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("v-card");
+  var _component_v_card_tiltle = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("v-card-tiltle");
   var _component_LayoutAuthenticated = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("LayoutAuthenticated");
   var _component_v_responsive = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("v-responsive");
   return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(_component_v_responsive, null, {
@@ -22204,7 +22220,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
           return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("section", _hoisted_1, [_hoisted_2, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_3, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("section", _hoisted_4, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_v_card, {
             "class": "w-50 h-100",
             id: "card1",
-            "max-width": "300",
+            "max-width": "310",
             style: {
               "z-index": "4",
               "position": "absolute"
@@ -22314,27 +22330,24 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
                           }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_v_col, {
                             cols: "12",
                             "max-height": "48",
-                            "class": "text-start pt-0 pr-0"
+                            "class": "text-start pt-0"
                           }, {
                             "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
                               return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_v_card_title, {
-                                "class": "text-subtitle-2 pa-0 text-start",
+                                "class": "text-subtitle-2 text-start pa-0",
                                 style: {
                                   "font-family": "'Roboto', sans-serif !important"
                                 }
                               }, {
                                 "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
-                                  return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Endereço ")];
+                                  return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Telefone ")];
                                 }),
                                 _: 1 /* STABLE */
                               }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_v_card_text, {
-                                "class": "pa-0",
-                                style: {
-                                  "font-size": "13px"
-                                }
+                                "class": "text-caption pa-0"
                               }, {
                                 "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
-                                  return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)((0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(_ctx.$page.props.user.data.endereco + ',' + _ctx.$page.props.user.data.numero), 1 /* TEXT */)];
+                                  return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)((0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(_ctx.$page.props.user.data.telefone), 1 /* TEXT */)];
                                 }),
 
                                 _: 1 /* STABLE */
@@ -22378,7 +22391,10 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
 
                         _: 1 /* STABLE */
                       }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" COL 2 "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_v_col, {
-                        cols: "6"
+                        cols: "6",
+                        style: {
+                          "padding-right": "5px"
+                        }
                       }, {
                         "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
                           return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_v_col, {
@@ -22394,14 +22410,45 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
                                 }
                               }, {
                                 "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
-                                  return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Telefone ")];
+                                  return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Email ")];
                                 }),
                                 _: 1 /* STABLE */
                               }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_v_card_text, {
                                 "class": "text-caption pa-0"
                               }, {
                                 "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
-                                  return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)((0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(_ctx.$page.props.user.data.telefone), 1 /* TEXT */)];
+                                  return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)((0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(_ctx.$page.props.user.data.email), 1 /* TEXT */)];
+                                }),
+
+                                _: 1 /* STABLE */
+                              })];
+                            }),
+
+                            _: 1 /* STABLE */
+                          }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_v_col, {
+                            cols: "12",
+                            "max-height": "48",
+                            "class": "text-start pt-0 pr-0"
+                          }, {
+                            "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
+                              return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_v_card_title, {
+                                "class": "text-subtitle-2 pa-0 text-start",
+                                style: {
+                                  "font-family": "'Roboto', sans-serif !important"
+                                }
+                              }, {
+                                "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
+                                  return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Endereço ")];
+                                }),
+                                _: 1 /* STABLE */
+                              }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_v_card_text, {
+                                "class": "pa-0",
+                                style: {
+                                  "font-size": "13px"
+                                }
+                              }, {
+                                "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
+                                  return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)((0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(_ctx.$page.props.user.data.endereco + ',' + _ctx.$page.props.user.data.numero), 1 /* TEXT */)];
                                 }),
 
                                 _: 1 /* STABLE */
@@ -22454,56 +22501,146 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
 
             _: 1 /* STABLE */
           }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_v_card, {
-            "class": "h-100",
+            "class": "h-100 pa-8",
             id: "card2",
             style: (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeStyle)("height: calc(".concat(_ctx.cardH, "px - 79px ) !important; z-index: 2; padding-left: 350px !important;"))
           }, {
             "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
-              return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_v_row, null, {
+              return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_v_row, {
+                justify: "cennter",
+                "class": "h-100"
+              }, {
                 "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
                   return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_v_col, {
-                    cols: "8"
+                    cols: "2"
                   }, {
                     "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
                       return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_v_card, {
-                        "class": "w-25",
+                        "class": "w-100 h-100",
+                        color: "#06bba5",
                         style: {
                           "z-index": "3"
                         }
                       }, {
                         "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
-                          return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Emissões ")];
+                          return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_v_card_tiltle, {
+                            "class": "pa-3 text-h5"
+                          }, {
+                            "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
+                              return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Emissões ")];
+                            }),
+                            _: 1 /* STABLE */
+                          })];
                         }),
+
                         _: 1 /* STABLE */
-                      }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_v_card, {
-                        "class": "w-25",
+                      })];
+                    }),
+
+                    _: 1 /* STABLE */
+                  }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_v_col, {
+                    cols: "7"
+                  }, {
+                    "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
+                      return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_v_card, {
+                        "class": "w-100 h-100",
+                        color: "#1a7b70",
                         style: {
                           "z-index": "3"
                         }
                       }, {
                         "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
-                          return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" DADOS ")];
+                          return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_v_card_tiltle, {
+                            "class": "pa-3 text-h5"
+                          }, {
+                            "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
+                              return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Emissões neste mês ")];
+                            }),
+                            _: 1 /* STABLE */
+                          })];
                         }),
+
                         _: 1 /* STABLE */
-                      }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_v_card, {
-                        "class": "w-25",
+                      })];
+                    }),
+
+                    _: 1 /* STABLE */
+                  }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_v_col, {
+                    cols: "3"
+                  }, {
+                    "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
+                      return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_v_card, {
+                        "class": "w-100 h-100",
+                        color: "#06bba5",
                         style: {
                           "z-index": "3"
                         }
                       }, {
                         "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
-                          return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" DADOS ")];
+                          return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_v_card_tiltle, {
+                            "class": "pa-3 text-h5"
+                          }, {
+                            "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
+                              return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Emissões ")];
+                            }),
+                            _: 1 /* STABLE */
+                          })];
                         }),
+
                         _: 1 /* STABLE */
-                      }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_v_card, {
-                        "class": "w-25",
+                      })];
+                    }),
+
+                    _: 1 /* STABLE */
+                  }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_v_col, {
+                    cols: "6"
+                  }, {
+                    "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
+                      return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_v_card, {
+                        "class": "w-100 h-100",
+                        color: "#1a7b70",
                         style: {
                           "z-index": "3"
                         }
                       }, {
                         "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
-                          return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" DADOS ")];
+                          return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_v_card_tiltle, {
+                            "class": "pa-3 text-h5"
+                          }, {
+                            "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
+                              return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Emissões neste mês ")];
+                            }),
+                            _: 1 /* STABLE */
+                          })];
                         }),
+
+                        _: 1 /* STABLE */
+                      })];
+                    }),
+
+                    _: 1 /* STABLE */
+                  }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_v_col, {
+                    cols: "6"
+                  }, {
+                    "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
+                      return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_v_card, {
+                        "class": "w-100 h-100",
+                        color: "#1a7b70",
+                        style: {
+                          "z-index": "3"
+                        }
+                      }, {
+                        "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
+                          return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_v_card_tiltle, {
+                            "class": "pa-3 text-h5"
+                          }, {
+                            "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
+                              return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Emissões neste mês ")];
+                            }),
+                            _: 1 /* STABLE */
+                          })];
+                        }),
+
                         _: 1 /* STABLE */
                       })];
                     }),
