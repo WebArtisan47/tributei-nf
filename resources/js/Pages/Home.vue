@@ -20,7 +20,7 @@
                                             <v-btn icon="mdi-close" color="white" class="ml-auto" @click="dialog = !dialog"
                                                 variant="text">
                                             </v-btn>
-                                            <steppers :pedidos="pedidos" />
+                                            <steppers :pedidos="pedidos" :user_id="$page.props.user.data.id" />
                                         </div>
 
                                     </v-dialog>
@@ -299,9 +299,9 @@
                                             <th class="text-center">
                                                 Fornecedor
                                             </th>
-                                            <th class="text-center">
+                                            <!-- <th class="text-center">
                                                 Valor da NFe
-                                            </th>
+                                            </th> -->
                                             <th class="text-center">
                                                 Pedido
                                             </th>
@@ -309,33 +309,35 @@
                                                 Status
                                             </th>
                                             <th class="text-center" style="max-width: 90px;">
-                                                DOWNLOAD NFe
+                                                DOWNLOADS
                                             </th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         <tr v-for="item in filteredItems" :key="item.name">
                                             <td class="text-center">{{ item.empresa }}</td>
-                                            <td class="text-center">{{ item.fornecedores }}</td>
-                                            <td class="text-center">{{ item.valorNFe }}</td>
-                                            <td class="text-center">{{ item.pedido }}</td>
+                                            <td class="text-center">{{ item.fornecedor }}</td>
+                                            <!-- <td class="text-center">{{ item.valorNFe }}</td> -->
+                                            <td class="text-center">{{ item.pedido_id }}</td>
                                             <td class="text-center">
                                                 <v-tooltip :text="item.error" v-if="item.color === 'red'" location="top">
                                                     <template v-slot:activator="{ props }">
-                                                        <v-chip class="ma-2 text-white" v-bind="props" :color="item.color">
+                                                        <v-chip class="ma-2 text-white" v-bind="props" :color="item.status != 'autorizado' ? 'green' : 'red'">
                                                             {{ item.status }}
                                                         </v-chip>
                                                     </template>
                                                 </v-tooltip>
-                                                <v-chip v-else class="ma-2 text-white" :color="item.color">
+                                                <v-chip v-else class="ma-2 text-white" style="text-transform: capitalize;" :color="item.status === 'autorizado' ? 'green' : 'red'">
                                                     {{ item.status }}
                                                 </v-chip>
                                             </td>
                                             <td class="text-center">
-                                                <v-btn icon v-if="item.color === 'green'" variant="plain">
-                                                    <v-icon color="green" icon="mdi-progress-download"></v-icon>
+                                                <v-btn icon v-if="item.status === 'autorizado'" :href="item.link_xml" variant="plain">
+                                                    <v-icon color="#00796B" icon="mdi-file-code-outline"></v-icon>
                                                 </v-btn>
-
+                                                <v-btn icon v-if="item.status === 'autorizado'" :href="item.link_danfe" variant="plain">
+                                                    <v-icon color="#00796B" icon="mdi-file-pdf-box"></v-icon>
+                                                </v-btn>
                                                 <v-icon v-if="item.color === 'orange'" color="orange"
                                                     icon="mdi-alert"></v-icon>
                                                 <v-icon v-if="item.color === 'red'" color="red" icon="mdi-cancel"></v-icon>
@@ -413,7 +415,7 @@ export default {
     data() {
         return {
             http: axios.create({
-                headers: { 'Authorization': 'Bearer YDmFIAkdQ4wm6-YDJZVb4pKo9Fk-YDWfuJEVPI.Zc' }
+                headers: { 'Authorization': 'Bearer YDWauEpovnjBQ-YDVPOPAh4ta.E-YDhdCjkazwv6A' }
             }),
             cadastrando: false,
             tipo: null,
@@ -443,54 +445,7 @@ export default {
             vICMS: "",
             vSeg: "",
             vUnit: "",
-            items: [
-                {
-                    empresa: 'Tiger LTDA',
-                    fornecedores: 'System Innovation',
-                    valorNFe: 'R$ 3.000',
-                    pedido: '45',
-                    color: 'orange',
-                    status: 'Aguardando retorno',
-                    link: 'https://example1.com'
-                },
-                {
-                    empresa: 'Phoenix Corp',
-                    fornecedores: 'Tech Solutions',
-                    valorNFe: 'R$ 5.500',
-                    pedido: '72',
-                    color: 'green',
-                    status: 'Emitido',
-                    link: 'https://example2.com'
-                },
-                {
-                    empresa: 'Skyline Enterprises',
-                    fornecedores: 'Innovate Tech',
-                    valorNFe: 'R$ 2.200',
-                    pedido: '28',
-                    color: 'red',
-                    status: 'Falha na emissão',
-                    error: 'NFe foi cancelada',
-                    link: 'https://example3.com'
-                },
-                {
-                    empresa: 'Green Systems',
-                    fornecedores: 'Data Experts',
-                    valorNFe: 'R$ 1.800',
-                    pedido: '15',
-                    color: 'orange',
-                    status: 'Aguardando retorno',
-                    link: 'https://example4.com'
-                },
-                {
-                    empresa: 'Tech Innovators',
-                    fornecedores: 'Future Solutions',
-                    valorNFe: 'R$ 4.750',
-                    pedido: '51',
-                    color: 'green',
-                    status: 'Emitido',
-                    link: 'https://example5.com'
-                }
-            ],
+            items: this.$page.props.emissoes,
         }
     },
     watch: {
@@ -565,7 +520,7 @@ export default {
             this.cliente_id = this.cliente.id;
             this.produto_id = this.produto.id;
             if (this.cliente_id, this.produto_id, this.quantidade, this.vDescIC, this.vUnit) {
-                this.http.post('https://apisaidas.tributei.net/api/05995840000155/simulador/pedidos', {
+                this.http.post('https://apisaidas.tributei.net/api/00104603000303/simulador/pedidos', {
                     cliente_id: this.cliente_id,
                     tipoCalculo: this.tipoCalculo
                 })
@@ -587,7 +542,7 @@ export default {
                                 vUnit: this.vUnit
                             }
                         ]);
-                        this.http.post('https://apisaidas.tributei.net/api/05995840000155/simulador/pedidos/produtos', {
+                        this.http.post('https://apisaidas.tributei.net/api/00104603000303/simulador/pedidos/produtos', {
                             IPI: this.ipi,
                             cOutro: this.cOutro,
                             pedido_id: response.data.id,
@@ -601,8 +556,9 @@ export default {
                             vUnit: this.vUnit
                         }).then(response => {
                             if (response.status === 201) {
-                                this.cadastrando = false;
-                                this.produtoCadastrado = true;
+                                location.reload();
+                                //this.cadastrando = false;
+                                //this.produtoCadastrado = true;
                             }
                         }).catch(error => {
                             console.error('Erro na requisição:', error);

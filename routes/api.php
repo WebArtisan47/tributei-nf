@@ -17,3 +17,4 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::post('cadastrar-request', [NFeController::class , 'createRequest']);
+Route::post('emitir-nfe', [NFeController::class, 'EmitirFocus']);

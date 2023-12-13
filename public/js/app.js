@@ -19003,7 +19003,7 @@ function _toPrimitive(input, hint) { if (_typeof(input) !== "object" || input ==
     return _ref = {
       http: axios__WEBPACK_IMPORTED_MODULE_0___default().create({
         headers: {
-          'Authorization': 'Bearer YDmFIAkdQ4wm6-YDJZVb4pKo9Fk-YDWfuJEVPI.Zc'
+          'Authorization': 'Bearer YDWauEpovnjBQ-YDVPOPAh4ta.E-YDhdCjkazwv6A'
         }
       }),
       cadastrando: false,
@@ -19027,48 +19027,7 @@ function _toPrimitive(input, hint) { if (_typeof(input) !== "object" || input ==
       cOutro: "",
       pedido_id: null,
       produto_id: ""
-    }, _defineProperty(_ref, "quantidade", ""), _defineProperty(_ref, "vDescC", ""), _defineProperty(_ref, "vDescIC", ""), _defineProperty(_ref, "vFrete", ""), _defineProperty(_ref, "vICMS", ""), _defineProperty(_ref, "vSeg", ""), _defineProperty(_ref, "vUnit", ""), _defineProperty(_ref, "items", [{
-      empresa: 'Tiger LTDA',
-      fornecedores: 'System Innovation',
-      valorNFe: 'R$ 3.000',
-      pedido: '45',
-      color: 'orange',
-      status: 'Aguardando retorno',
-      link: 'https://example1.com'
-    }, {
-      empresa: 'Phoenix Corp',
-      fornecedores: 'Tech Solutions',
-      valorNFe: 'R$ 5.500',
-      pedido: '72',
-      color: 'green',
-      status: 'Emitido',
-      link: 'https://example2.com'
-    }, {
-      empresa: 'Skyline Enterprises',
-      fornecedores: 'Innovate Tech',
-      valorNFe: 'R$ 2.200',
-      pedido: '28',
-      color: 'red',
-      status: 'Falha na emissão',
-      error: 'NFe foi cancelada',
-      link: 'https://example3.com'
-    }, {
-      empresa: 'Green Systems',
-      fornecedores: 'Data Experts',
-      valorNFe: 'R$ 1.800',
-      pedido: '15',
-      color: 'orange',
-      status: 'Aguardando retorno',
-      link: 'https://example4.com'
-    }, {
-      empresa: 'Tech Innovators',
-      fornecedores: 'Future Solutions',
-      valorNFe: 'R$ 4.750',
-      pedido: '51',
-      color: 'green',
-      status: 'Emitido',
-      link: 'https://example5.com'
-    }]), _ref;
+    }, _defineProperty(_ref, "quantidade", ""), _defineProperty(_ref, "vDescC", ""), _defineProperty(_ref, "vDescIC", ""), _defineProperty(_ref, "vFrete", ""), _defineProperty(_ref, "vICMS", ""), _defineProperty(_ref, "vSeg", ""), _defineProperty(_ref, "vUnit", ""), _defineProperty(_ref, "items", this.$page.props.emissoes), _ref;
   },
   watch: {
     select: function select() {
@@ -19138,7 +19097,7 @@ function _toPrimitive(input, hint) { if (_typeof(input) !== "object" || input ==
       this.cliente_id = this.cliente.id;
       this.produto_id = this.produto.id;
       if (this.cliente_id, this.produto_id, this.quantidade, this.vDescIC, this.vUnit) {
-        this.http.post('https://apisaidas.tributei.net/api/05995840000155/simulador/pedidos', {
+        this.http.post('https://apisaidas.tributei.net/api/00104603000303/simulador/pedidos', {
           cliente_id: this.cliente_id,
           tipoCalculo: this.tipoCalculo
         }).then(function (response) {
@@ -19157,7 +19116,7 @@ function _toPrimitive(input, hint) { if (_typeof(input) !== "object" || input ==
             vSeg: _this.vSeg,
             vUnit: _this.vUnit
           }]);
-          _this.http.post('https://apisaidas.tributei.net/api/05995840000155/simulador/pedidos/produtos', {
+          _this.http.post('https://apisaidas.tributei.net/api/00104603000303/simulador/pedidos/produtos', {
             IPI: _this.ipi,
             cOutro: _this.cOutro,
             pedido_id: response.data.id,
@@ -19171,8 +19130,9 @@ function _toPrimitive(input, hint) { if (_typeof(input) !== "object" || input ==
             vUnit: _this.vUnit
           }).then(function (response) {
             if (response.status === 201) {
-              _this.cadastrando = false;
-              _this.produtoCadastrado = true;
+              location.reload();
+              //this.cadastrando = false;
+              //this.produtoCadastrado = true;
             }
           })["catch"](function (error) {
             console.error('Erro na requisição:', error);
@@ -19271,6 +19231,1747 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/Cfop.vue?vue&type=script&lang=js":
+/*!**********************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/Cfop.vue?vue&type=script&lang=js ***!
+  \**********************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  data: function data() {
+    return {
+      cfops: [{
+        numero: 1000,
+        descricao: "ENTRADAS OU AQUISIÇÕES DE SERVIÇOS DO ESTADO",
+        "disabled": true
+      }, {
+        numero: 1100,
+        descricao: "COMPRAS PARA INDUSTRIALIZAÇÃO, PRODUÇÃO RURAL, COMERCIALIZAÇÃO OU PRESTAÇÃO DE SERVIÇOS"
+      }, {
+        numero: 1101,
+        descricao: "Compra para industrialização ou produção rural"
+      }, {
+        numero: 1102,
+        descricao: "Compra para comercialização"
+      }, {
+        numero: 1111,
+        descricao: "Compra para industrialização, de mercadoria recebida anteriormente em consignação industrial"
+      }, {
+        numero: 1113,
+        descricao: "Compra para comercialização, de mercadoria recebida anteriormente em consignação mercantil"
+      }, {
+        numero: 1116,
+        descricao: "Compra para industrialização originada de encomenda para recebimento futuro"
+      }, {
+        numero: 1117,
+        descricao: "Compra para comercialização originada de encomenda para recebimento futuro"
+      }, {
+        numero: 1118,
+        descricao: "Compra de mercadoria para comercialização pelo adquirente originário, entregue pelo vendedor remetente ao destinatário, em venda à ordem"
+      }, {
+        numero: 1120,
+        descricao: "Compra para industrialização, em venda à ordem, já recebida do vendedor remetente"
+      }, {
+        numero: 1121,
+        descricao: "Compra para comercialização, em venda à ordem, já recebida do vendedor remetente"
+      }, {
+        numero: 1122,
+        descricao: "Compra para industrialização em que a mercadoria foi remetida pelo fornecedor ao industrializador sem transitar pelo estabelecimento adquirente"
+      }, {
+        numero: 1124,
+        descricao: "Industrialização efetuada por outra empresa"
+      }, {
+        numero: 1125,
+        descricao: "Industrialização efetuada por outra empresa quando a mercadoria remetida para utilização no processo de industrialização não transitou pelo estabelecimento adquirente da mercadoria"
+      }, {
+        numero: 1126,
+        descricao: "Compra para utilização na prestação de serviço sujeita ao ICMS"
+      }, {
+        numero: 1128,
+        descricao: "Compra para utilização na prestação de serviço sujeita ao ISSQN"
+      }, {
+        numero: 1150,
+        descricao: "TRANSFERÊNCIAS PARA INDUSTRIALIZAÇÃO, PRODUÇÃO RURAL, COMERCIALIZAÇÃO OU PRESTAÇÃO DE SERVIÇOS"
+      }, {
+        numero: 1151,
+        descricao: "Transferência para industrialização ou produção rura"
+      }, {
+        numero: 1152,
+        descricao: "Transferência para comercialização"
+      }, {
+        numero: 1153,
+        descricao: "Transferência de energia elétrica para distribuição"
+      }, {
+        numero: 1154,
+        descricao: "Transferência para utilização na prestação de serviço"
+      }, {
+        numero: 1200,
+        descricao: "DEVOLUÇÕES DE VENDAS DE PRODUÇÃO DO ESTABELECIMENTO, DE PRODUTOS DE TERCEIROS OU ANULAÇÕES DE VALORES"
+      }, {
+        numero: 1201,
+        descricao: "Devolução de venda de produção do estabelecimento"
+      }, {
+        numero: 1202,
+        descricao: "Devolução de venda de mercadoria adquirida ou recebida de terceiros"
+      }, {
+        numero: 1203,
+        descricao: "Devolução de venda de produção do estabelecimento, destinada à Zona Franca de Manaus ou Áreas de Livre Comércio"
+      }, {
+        numero: 1204,
+        descricao: "Devolução de venda de mercadoria adquirida ou recebida de terceiros, destinada à Zona Franca de Manaus ou Áreas de Livre Comércio"
+      }, {
+        numero: 1205,
+        descricao: "Anulação de valor relativo à prestação de serviço de comunicação"
+      }, {
+        numero: 1206,
+        descricao: "Anulação de valor relativo à prestação de serviço de transporte"
+      }, {
+        numero: 1207,
+        descricao: "Anulação de valor relativo à venda de energia elétrica"
+      }, {
+        numero: 1208,
+        descricao: "Devolução de produção do estabelecimento, remetida em transferência"
+      }, {
+        numero: 1209,
+        descricao: "Devolução de mercadoria adquirida ou recebida de terceiros, remetida em transferência"
+      }, {
+        numero: 1250,
+        descricao: "COMPRAS DE ENERGIA ELÉTRICA"
+      }, {
+        numero: 1251,
+        descricao: "Compra de energia elétrica para distribuição ou comercialização"
+      }, {
+        numero: 1252,
+        descricao: "Compra de energia elétrica por estabelecimento industrial"
+      }, {
+        numero: 1253,
+        descricao: "Compra de energia elétrica por estabelecimento comercial"
+      }, {
+        numero: 1254,
+        descricao: "Compra de energia elétrica por estabelecimento prestador de serviço de transporte"
+      }, {
+        numero: 1255,
+        descricao: "Compra de energia elétrica por estabelecimento prestador de serviço de comunicação"
+      }, {
+        numero: 1256,
+        descricao: "Compra de energia elétrica por estabelecimento de produtor rural"
+      }, {
+        numero: 1257,
+        descricao: 'Compra de energia elétrica p/ consumo por demanda contratada'
+      }, {
+        numero: 1301,
+        descricao: 'Aquisição de serviço de comunicação p/ execução de serviço da mesma natureza'
+      }, {
+        numero: 1302,
+        descricao: 'Aquisição de serviço de comunicação por estabelecimento industrial'
+      }, {
+        numero: 1303,
+        descricao: 'Aquisição de serviço de comunicação por estabelecimento comercial'
+      }, {
+        numero: 1304,
+        descricao: 'Aquisição de serviço de comunicação por estabelecimento de prestador de serviço de transporte'
+      }, {
+        numero: 1305,
+        descricao: 'Aquisição de serviço de comunicação por estabelecimento de geradora ou de distribuidora de energia elétrica'
+      }, {
+        numero: 1306,
+        descricao: 'Aquisição de serviço de comunicação por estabelecimento de produtor rural'
+      }, {
+        numero: 1351,
+        descricao: 'Aquisição de serviço de transporte p/ execução de serviço da mesma natureza'
+      }, {
+        numero: 1352,
+        descricao: 'Aquisição de serviço de transporte por estabelecimento industrial'
+      }, {
+        numero: 1353,
+        descricao: 'Aquisição de serviço de transporte por estabelecimento comercial'
+      }, {
+        numero: 1354,
+        descricao: 'Aquisição de serviço de transporte por estabelecimento de prestador de serviço de comunicação'
+      }, {
+        numero: 1355,
+        descricao: 'Aquisição de serviço de transporte por estabelecimento de geradora ou de distribuidora de energia elétrica'
+      }, {
+        numero: 1356,
+        descricao: 'Aquisição de serviço de transporte por estabelecimento de produtor rural'
+      }, {
+        numero: 1360,
+        descricao: 'Aquisição de serviço de transporte por contribuinte-substituto em relação ao serviço de transporte'
+      }, {
+        numero: 1401,
+        descricao: 'Compra p/ industrialização ou produção rural de mercadoria sujeita a ST'
+      }, {
+        numero: 1403,
+        descricao: 'Compra p/ comercialização em operação com mercadoria sujeita a ST'
+      }, {
+        numero: 1406,
+        descricao: 'Compra de bem p/ o ativo imobilizado cuja mercadoria está sujeita a ST'
+      }, {
+        numero: 1407,
+        descricao: 'Compra de mercadoria p/ uso ou consumo cuja mercadoria está sujeita a ST'
+      }, {
+        numero: 1408,
+        descricao: 'Transferência p/ industrialização ou produção rural de mercadoria sujeita a ST'
+      }, {
+        numero: 1409,
+        descricao: 'Transferência p/ comercialização em operação com mercadoria sujeita a ST'
+      }, {
+        numero: 1410,
+        descricao: 'Devolução de venda de mercadoria, de produção do estabelecimento, sujeita a ST'
+      }, {
+        numero: 1411,
+        descricao: 'Devolução de venda de mercadoria adquirida ou recebida de terceiros em operação com mercadoria sujeita a ST'
+      }, {
+        numero: 1414,
+        descricao: 'Retorno de mercadoria de produção do estabelecimento, remetida p/ venda fora do estabelecimento, sujeita a ST'
+      }, {
+        numero: 1415,
+        descricao: 'Retorno de mercadoria adquirida ou recebida de terceiros, remetida p/ venda fora do estabelecimento em operação com mercadoria sujeita a ST'
+      }, {
+        numero: 1451,
+        descricao: 'Retorno de animal do estabelecimento produtor'
+      }, {
+        numero: 1452,
+        descricao: 'Retorno de insumo não utilizado na produção'
+      }, {
+        numero: 1501,
+        descricao: 'Entrada de mercadoria recebida com fim específico de exportação'
+      }, {
+        numero: 1503,
+        descricao: 'Entrada decorrente de devolução de produto, de fabricação do estabelecimento, remetido com fim específico de exportação'
+      }, {
+        numero: 1504,
+        descricao: 'Entrada decorrente de devolução de mercadoria remetida com fim específico de exportação, adquirida ou recebida de terceiros'
+      }, {
+        numero: 1505,
+        descricao: 'Entrada decorrente de devolução simbólica de mercadoria remetida p/ formação de lote de exportação, de produto industrializado ou produzido pelo próprio estabelecimento'
+      }, {
+        numero: 1506,
+        descricao: 'Entrada decorrente de devolução simbólica de mercadoria, adquirida ou recebida de terceiros, remetida p/ formação de lote de exportação'
+      }, {
+        numero: 1551,
+        descricao: 'Compra de bem p/ o ativo imobilizado'
+      }, {
+        numero: 1552,
+        descricao: 'Transferência de bem do ativo imobilizado'
+      }, {
+        numero: 1553,
+        descricao: 'Devolução de venda de bem do ativo imobilizado'
+      }, {
+        numero: 1554,
+        descricao: 'Retorno de bem do ativo imobilizado remetido p/ uso fora do estabelecimento'
+      }, {
+        numero: 1555,
+        descricao: 'Entrada de bem do ativo imobilizado de terceiro, remetido p/ uso no estabelecimento'
+      }, {
+        numero: 1556,
+        descricao: 'Compra de material p/ uso ou consumo'
+      }, {
+        numero: 1557,
+        descricao: 'Transferência de material p/ uso ou consumo'
+      }, {
+        numero: 1601,
+        descricao: 'Recebimento, por transferência, de crédito de ICMS'
+      }, {
+        numero: 1602,
+        descricao: 'Recebimento, por transferência, de saldo credor do ICMS, de outro estabelecimento da mesma empresa, p/ compensação de saldo devedor do imposto'
+      }, {
+        numero: 1603,
+        descricao: 'Ressarcimento de ICMS retido por substituição tributária'
+      }, {
+        numero: 1604,
+        descricao: 'Lançamento do crédito relativo à compra de bem p/ o ativo imobilizado'
+      }, {
+        numero: 1605,
+        descricao: 'Recebimento, por transferência, de saldo devedor do ICMS de outro estabelecimento da mesma empresa'
+      }, {
+        numero: 1651,
+        descricao: 'Compra de combustível ou lubrificante p/ industrialização subseqüente'
+      }, {
+        numero: 1652,
+        descricao: 'Compra de combustível ou lubrificante p/ comercialização'
+      }, {
+        numero: 1653,
+        descricao: 'Compra de combustível ou lubrificante por consumidor ou usuário final'
+      }, {
+        numero: 1658,
+        descricao: 'Transferência de combustível ou lubrificante p/ industrialização'
+      }, {
+        numero: 1659,
+        descricao: 'Transferência de combustível ou lubrificante p/ comercialização'
+      }, {
+        numero: 1660,
+        descricao: 'Devolução de venda de combustível ou lubrificante destinados à industrialização subseqüente'
+      }, {
+        numero: 1661,
+        descricao: 'Devolução de venda de combustível ou lubrificante destinados à comercialização'
+      }, {
+        numero: 1662,
+        descricao: 'Devolução de venda de combustível ou lubrificante destinados a consumidor ou usuário final'
+      }, {
+        numero: 1663,
+        descricao: 'Entrada de combustível ou lubrificante p/ armazenagem'
+      }, {
+        numero: 1664,
+        descricao: 'Retorno de combustível ou lubrificante remetidos p/ armazenagem'
+      }, {
+        numero: 1901,
+        descricao: 'Entrada p/ industrialização por encomenda'
+      }, {
+        numero: 1902,
+        descricao: 'Retorno de mercadoria remetida p/ industrialização por encomenda'
+      }, {
+        numero: 1903,
+        descricao: 'Entrada de mercadoria remetida p/ industrialização e não aplicada no referido processo'
+      }, {
+        numero: 1904,
+        descricao: 'Retorno de remessa p/ venda fora do estabelecimento'
+      }, {
+        numero: 1905,
+        descricao: 'Entrada de mercadoria recebida p/ depósito em depósito fechado ou armazém geral'
+      }, {
+        numero: 1906,
+        descricao: 'Retorno de mercadoria remetida p/ depósito fechado ou armazém geral'
+      }, {
+        numero: 1907,
+        descricao: 'Retorno simbólico de mercadoria remetida p/ depósito fechado ou armazém geral'
+      }, {
+        numero: 1908,
+        descricao: 'Entrada de bem por conta de contrato de comodato'
+      }, {
+        numero: 1909,
+        descricao: 'Retorno de bem remetido por conta de contrato de comodato'
+      }, {
+        numero: 1910,
+        descricao: 'Entrada de bonificação, doação ou brinde'
+      }, {
+        numero: 1911,
+        descricao: 'Entrada de amostra grátis'
+      }, {
+        numero: 1912,
+        descricao: 'Entrada de mercadoria ou bem recebido p/ demonstração'
+      }, {
+        numero: 1913,
+        descricao: 'Retorno de mercadoria ou bem remetido p/ demonstração'
+      }, {
+        numero: 1914,
+        descricao: 'Retorno de mercadoria ou bem remetido p/ exposição ou feira'
+      }, {
+        numero: 1915,
+        descricao: 'Entrada de mercadoria ou bem recebido p/ conserto ou reparo'
+      }, {
+        numero: 1916,
+        descricao: 'Retorno de mercadoria ou bem remetido p/ conserto ou reparo'
+      }, {
+        numero: 1917,
+        descricao: 'Entrada de mercadoria recebida em consignação mercantil ou industrial'
+      }, {
+        numero: 1918,
+        descricao: 'Devolução de mercadoria remetida em consignação mercantil ou industrial'
+      }, {
+        numero: 1919,
+        descricao: 'Devolução simbólica de mercadoria vendida ou utilizada em processo industrial, remetida anteriormente em consignação mercantil ou industrial'
+      }, {
+        numero: 1920,
+        descricao: 'Entrada de vasilhame ou sacaria'
+      }, {
+        numero: 1921,
+        descricao: 'Retorno de vasilhame ou sacaria'
+      }, {
+        numero: 1922,
+        descricao: 'Lançamento efetuado a título de simples faturamento decorrente de compra p/ recebimento futuro'
+      }, {
+        numero: 1923,
+        descricao: 'Entrada de mercadoria recebida do vendedor remetente, em venda à ordem'
+      }, {
+        numero: 1924,
+        descricao: 'Entrada p/ industrialização por conta e ordem do adquirente da mercadoria, quando esta não transitar pelo estabelecimento do adquirente'
+      }, {
+        numero: 1925,
+        descricao: 'Retorno de mercadoria remetida p/ industrialização por conta e ordem do adquirente da mercadoria, quando esta não transitar pelo estabelecimento do adquirente'
+      }, {
+        numero: 1926,
+        descricao: 'Lançamento efetuado a título de reclassificação de mercadoria decorrente de formação de kit ou de sua desagregação'
+      }, {
+        numero: 1931,
+        descricao: 'Lançamento efetuado pelo tomador do serviço de transporte, quando a responsabilidade de retenção do imposto for atribuída ao remetente ou alienante da mercadoria, pelo serviço de transporte realizado por transportador autônomo ou por transportador não-inscrito na UF onde se tenha iniciado o serviço'
+      }, {
+        numero: 1932,
+        descricao: 'Aquisição de serviço de transporte iniciado em UF diversa daquela onde esteja inscrito o prestador'
+      }, {
+        numero: 1933,
+        descricao: 'Aquisição de serviço tributado pelo Imposto sobre Serviços de Qualquer Natureza'
+      }, {
+        numero: 1934,
+        descricao: 'Entrada simbólica de mercadoria recebida p/ depósito fechado ou armazém geral'
+      }, {
+        numero: 1949,
+        descricao: 'Outra entrada de mercadoria ou prestação de serviço não especificada'
+      }, {
+        numero: 2000,
+        descricao: "ENTRADAS OU AQUISIÇÕES DE SERVIÇOS DE OUTROS ESTADOS",
+        "disabled": true
+      }, {
+        numero: 2101,
+        descricao: 'Compra p/ industrialização ou produção rural'
+      }, {
+        numero: 2102,
+        descricao: 'Compra p/ comercialização'
+      }, {
+        numero: 2111,
+        descricao: 'Compra p/ industrialização de mercadoria recebida anteriormente em consignação industrial'
+      }, {
+        numero: 2113,
+        descricao: 'Compra p/ comercialização, de mercadoria recebida anteriormente em consignação mercantil'
+      }, {
+        numero: 2116,
+        descricao: 'Compra p/ industrialização ou produção rural originada de encomenda p/ recebimento futuro'
+      }, {
+        numero: 2117,
+        descricao: 'Compra p/ comercialização originada de encomenda p/ recebimento futuro'
+      }, {
+        numero: 2118,
+        descricao: 'Compra de mercadoria p/ comercialização pelo adquirente originário, entregue pelo vendedor remetente ao destinatário, em venda à ordem'
+      }, {
+        numero: 2120,
+        descricao: 'Compra p/ industrialização, em venda à ordem, já recebida do vendedor remetente'
+      }, {
+        numero: 2121,
+        descricao: 'Compra p/ comercialização, em venda à ordem, já recebida do vendedor remetente'
+      }, {
+        numero: 2122,
+        descricao: 'Compra p/ industrialização em que a mercadoria foi remetida pelo fornecedor ao industrializador sem transitar pelo estabelecimento adquirente'
+      }, {
+        numero: 2124,
+        descricao: 'Industrialização efetuada por outra empresa'
+      }, {
+        numero: 2125,
+        descricao: 'Industrialização efetuada por outra empresa quando a mercadoria remetida p/ utilização no processo de industrialização não transitou pelo estabelecimento adquirente da mercadoria'
+      }, {
+        numero: 2126,
+        descricao: 'Compra p/ utilização na prestação de serviço sujeita ao ICMS'
+      }, {
+        numero: 2128,
+        descricao: 'Compra p/ utilização na prestação de serviço sujeita ao ISSQN'
+      }, {
+        numero: 2151,
+        descricao: 'Transferência p/ industrialização ou produção rural'
+      }, {
+        numero: 2152,
+        descricao: 'Transferência p/ comercialização'
+      }, {
+        numero: 2153,
+        descricao: 'Transferência de energia elétrica p/ distribuição'
+      }, {
+        numero: 2154,
+        descricao: 'Transferência p/ utilização na prestação de serviço'
+      }, {
+        numero: 2201,
+        descricao: 'Devolução de venda de produção do estabelecimento'
+      }, {
+        numero: 2202,
+        descricao: 'Devolução de venda de mercadoria adquirida ou recebida de terceiros'
+      }, {
+        numero: 2203,
+        descricao: 'Devolução de venda de produção do estabelecimento destinada à ZFM ou ALC'
+      }, {
+        numero: 2204,
+        descricao: 'Devolução de venda de mercadoria adquirida ou recebida de terceiros, destinada à ZFM ou ALC'
+      }, {
+        numero: 2205,
+        descricao: 'Anulação de valor relativo à prestação de serviço de comunicação'
+      }, {
+        numero: 2206,
+        descricao: 'Anulação de valor relativo à prestação de serviço de transporte'
+      }, {
+        numero: 2207,
+        descricao: 'Anulação de valor relativo à venda de energia elétrica'
+      }, {
+        numero: 2208,
+        descricao: 'Devolução de produção do estabelecimento, remetida em transferência'
+      }, {
+        numero: 2209,
+        descricao: 'Devolução de mercadoria adquirida ou recebida de terceiros e remetida em transferência'
+      }, {
+        numero: 2212,
+        descricao: 'Devolução de venda no mercado interno de mercadoria industrializada e insumo importado sob o Regime Aduaneiro Especial de Entreposto Industrial (Recof-Sped)'
+      }, {
+        numero: 2251,
+        descricao: 'Compra de energia elétrica p/ distribuição ou comercialização'
+      }, {
+        numero: 2252,
+        descricao: 'Compra de energia elétrica por estabelecimento industrial'
+      }, {
+        numero: 2253,
+        descricao: 'Compra de energia elétrica por estabelecimento comercial'
+      }, {
+        numero: 2254,
+        descricao: 'Compra de energia elétrica por estabelecimento prestador de serviço de transporte'
+      }, {
+        numero: 2255,
+        descricao: 'Compra de energia elétrica por estabelecimento prestador de serviço de comunicação'
+      }, {
+        numero: 2256,
+        descricao: 'Compra de energia elétrica por estabelecimento de produtor rural'
+      }, {
+        numero: 2257,
+        descricao: 'Compra de energia elétrica p/ consumo por demanda contratada'
+      }, {
+        numero: 2301,
+        descricao: 'Aquisição de serviço de comunicação p/ execução de serviço da mesma natureza'
+      }, {
+        numero: 2302,
+        descricao: 'Aquisição de serviço de comunicação por estabelecimento industrial'
+      }, {
+        numero: 2303,
+        descricao: 'Aquisição de serviço de comunicação por estabelecimento comercial'
+      }, {
+        numero: 2304,
+        descricao: 'Aquisição de serviço de comunicação por estabelecimento de prestador de serviço de transporte'
+      }, {
+        numero: 2305,
+        descricao: 'Aquisição de serviço de comunicação por estabelecimento de geradora ou de distribuidora de energia elétrica'
+      }, {
+        numero: 2306,
+        descricao: 'Aquisição de serviço de comunicação por estabelecimento de produtor rural'
+      }, {
+        numero: 2351,
+        descricao: 'Aquisição de serviço de transporte p/ execução de serviço da mesma natureza'
+      }, {
+        numero: 2352,
+        descricao: 'Aquisição de serviço de transporte por estabelecimento industrial'
+      }, {
+        numero: 2353,
+        descricao: 'Aquisição de serviço de transporte por estabelecimento comercial'
+      }, {
+        numero: 2354,
+        descricao: 'Aquisição de serviço de transporte por estabelecimento de prestador de serviço de comunicação'
+      }, {
+        numero: 2355,
+        descricao: 'Aquisição de serviço de transporte por estabelecimento de geradora ou de distribuidora de energia elétrica'
+      }, {
+        numero: 2356,
+        descricao: 'Aquisição de serviço de transporte por estabelecimento de produtor rural'
+      }, {
+        numero: 2401,
+        descricao: 'Compra p/ industrialização ou produção rural de mercadoria sujeita a ST'
+      }, {
+        numero: 2403,
+        descricao: 'Compra p/ comercialização em operação com mercadoria sujeita a ST'
+      }, {
+        numero: 2406,
+        descricao: 'Compra de bem p/ o ativo imobilizado cuja mercadoria está sujeita a ST'
+      }, {
+        numero: 2407,
+        descricao: 'Compra de mercadoria p/ uso ou consumo cuja mercadoria está sujeita a ST'
+      }, {
+        numero: 2408,
+        descricao: 'Transferência p/ industrialização ou produção rural de mercadoria sujeita a ST'
+      }, {
+        numero: 2409,
+        descricao: 'Transferência p/ comercialização em operação com mercadoria sujeita a ST'
+      }, {
+        numero: 2410,
+        descricao: 'Devolução de venda de produção do estabelecimento, quando o produto sujeito a ST'
+      }, {
+        numero: 2411,
+        descricao: 'Devolução de venda de mercadoria adquirida ou recebida de terceiros em operação com mercadoria sujeita a ST'
+      }, {
+        numero: 2414,
+        descricao: 'Retorno de produção do estabelecimento, remetida p/ venda fora do estabelecimento, quando o produto sujeito a ST'
+      }, {
+        numero: 2415,
+        descricao: 'Retorno de mercadoria adquirida ou recebida de terceiros, remetida p/ venda fora do estabelecimento em operação com mercadoria sujeita a ST'
+      }, {
+        numero: 2501,
+        descricao: 'Entrada de mercadoria recebida com fim específico de exportação'
+      }, {
+        numero: 2503,
+        descricao: 'Entrada decorrente de devolução de produto industrializado pelo estabelecimento, remetido com fim específico de exportação'
+      }, {
+        numero: 2504,
+        descricao: 'Entrada decorrente de devolução de mercadoria remetida com fim específico de exportação, adquirida ou recebida de terceiros'
+      }, {
+        numero: 2505,
+        descricao: 'Entrada decorrente de devolução simbólica de mercadoria remetida p/ formação de lote de exportação, de produto industrializado ou produzido pelo próprio estabelecimento.'
+      }, {
+        numero: 2506,
+        descricao: 'Entrada decorrente de devolução simbólica de mercadoria, adquirida ou recebida de terceiros, remetida p/ formação de lote de exportação.'
+      }, {
+        numero: 2551,
+        descricao: 'Compra de bem p/ o ativo imobilizado'
+      }, {
+        numero: 2552,
+        descricao: 'Transferência de bem do ativo imobilizado'
+      }, {
+        numero: 2553,
+        descricao: 'Devolução de venda de bem do ativo imobilizado'
+      }, {
+        numero: 2554,
+        descricao: 'Retorno de bem do ativo imobilizado remetido p/ uso fora do estabelecimento'
+      }, {
+        numero: 2555,
+        descricao: 'Entrada de bem do ativo imobilizado de terceiro, remetido p/ uso no estabelecimento'
+      }, {
+        numero: 2556,
+        descricao: 'Compra de material p/ uso ou consumo'
+      }, {
+        numero: 2557,
+        descricao: 'Transferência de material p/ uso ou consumo'
+      }, {
+        numero: 2603,
+        descricao: 'Ressarcimento de ICMS retido por substituição tributária'
+      }, {
+        numero: 2651,
+        descricao: 'Compra de combustível ou lubrificante p/ industrialização subsequente'
+      }, {
+        numero: 2652,
+        descricao: 'Compra de combustível ou lubrificante p/ comercialização'
+      }, {
+        numero: 2652,
+        descricao: 'Compra de combustível ou lubrificante p/ comercialização'
+      }, {
+        numero: 2653,
+        descricao: 'Compra de combustível ou lubrificante por consumidor ou usuário final'
+      }, {
+        numero: 2658,
+        descricao: 'Transferência de combustível ou lubrificante p/ industrialização'
+      }, {
+        numero: 2659,
+        descricao: 'Transferência de combustível ou lubrificante p/ comercialização'
+      }, {
+        numero: 2660,
+        descricao: 'Devolução de venda de combustível ou lubrificante destinados à industrialização subsequente'
+      }, {
+        numero: 2661,
+        descricao: 'Devolução de venda de combustível ou lubrificante destinados à comercialização'
+      }, {
+        numero: 2662,
+        descricao: 'Devolução de venda de combustível ou lubrificante destinados a consumidor ou usuário final'
+      }, {
+        numero: 2663,
+        descricao: 'Entrada de combustível ou lubrificante p/ armazenagem'
+      }, {
+        numero: 2664,
+        descricao: 'Retorno de combustível ou lubrificante remetidos p/ armazenagem'
+      }, {
+        numero: 2901,
+        descricao: 'Entrada p/ industrialização por encomenda'
+      }, {
+        numero: 2902,
+        descricao: 'Retorno de mercadoria remetida p/ industrialização por encomenda'
+      }, {
+        numero: 2903,
+        descricao: 'Entrada de mercadoria remetida p/ industrialização e não aplicada no referido processo'
+      }, {
+        numero: 2904,
+        descricao: 'Retorno de remessa p/ venda fora do estabelecimento'
+      }, {
+        numero: 2905,
+        descricao: 'Entrada de mercadoria recebida p/ depósito em depósito fechado ou armazém geral'
+      }, {
+        numero: 2906,
+        descricao: 'Retorno de mercadoria remetida p/ depósito fechado ou armazém geral'
+      }, {
+        numero: 2907,
+        descricao: 'Retorno simbólico de mercadoria remetida p/ depósito fechado ou armazém geral'
+      }, {
+        numero: 2908,
+        descricao: 'Entrada de bem por conta de contrato de comodato'
+      }, {
+        numero: 2909,
+        descricao: 'Retorno de bem remetido por conta de contrato de comodato'
+      }, {
+        numero: 2910,
+        descricao: 'Entrada de bonificação, doação ou brinde'
+      }, {
+        numero: 2911,
+        descricao: 'Entrada de amostra grátis'
+      }, {
+        numero: 2912,
+        descricao: 'Entrada de mercadoria ou bem recebido p/ demonstração'
+      }, {
+        numero: 2913,
+        descricao: 'Retorno de mercadoria ou bem remetido p/ demonstração'
+      }, {
+        numero: 2914,
+        descricao: 'Retorno de mercadoria ou bem remetido p/ exposição ou feira'
+      }, {
+        numero: 2915,
+        descricao: 'Entrada de mercadoria ou bem recebido p/ conserto ou reparo'
+      }, {
+        numero: 2916,
+        descricao: 'Retorno de mercadoria ou bem remetido p/ conserto ou reparo'
+      }, {
+        numero: 2917,
+        descricao: 'Entrada de mercadoria recebida em consignação mercantil ou industrial'
+      }, {
+        numero: 2918,
+        descricao: 'Devolução de mercadoria remetida em consignação mercantil ou industrial'
+      }, {
+        numero: 2919,
+        descricao: 'Devolução simbólica de mercadoria vendida ou utilizada em processo industrial, remetida anteriormente em consignação mercantil ou industrial'
+      }, {
+        numero: 2920,
+        descricao: 'Entrada de vasilhame ou sacaria'
+      }, {
+        numero: 2921,
+        descricao: 'Retorno de vasilhame ou sacaria'
+      }, {
+        numero: 2922,
+        descricao: 'Lançamento efetuado a título de simples faturamento decorrente de compra p/ recebimento futuro'
+      }, {
+        numero: 2923,
+        descricao: 'Entrada de mercadoria recebida do vendedor remetente, em venda à ordem'
+      }, {
+        numero: 2924,
+        descricao: 'Entrada p/ industrialização por conta e ordem do adquirente da mercadoria, quando esta não transitar pelo estabelecimento do adquirente'
+      }, {
+        numero: 2925,
+        descricao: 'Retorno de mercadoria remetida p/ industrialização por conta e ordem do adquirente da mercadoria, quando esta não transitar pelo estabelecimento do adquirente'
+      }, {
+        numero: 2931,
+        descricao: 'Lançamento efetuado pelo tomador do serviço de transporte, quando a responsabilidade de retenção do imposto for atribuída ao remetente ou alienante da mercadoria, pelo serviço de transporte realizado por transportador autônomo ou por transportador não-inscrito na UF onde se tenha iniciado o serviço'
+      }, {
+        numero: 2932,
+        descricao: 'Aquisição de serviço de transporte iniciado em UF diversa daquela onde esteja inscrito o prestador'
+      }, {
+        numero: 2933,
+        descricao: 'Aquisição de serviço tributado pelo Imposto Sobre Serviços de Qualquer Natureza'
+      }, {
+        numero: 2934,
+        descricao: 'Entrada simbólica de mercadoria recebida p/ depósito fechado ou armazém geral'
+      }, {
+        numero: 2949,
+        descricao: 'Outra entrada de mercadoria ou prestação de serviço não especificado'
+      }, {
+        numero: 3000,
+        descricao: "ENTRADAS OU AQUISIÇÕES DE SERVIÇOS DO EXTERIOR",
+        "disabled": true
+      }, {
+        numero: 3101,
+        descricao: 'Compra p/ industrialização ou produção rural'
+      }, {
+        numero: 3102,
+        descricao: 'Compra p/ comercialização'
+      }, {
+        numero: 3126,
+        descricao: 'Compra p/ utilização na prestação de serviço sujeita ao ICMS'
+      }, {
+        numero: 3127,
+        descricao: 'Compra p/ industrialização sob o regime de drawback'
+      }, {
+        numero: 3128,
+        descricao: 'Compra p/ utilização na prestação de serviço sujeita ao ISSQN'
+      }, {
+        numero: 3129,
+        descricao: 'Compra para industrialização sob o Regime Aduaneiro Especial de Entreposto Industrial (Recof-Sped)'
+      }, {
+        numero: 3201,
+        descricao: 'Devolução de venda de produção do estabelecimento'
+      }, {
+        numero: 3202,
+        descricao: 'Devolução de venda de mercadoria adquirida ou recebida de terceiros'
+      }, {
+        numero: 3205,
+        descricao: 'Anulação de valor relativo à prestação de serviço de comunicação'
+      }, {
+        numero: 3206,
+        descricao: 'Anulação de valor relativo à prestação de serviço de transporte'
+      }, {
+        numero: 3207,
+        descricao: 'Anulação de valor relativo à venda de energia elétrica'
+      }, {
+        numero: 3211,
+        descricao: 'Devolução de venda de produção do estabelecimento sob o regime de drawback'
+      }, {
+        numero: 3212,
+        descricao: 'Devolução de venda no mercado externo de mercadoria industrializada sob o Regime Aduaneiro Especial de Entreposto Industrial (Recof-Sped)'
+      }, {
+        numero: 3251,
+        descricao: 'Compra de energia elétrica p/ distribuição ou comercialização'
+      }, {
+        numero: 3301,
+        descricao: 'Aquisição de serviço de comunicação p/ execução de serviço da mesma natureza'
+      }, {
+        numero: 3351,
+        descricao: 'Aquisição de serviço de transporte p/ execução de serviço da mesma natureza'
+      }, {
+        numero: 3352,
+        descricao: 'Aquisição de serviço de transporte por estabelecimento industrial'
+      }, {
+        numero: 3353,
+        descricao: 'Aquisição de serviço de transporte por estabelecimento comercial'
+      }, {
+        numero: 3354,
+        descricao: 'Aquisição de serviço de transporte por estabelecimento de prestador de serviço de comunicação'
+      }, {
+        numero: 3355,
+        descricao: 'Aquisição de serviço de transporte por estabelecimento de geradora ou de distribuidora de energia elétrica'
+      }, {
+        numero: 3356,
+        descricao: 'Aquisição de serviço de transporte por estabelecimento de produtor rural'
+      }, {
+        numero: 3503,
+        descricao: 'Devolução de mercadoria exportada que tenha sido recebida com fim específico de exportação'
+      }, {
+        numero: 3551,
+        descricao: 'Compra de bem p/ o ativo imobilizado'
+      }, {
+        numero: 3553,
+        descricao: 'Devolução de venda de bem do ativo imobilizado'
+      }, {
+        numero: 3556,
+        descricao: 'Compra de material p/ uso ou consumo'
+      }, {
+        numero: 3651,
+        descricao: 'Compra de combustível ou lubrificante p/ industrialização subseqüente'
+      }, {
+        numero: 3652,
+        descricao: 'Compra de combustível ou lubrificante p/ comercialização'
+      }, {
+        numero: 3653,
+        descricao: 'Compra de combustível ou lubrificante por consumidor ou usuário final'
+      }, {
+        numero: 3930,
+        descricao: 'Lançamento efetuado a título de entrada de bem sob amparo de regime especial aduaneiro de admissão temporária'
+      }, {
+        numero: 3949,
+        descricao: 'Outra entrada de mercadoria ou prestação de serviço não especificado'
+      }, {
+        numero: 5000,
+        descricao: "SAÍDAS OU PRESTAÇÕES DE SERVIÇOS PARA O ESTADO",
+        "disabled": true
+      }, {
+        numero: 5101,
+        descricao: 'Venda de produção do estabelecimento'
+      }, {
+        numero: 5102,
+        descricao: 'Venda de mercadoria adquirida ou recebida de terceiros'
+      }, {
+        numero: 5103,
+        descricao: 'Venda de produção do estabelecimento efetuada fora do estabelecimento'
+      }, {
+        numero: 5104,
+        descricao: 'Venda de mercadoria adquirida ou recebida de terceiros, efetuada fora do estabelecimento'
+      }, {
+        numero: 5105,
+        descricao: 'Venda de produção do estabelecimento que não deva por ele transitar'
+      }, {
+        numero: 5106,
+        descricao: 'Venda de mercadoria adquirida ou recebida de terceiros, que não deva por ele transitar'
+      }, {
+        numero: 5109,
+        descricao: 'Venda de produção do estabelecimento destinada à ZFM ou ALC'
+      }, {
+        numero: 5110,
+        descricao: 'Venda de mercadoria, adquirida ou recebida de terceiros, destinada à ZFM ou ALC'
+      }, {
+        numero: 5111,
+        descricao: 'Venda de produção do estabelecimento remetida anteriormente em consignação industrial'
+      }, {
+        numero: 5112,
+        descricao: 'Venda de mercadoria adquirida ou recebida de terceiros remetida anteriormente em consignação industrial'
+      }, {
+        numero: 5113,
+        descricao: 'Venda de produção do estabelecimento remetida anteriormente em consignação mercantil'
+      }, {
+        numero: 5114,
+        descricao: 'Venda de mercadoria adquirida ou recebida de terceiros remetida anteriormente em consignação mercantil'
+      }, {
+        numero: 5115,
+        descricao: 'Venda de mercadoria adquirida ou recebida de terceiros, recebida anteriormente em consignação mercantil'
+      }, {
+        numero: 5116,
+        descricao: 'Venda de produção do estabelecimento originada de encomenda p/ entrega futura'
+      }, {
+        numero: 5117,
+        descricao: 'Venda de mercadoria adquirida ou recebida de terceiros, originada de encomenda p/ entrega futura'
+      }, {
+        numero: 5118,
+        descricao: 'Venda de produção do estabelecimento entregue ao destinatário por conta e ordem do adquirente originário, em venda à ordem'
+      }, {
+        numero: 5119,
+        descricao: 'Venda de mercadoria adquirida ou recebida de terceiros entregue ao destinatário por conta e ordem do adquirente originário, em venda à ordem'
+      }, {
+        numero: 5120,
+        descricao: 'Venda de mercadoria adquirida ou recebida de terceiros entregue ao destinatário pelo vendedor remetente, em venda à ordem'
+      }, {
+        numero: 5122,
+        descricao: 'Venda de produção do estabelecimento remetida p/ industrialização, por conta e ordem do adquirente, sem transitar pelo estabelecimento do adquirente'
+      }, {
+        numero: 5123,
+        descricao: 'Venda de mercadoria adquirida ou recebida de terceiros remetida p/ industrialização, por conta e ordem do adquirente, sem transitar pelo estabelecimento do adquirente'
+      }, {
+        numero: 5124,
+        descricao: 'Industrialização efetuada p/ outra empresa'
+      }, {
+        numero: 5125,
+        descricao: 'Industrialização efetuada p/ outra empresa quando a mercadoria recebida p/ utilização no processo de industrialização não transitar pelo estabelecimento adquirente da mercadoria'
+      }, {
+        numero: 5129,
+        descricao: 'Venda de insumo importado e de mercadoria industrializada sob o amparo do Regime Aduaneiro Especial de Entreposto Industrial (Recof-Sped)'
+      }, {
+        numero: 5151,
+        descricao: 'Transferência de produção do estabelecimento'
+      }, {
+        numero: 5152,
+        descricao: 'Transferência de mercadoria adquirida ou recebida de terceiros'
+      }, {
+        numero: 5153,
+        descricao: 'Transferência de energia elétrica'
+      }, {
+        numero: 5155,
+        descricao: 'Transferência de produção do estabelecimento, que não deva por ele transitar'
+      }, {
+        numero: 5156,
+        descricao: 'Transferência de mercadoria adquirida ou recebida de terceiros, que não deva por ele transitar'
+      }, {
+        numero: 5201,
+        descricao: 'Devolução de compra p/ industrialização ou produção rural'
+      }, {
+        numero: 5202,
+        descricao: 'Devolução de compra p/ comercialização'
+      }, {
+        numero: 5205,
+        descricao: 'Anulação de valor relativo a aquisição de serviço de comunicação'
+      }, {
+        numero: 5206,
+        descricao: 'Anulação de valor relativo a aquisição de serviço de transporte'
+      }, {
+        numero: 5207,
+        descricao: 'Anulação de valor relativo à compra de energia elétrica'
+      }, {
+        numero: 5208,
+        descricao: 'Devolução de mercadoria recebida em transferência p/ industrialização ou produção rural'
+      }, {
+        numero: 5209,
+        descricao: 'Devolução de mercadoria recebida em transferência p/ comercialização'
+      }, {
+        numero: 5210,
+        descricao: 'Devolução de compra p/ utilização na prestação de serviço'
+      }, {
+        numero: 5251,
+        descricao: 'Venda de energia elétrica p/ distribuição ou comercialização'
+      }, {
+        numero: 5252,
+        descricao: 'Venda de energia elétrica p/ estabelecimento industrial'
+      }, {
+        numero: 5253,
+        descricao: 'Venda de energia elétrica p/ estabelecimento comercial'
+      }, {
+        numero: 5254,
+        descricao: 'Venda de energia elétrica p/ estabelecimento prestador de serviço de transporte'
+      }, {
+        numero: 5255,
+        descricao: 'Venda de energia elétrica p/ estabelecimento prestador de serviço de comunicação'
+      }, {
+        numero: 5256,
+        descricao: 'Venda de energia elétrica p/ estabelecimento de produtor rural'
+      }, {
+        numero: 5257,
+        descricao: 'Venda de energia elétrica p/ consumo por demanda contratada'
+      }, {
+        numero: 5258,
+        descricao: 'Venda de energia elétrica a não contribuinte'
+      }, {
+        numero: 5301,
+        descricao: 'Prestação de serviço de comunicação p/ execução de serviço da mesma natureza'
+      }, {
+        numero: 5302,
+        descricao: 'Prestação de serviço de comunicação a estabelecimento industrial'
+      }, {
+        numero: 5303,
+        descricao: 'Prestação de serviço de comunicação a estabelecimento comercial'
+      }, {
+        numero: 5304,
+        descricao: 'Prestação de serviço de comunicação a estabelecimento de prestador de serviço de transporte'
+      }, {
+        numero: 5305,
+        descricao: 'Prestação de serviço de comunicação a estabelecimento de geradora ou de distribuidora de energia elétrica'
+      }, {
+        numero: 5306,
+        descricao: 'Prestação de serviço de comunicação a estabelecimento de produtor rural'
+      }, {
+        numero: 5307,
+        descricao: 'Prestação de serviço de comunicação a não contribuinte'
+      }, {
+        numero: 5351,
+        descricao: 'Prestação de serviço de transporte p/ execução de serviço da mesma natureza'
+      }, {
+        numero: 5352,
+        descricao: 'Prestação de serviço de transporte a estabelecimento industrial'
+      }, {
+        numero: 5353,
+        descricao: 'Prestação de serviço de transporte a estabelecimento comercial'
+      }, {
+        numero: 5354,
+        descricao: 'Prestação de serviço de transporte a estabelecimento de prestador de serviço de comunicação'
+      }, {
+        numero: 5355,
+        descricao: 'Prestação de serviço de transporte a estabelecimento de geradora ou de distribuidora de energia elétrica'
+      }, {
+        numero: 5356,
+        descricao: 'Prestação de serviço de transporte a estabelecimento de produtor rural'
+      }, {
+        numero: 5357,
+        descricao: 'Prestação de serviço de transporte a não contribuinte'
+      }, {
+        numero: 5359,
+        descricao: 'Prestação de serviço de transporte a contribuinte ou a não-contribuinte, quando a mercadoria transportada esteja dispensada de emissão de Nota Fiscal'
+      }, {
+        numero: 5360,
+        descricao: 'Prestação de serviço de transporte a contribuinte-substituto em relação ao serviço de transporte'
+      }, {
+        numero: 5401,
+        descricao: 'Venda de produção do estabelecimento quando o produto esteja sujeito a ST'
+      }, {
+        numero: 5402,
+        descricao: 'Venda de produção do estabelecimento de produto sujeito a ST, em operação entre contribuintes substitutos do mesmo produto'
+      }, {
+        numero: 5403,
+        descricao: 'Venda de mercadoria, adquirida ou recebida de terceiros, sujeita a ST, na condição de contribuinte-substituto'
+      }, {
+        numero: 5405,
+        descricao: 'Venda de mercadoria, adquirida ou recebida de terceiros, sujeita a ST, na condição de contribuinte-substituído'
+      }, {
+        numero: 5408,
+        descricao: 'Transferência de produção do estabelecimento quando o produto sujeito a ST'
+      }, {
+        numero: 5409,
+        descricao: 'Transferência de mercadoria adquirida ou recebida de terceiros em operação com mercadoria sujeita a ST'
+      }, {
+        numero: 5410,
+        descricao: 'Devolução de compra p/ industrialização de mercadoria sujeita a ST'
+      }, {
+        numero: 5411,
+        descricao: 'Devolução de compra p/ comercialização em operação com mercadoria sujeita a ST'
+      }, {
+        numero: 5412,
+        descricao: 'Devolução de bem do ativo imobilizado, em operação com mercadoria sujeita a ST'
+      }, {
+        numero: 5413,
+        descricao: 'Devolução de mercadoria destinada ao uso ou consumo, em operação com mercadoria sujeita a ST'
+      }, {
+        numero: 5414,
+        descricao: 'Remessa de produção do estabelecimento p/ venda fora do estabelecimento, quando o produto sujeito a ST'
+      }, {
+        numero: 5415,
+        descricao: 'Remessa de mercadoria adquirida ou recebida de terceiros p/ venda fora do estabelecimento, em operação com mercadoria sujeita a ST'
+      }, {
+        numero: 5451,
+        descricao: 'Remessa de animal e de insumo p/ estabelecimento produtor'
+      }, {
+        numero: 5501,
+        descricao: 'Remessa de produção do estabelecimento, com fim específico de exportação'
+      }, {
+        numero: 5502,
+        descricao: 'Remessa de mercadoria adquirida ou recebida de terceiros, com fim específico de exportação'
+      }, {
+        numero: 5503,
+        descricao: 'Devolução de mercadoria recebida com fim específico de exportação'
+      }, {
+        numero: 5504,
+        descricao: 'Remessa de mercadoria p/ formação de lote de exportação, de produto industrializado ou produzido pelo próprio estabelecimento.'
+      }, {
+        numero: 5505,
+        descricao: 'Remessa de mercadoria, adquirida ou recebida de terceiros, p/ formação de lote de exportação.'
+      }, {
+        numero: 5551,
+        descricao: 'Venda de bem do ativo imobilizado'
+      }, {
+        numero: 5552,
+        descricao: 'Transferência de bem do ativo imobilizado'
+      }, {
+        numero: 5553,
+        descricao: 'Devolução de compra de bem p/ o ativo imobilizado'
+      }, {
+        numero: 5554,
+        descricao: 'Remessa de bem do ativo imobilizado p/ uso fora do estabelecimento'
+      }, {
+        numero: 5555,
+        descricao: 'Devolução de bem do ativo imobilizado de terceiro, recebido p/ uso no estabelecimento'
+      }, {
+        numero: 5556,
+        descricao: 'Devolução de compra de material de uso ou consumo'
+      }, {
+        numero: 5557,
+        descricao: 'Transferência de material de uso ou consumo'
+      }, {
+        numero: 5601,
+        descricao: 'Transferência de crédito de ICMS acumulado'
+      }, {
+        numero: 5602,
+        descricao: 'Transferência de saldo credor do ICMS, p/ outro estabelecimento da mesma empresa, destinado à compensação de saldo devedor do ICMS'
+      }, {
+        numero: 5603,
+        descricao: 'Ressarcimento de ICMS retido por substituição tributária'
+      }, {
+        numero: 5605,
+        descricao: 'Transferência de saldo devedor do ICMS de outro estabelecimento da mesma empresa'
+      }, {
+        numero: 5606,
+        descricao: 'Utilização de saldo credor do ICMS p/ extinção por compensação de débitos fiscais'
+      }, {
+        numero: 5651,
+        descricao: 'Venda de combustível ou lubrificante de produção do estabelecimento destinados à industrialização subseqüente'
+      }, {
+        numero: 5652,
+        descricao: 'Venda de combustível ou lubrificante, de produção do estabelecimento, destinados à comercialização'
+      }, {
+        numero: 5653,
+        descricao: 'Venda de combustível ou lubrificante, de produção do estabelecimento, destinados a consumidor ou usuário final'
+      }, {
+        numero: 5654,
+        descricao: 'Venda de combustível ou lubrificante, adquiridos ou recebidos de terceiros, destinados à industrialização subseqüente'
+      }, {
+        numero: 5655,
+        descricao: 'Venda de combustível ou lubrificante, adquiridos ou recebidos de terceiros, destinados à comercialização'
+      }, {
+        numero: 5656,
+        descricao: 'Venda de combustível ou lubrificante, adquiridos ou recebidos de terceiros, destinados a consumidor ou usuário final'
+      }, {
+        numero: 5657,
+        descricao: 'Remessa de combustível ou lubrificante, adquiridos ou recebidos de terceiros, p/ venda fora do estabelecimento'
+      }, {
+        numero: 5658,
+        descricao: 'Transferência de combustível ou lubrificante de produção do estabelecimento'
+      }, {
+        numero: 5659,
+        descricao: 'Transferência de combustível ou lubrificante adquiridos ou recebidos de terceiros'
+      }, {
+        numero: 5660,
+        descricao: 'Devolução de compra de combustível ou lubrificante adquiridos p/ industrialização subseqüente'
+      }, {
+        numero: 5661,
+        descricao: 'Devolução de compra de combustível ou lubrificante adquiridos p/ comercialização'
+      }, {
+        numero: 5662,
+        descricao: 'Devolução de compra de combustível ou lubrificante adquiridos por consumidor ou usuário final'
+      }, {
+        numero: 5663,
+        descricao: 'Remessa p/ armazenagem de combustível ou lubrificante'
+      }, {
+        numero: 5664,
+        descricao: 'Retorno de combustível ou lubrificante recebidos p/ armazenagem'
+      }, {
+        numero: 5665,
+        descricao: 'Retorno simbólico de combustível ou lubrificante recebidos p/ armazenagem'
+      }, {
+        numero: 5666,
+        descricao: 'Remessa, por conta e ordem de terceiros, de combustível ou lubrificante recebidos p/ armazenagem'
+      }, {
+        numero: 5667,
+        descricao: 'Venda de combustível ou lubrificante a consumidor ou usuário final estabelecido em outra UF'
+      }, {
+        numero: 5901,
+        descricao: 'Remessa p/ industrialização por encomenda'
+      }, {
+        numero: 5902,
+        descricao: 'Retorno de mercadoria utilizada na industrialização por encomenda'
+      }, {
+        numero: 5903,
+        descricao: 'Retorno de mercadoria recebida p/ industrialização e não aplicada no referido processo'
+      }, {
+        numero: 5904,
+        descricao: 'Remessa p/ venda fora do estabelecimento'
+      }, {
+        numero: 5905,
+        descricao: 'Remessa p/ depósito fechado ou armazém geral'
+      }, {
+        numero: 5906,
+        descricao: 'Retorno de mercadoria depositada em depósito fechado ou armazém geral'
+      }, {
+        numero: 5907,
+        descricao: 'Retorno simbólico de mercadoria depositada em depósito fechado ou armazém geral'
+      }, {
+        numero: 5908,
+        descricao: 'Remessa de bem por conta de contrato de comodato'
+      }, {
+        numero: 5909,
+        descricao: 'Retorno de bem recebido por conta de contrato de comodato'
+      }, {
+        numero: 5910,
+        descricao: 'Remessa em bonificação, doação ou brinde'
+      }, {
+        numero: 5911,
+        descricao: 'Remessa de amostra grátis'
+      }, {
+        numero: 5912,
+        descricao: 'Remessa de mercadoria ou bem p/ demonstração'
+      }, {
+        numero: 5913,
+        descricao: 'Retorno de mercadoria ou bem recebido p/ demonstração'
+      }, {
+        numero: 5914,
+        descricao: 'Remessa de mercadoria ou bem p/ exposição ou feira'
+      }, {
+        numero: 5915,
+        descricao: 'Remessa de mercadoria ou bem p/ conserto ou reparo'
+      }, {
+        numero: 5916,
+        descricao: 'Retorno de mercadoria ou bem recebido p/ conserto ou reparo'
+      }, {
+        numero: 5917,
+        descricao: 'Remessa de mercadoria em consignação mercantil ou industrial'
+      }, {
+        numero: 5918,
+        descricao: 'Devolução de mercadoria recebida em consignação mercantil ou industrial'
+      }, {
+        numero: 5919,
+        descricao: 'Devolução simbólica de mercadoria vendida ou utilizada em processo industrial, recebida anteriormente em consignação mercantil ou industrial'
+      }, {
+        numero: 5920,
+        descricao: 'Remessa de vasilhame ou sacaria'
+      }, {
+        numero: 5921,
+        descricao: 'Devolução de vasilhame ou sacaria'
+      }, {
+        numero: 5922,
+        descricao: 'Lançamento efetuado a título de simples faturamento decorrente de venda p/ entrega futura'
+      }, {
+        numero: 5923,
+        descricao: 'Remessa de mercadoria por conta e ordem de terceiros, em venda à ordem ou em operações com armazém geral ou depósito fechado.'
+      }, {
+        numero: 5924,
+        descricao: 'Remessa p/ industrialização por conta e ordem do adquirente da mercadoria, quando esta não transitar pelo estabelecimento do adquirente'
+      }, {
+        numero: 5925,
+        descricao: 'Retorno de mercadoria recebida p/ industrialização por conta e ordem do adquirente da mercadoria, quando aquela não transitar pelo estabelecimento do adquirente'
+      }, {
+        numero: 5926,
+        descricao: 'Lançamento efetuado a título de reclassificação de mercadoria decorrente de formação de kit ou de sua desagregação'
+      }, {
+        numero: 5927,
+        descricao: 'Lançamento efetuado a título de baixa de estoque decorrente de perda, roubo ou deterioração'
+      }, {
+        numero: 5928,
+        descricao: 'Lançamento efetuado a título de baixa de estoque decorrente do encerramento da atividade da empresa'
+      }, {
+        numero: 5929,
+        descricao: 'Lançamento efetuado em decorrência de emissão de documento fiscal relativo a operação ou prestação também registrada em equipamento Emissor de Cupom Fiscal - ECF'
+      }, {
+        numero: 5931,
+        descricao: 'Lançamento efetuado em decorrência da responsabilidade de retenção do imposto por substituição tributária, atribuída ao remetente ou alienante da mercadoria, pelo serviço de transporte realizado por transportador autônomo ou por transportador não inscrito na UF onde iniciado o serviço'
+      }, {
+        numero: 5932,
+        descricao: 'Prestação de serviço de transporte iniciada em UF diversa daquela onde inscrito o prestador'
+      }, {
+        numero: 5933,
+        descricao: 'Prestação de serviço tributado pelo Imposto Sobre Serviços de Qualquer Natureza'
+      }, {
+        numero: 5934,
+        descricao: 'Remessa simbólica de mercadoria depositada em armazém geral ou depósito fechado.'
+      }, {
+        numero: 5949,
+        descricao: 'Outra saída de mercadoria ou prestação de serviço não especificado'
+      }, {
+        numero: 6000,
+        descricao: "SAÍDAS OU PRESTAÇÕES DE SERVIÇOS PARA OUTROS ESTADOS",
+        "disabled": true
+      }, {
+        numero: 6101,
+        descricao: 'Venda de produção do estabelecimento'
+      }, {
+        numero: 6102,
+        descricao: 'Venda de mercadoria adquirida ou recebida de terceiros'
+      }, {
+        numero: 6103,
+        descricao: 'Venda de produção do estabelecimento, efetuada fora do estabelecimento'
+      }, {
+        numero: 6104,
+        descricao: 'Venda de mercadoria adquirida ou recebida de terceiros, efetuada fora do estabelecimento'
+      }, {
+        numero: 6105,
+        descricao: 'Venda de produção do estabelecimento que não deva por ele transitar'
+      }, {
+        numero: 6106,
+        descricao: 'Venda de mercadoria adquirida ou recebida de terceiros, que não deva por ele transitar'
+      }, {
+        numero: 6107,
+        descricao: 'Venda de produção do estabelecimento, destinada a não contribuinte'
+      }, {
+        numero: 6108,
+        descricao: 'Venda de mercadoria adquirida ou recebida de terceiros, destinada a não contribuinte'
+      }, {
+        numero: 6109,
+        descricao: 'Venda de produção do estabelecimento destinada à ZFM ou ALC'
+      }, {
+        numero: 6110,
+        descricao: 'Venda de mercadoria, adquirida ou recebida de terceiros, destinada à ZFM ou ALC'
+      }, {
+        numero: 6111,
+        descricao: 'Venda de produção do estabelecimento remetida anteriormente em consignação industrial'
+      }, {
+        numero: 6112,
+        descricao: 'Venda de mercadoria adquirida ou recebida de Terceiros remetida anteriormente em consignação industrial'
+      }, {
+        numero: 6113,
+        descricao: 'Venda de produção do estabelecimento remetida anteriormente em consignação mercantil'
+      }, {
+        numero: 6114,
+        descricao: 'Venda de mercadoria adquirida ou recebida de terceiros remetida anteriormente em consignação mercantil'
+      }, {
+        numero: 6115,
+        descricao: 'Venda de mercadoria adquirida ou recebida de terceiros, recebida anteriormente em consignação mercantil'
+      }, {
+        numero: 6116,
+        descricao: 'Venda de produção do estabelecimento originada de encomenda p/ entrega futura'
+      }, {
+        numero: 6117,
+        descricao: 'Venda de mercadoria adquirida ou recebida de terceiros, originada de encomenda p/ entrega futura'
+      }, {
+        numero: 6118,
+        descricao: 'Venda de produção do estabelecimento entregue ao destinatário por conta e ordem do adquirente originário, em venda à ordem'
+      }, {
+        numero: 6119,
+        descricao: 'Venda de mercadoria adquirida ou recebida de terceiros entregue ao destinatário por conta e ordem do adquirente originário, em venda à ordem'
+      }, {
+        numero: 6120,
+        descricao: 'Venda de mercadoria adquirida ou recebida de terceiros entregue ao destinatário pelo vendedor remetente, em venda à ordem'
+      }, {
+        numero: 6122,
+        descricao: 'Venda de produção do estabelecimento remetida p/ industrialização, por conta e ordem do adquirente, sem transitar pelo estabelecimento do adquirente'
+      }, {
+        numero: 6123,
+        descricao: 'Venda de mercadoria adquirida ou recebida de terceiros remetida p/ industrialização, por conta e ordem do adquirente, sem transitar pelo estabelecimento do adquirente'
+      }, {
+        numero: 6124,
+        descricao: 'Industrialização efetuada p/ outra empresa'
+      }, {
+        numero: 6125,
+        descricao: 'Industrialização efetuada p/ outra empresa quando a mercadoria recebida p/ utilização no processo de industrialização não transitar pelo estabelecimento adquirente da mercadoria'
+      }, {
+        numero: 6129,
+        descricao: 'Venda de insumo importado e de mercadoria industrializada sob o amparo do Regime Aduaneiro Especial de Entreposto Industrial (Recof-Sped)'
+      }, {
+        numero: 6151,
+        descricao: 'Transferência de produção do estabelecimento'
+      }, {
+        numero: 6152,
+        descricao: 'Transferência de mercadoria adquirida ou recebida de terceiros'
+      }, {
+        numero: 6153,
+        descricao: 'Transferência de energia elétrica'
+      }, {
+        numero: 6155,
+        descricao: 'Transferência de produção do estabelecimento, que não deva por ele transitar'
+      }, {
+        numero: 6156,
+        descricao: 'Transferência de mercadoria adquirida ou recebida de terceiros, que não deva por ele transitar'
+      }, {
+        numero: 6201,
+        descricao: 'Devolução de compra p/ industrialização ou produção rural'
+      }, {
+        numero: 6202,
+        descricao: 'Devolução de compra p/ comercialização'
+      }, {
+        numero: 6205,
+        descricao: 'Anulação de valor relativo a aquisição de serviço de comunicação'
+      }, {
+        numero: 6206,
+        descricao: 'Anulação de valor relativo a aquisição de serviço de transporte'
+      }, {
+        numero: 6207,
+        descricao: 'Anulação de valor relativo à compra de energia elétrica'
+      }, {
+        numero: 6208,
+        descricao: 'Devolução de mercadoria recebida em transferência p/ industrialização ou produção rural'
+      }, {
+        numero: 6209,
+        descricao: 'Devolução de mercadoria recebida em transferência p/ comercialização'
+      }, {
+        numero: 6210,
+        descricao: 'Devolução de compra p/ utilização na prestação de serviço'
+      }, {
+        numero: 6251,
+        descricao: 'Venda de energia elétrica p/ distribuição ou comercialização'
+      }, {
+        numero: 6252,
+        descricao: 'Venda de energia elétrica p/ estabelecimento industrial'
+      }, {
+        numero: 6253,
+        descricao: 'Venda de energia elétrica p/ estabelecimento comercial'
+      }, {
+        numero: 6254,
+        descricao: 'Venda de energia elétrica p/ estabelecimento prestador de serviço de transporte'
+      }, {
+        numero: 6255,
+        descricao: 'Venda de energia elétrica p/ estabelecimento prestador de serviço de comunicação'
+      }, {
+        numero: 6256,
+        descricao: 'Venda de energia elétrica p/ estabelecimento de produtor rural'
+      }, {
+        numero: 6257,
+        descricao: 'Venda de energia elétrica p/ consumo por demanda contratada'
+      }, {
+        numero: 6258,
+        descricao: 'Venda de energia elétrica a não contribuinte'
+      }, {
+        numero: 6301,
+        descricao: 'Prestação de serviço de comunicação p/ execução de serviço da mesma natureza'
+      }, {
+        numero: 6302,
+        descricao: 'Prestação de serviço de comunicação a estabelecimento industrial'
+      }, {
+        numero: 6303,
+        descricao: 'Prestação de serviço de comunicação a estabelecimento comercial'
+      }, {
+        numero: 6304,
+        descricao: 'Prestação de serviço de comunicação a estabelecimento de prestador de serviço de transporte'
+      }, {
+        numero: 6305,
+        descricao: 'Prestação de serviço de comunicação a estabelecimento de geradora ou de distribuidora de energia elétrica'
+      }, {
+        numero: 6306,
+        descricao: 'Prestação de serviço de comunicação a estabelecimento de produtor rural'
+      }, {
+        numero: 6307,
+        descricao: 'Prestação de serviço de comunicação a não contribuinte'
+      }, {
+        numero: 6351,
+        descricao: 'Prestação de serviço de transporte p/ execução de serviço da mesma natureza'
+      }, {
+        numero: 6352,
+        descricao: 'Prestação de serviço de transporte a estabelecimento industrial'
+      }, {
+        numero: 6353,
+        descricao: 'Prestação de serviço de transporte a estabelecimento comercial'
+      }, {
+        numero: 6354,
+        descricao: 'Prestação de serviço de transporte a estabelecimento de prestador de serviço de comunicação'
+      }, {
+        numero: 6355,
+        descricao: 'Prestação de serviço de transporte a estabelecimento de geradora ou de distribuidora de energia elétrica'
+      }, {
+        numero: 6356,
+        descricao: 'Prestação de serviço de transporte a estabelecimento de produtor rural'
+      }, {
+        numero: 6357,
+        descricao: 'Prestação de serviço de transporte a não contribuinte'
+      }, {
+        numero: 6359,
+        descricao: 'Prestação de serviço de transporte a contribuinte ou a não-contribuinte, quando a mercadoria transportada esteja dispensada de emissão de Nota Fiscal'
+      }, {
+        numero: 6360,
+        descricao: 'Prestação de serviço de transporte a contribuinte substituto em relação ao serviço de transporte'
+      }, {
+        numero: 6401,
+        descricao: 'Venda de produção do estabelecimento quando o produto sujeito a ST'
+      }, {
+        numero: 6402,
+        descricao: 'Venda de produção do estabelecimento de produto sujeito a ST, em operação entre contribuintes substitutos do mesmo produto'
+      }, {
+        numero: 6403,
+        descricao: 'Venda de mercadoria adquirida ou recebida de terceiros em operação com mercadoria sujeita a ST, na condição de contribuinte substituto'
+      }, {
+        numero: 6404,
+        descricao: 'Venda de mercadoria sujeita a ST, cujo imposto já tenha sido retido anteriormente'
+      }, {
+        numero: 6408,
+        descricao: 'Transferência de produção do estabelecimento quando o produto sujeito a ST'
+      }, {
+        numero: 6409,
+        descricao: 'Transferência de mercadoria adquirida ou recebida de terceiros, sujeita a ST'
+      }, {
+        numero: 6410,
+        descricao: 'Devolução de compra p/ industrialização ou produção rural quando a mercadoria sujeita a ST'
+      }, {
+        numero: 6411,
+        descricao: 'Devolução de compra p/ comercialização em operação com mercadoria sujeita a ST'
+      }, {
+        numero: 6412,
+        descricao: 'Devolução de bem do ativo imobilizado, em operação com mercadoria sujeita a ST'
+      }, {
+        numero: 6413,
+        descricao: 'Devolução de mercadoria destinada ao uso ou consumo, em operação com mercadoria sujeita a ST'
+      }, {
+        numero: 6414,
+        descricao: 'Remessa de produção do estabelecimento p/ venda fora do estabelecimento, quando o produto sujeito a ST'
+      }, {
+        numero: 6415,
+        descricao: 'Remessa de mercadoria adquirida ou recebida de terceiros p/ venda fora do estabelecimento, quando a referida ração com mercadoria sujeita a ST'
+      }, {
+        numero: 6501,
+        descricao: 'Remessa de produção do estabelecimento, com fim específico de exportação'
+      }, {
+        numero: 6502,
+        descricao: 'Remessa de mercadoria adquirida ou recebida de terceiros, com fim específico de exportação'
+      }, {
+        numero: 6503,
+        descricao: 'Devolução de mercadoria recebida com fim específico de exportação'
+      }, {
+        numero: 6504,
+        descricao: 'Remessa de mercadoria p/ formação de lote de exportação, de produto industrializado ou produzido pelo próprio estabelecimento.'
+      }, {
+        numero: 6505,
+        descricao: 'Remessa de mercadoria, adquirida ou recebida de terceiros, p/ formação de lote de exportação.'
+      }, {
+        numero: 6551,
+        descricao: 'Venda de bem do ativo imobilizado'
+      }, {
+        numero: 6552,
+        descricao: 'Transferência de bem do ativo imobilizado'
+      }, {
+        numero: 6553,
+        descricao: 'Devolução de compra de bem p/ o ativo imobilizado'
+      }, {
+        numero: 6554,
+        descricao: 'Remessa de bem do ativo imobilizado p/ uso fora do estabelecimento'
+      }, {
+        numero: 6555,
+        descricao: 'Devolução de bem do ativo imobilizado de terceiro, recebido p/ uso no estabelecimento'
+      }, {
+        numero: 6556,
+        descricao: 'Devolução de compra de material de uso ou consumo'
+      }, {
+        numero: 6557,
+        descricao: 'Transferência de material de uso ou consumo'
+      }, {
+        numero: 6603,
+        descricao: 'Ressarcimento de ICMS retido por substituição tributária'
+      }, {
+        numero: 6651,
+        descricao: 'Venda de combustível ou lubrificante, de produção do estabelecimento, destinados à industrialização subseqüente'
+      }, {
+        numero: 6652,
+        descricao: 'Venda de combustível ou lubrificante, de produção do estabelecimento, destinados à comercialização'
+      }, {
+        numero: 6653,
+        descricao: 'Venda de combustível ou lubrificante, de produção do estabelecimento, destinados a consumidor ou usuário final'
+      }, {
+        numero: 6654,
+        descricao: 'Venda de combustível ou lubrificante, adquiridos ou recebidos de terceiros, destinados à industrialização subseqüente'
+      }, {
+        numero: 6655,
+        descricao: 'Venda de combustível ou lubrificante, adquiridos ou recebidos de terceiros, destinados à comercialização'
+      }, {
+        numero: 6656,
+        descricao: 'Venda de combustível ou lubrificante, adquiridos ou recebidos de terceiros, destinados a consumidor ou usuário final'
+      }, {
+        numero: 6657,
+        descricao: 'Remessa de combustível ou lubrificante, adquiridos ou recebidos de terceiros, p/ venda fora do estabelecimento'
+      }, {
+        numero: 6658,
+        descricao: 'Transferência de combustível ou lubrificante de produção do estabelecimento'
+      }, {
+        numero: 6659,
+        descricao: 'Transferência de combustível ou lubrificante adquiridos ou recebidos de terceiros'
+      }, {
+        numero: 6660,
+        descricao: 'Devolução de compra de combustível ou lubrificante adquiridos p/ industrialização subseqüente'
+      }, {
+        numero: 6661,
+        descricao: 'Devolução de compra de combustível ou lubrificante adquiridos p/ comercialização'
+      }, {
+        numero: 6662,
+        descricao: 'Devolução de compra de combustível ou lubrificante adquiridos por consumidor ou usuário final'
+      }, {
+        numero: 6663,
+        descricao: 'Remessa p/ armazenagem de combustível ou lubrificante'
+      }, {
+        numero: 6664,
+        descricao: 'Retorno de combustível ou lubrificante recebidos p/ armazenagem'
+      }, {
+        numero: 6665,
+        descricao: 'Retorno simbólico de combustível ou lubrificante recebidos p/ armazenagem'
+      }, {
+        numero: 6666,
+        descricao: 'Remessa, por conta e ordem de terceiros, de combustível ou lubrificante recebidos p/ armazenagem'
+      }, {
+        numero: 6667,
+        descricao: 'Venda de combustível ou lubrificante a consumidor ou usuário final estabelecido em outra UF diferente da que ocorrer o consumo'
+      }, {
+        numero: 6901,
+        descricao: 'Remessa p/ industrialização por encomenda'
+      }, {
+        numero: 6902,
+        descricao: 'Retorno de mercadoria utilizada na industrialização por encomenda'
+      }, {
+        numero: 6903,
+        descricao: 'Retorno de mercadoria recebida p/ industrialização e não aplicada no referido processo'
+      }, {
+        numero: 6904,
+        descricao: 'Remessa p/ venda fora do estabelecimento'
+      }, {
+        numero: 6905,
+        descricao: 'Remessa p/ depósito fechado ou armazém geral'
+      }, {
+        numero: 6906,
+        descricao: 'Retorno de mercadoria depositada em depósito fechado ou armazém geral'
+      }, {
+        numero: 6907,
+        descricao: 'Retorno simbólico de mercadoria depositada em depósito fechado ou armazém geral'
+      }, {
+        numero: 6908,
+        descricao: 'Remessa de bem por conta de contrato de comodato'
+      }, {
+        numero: 6909,
+        descricao: 'Retorno de bem recebido por conta de contrato de comodato'
+      }, {
+        numero: 6910,
+        descricao: 'Remessa em bonificação, doação ou brinde'
+      }, {
+        numero: 6911,
+        descricao: 'Remessa de amostra grátis'
+      }, {
+        numero: 6912,
+        descricao: 'Remessa de mercadoria ou bem p/ demonstração'
+      }, {
+        numero: 6913,
+        descricao: 'Retorno de mercadoria ou bem recebido p/ demonstração'
+      }, {
+        numero: 6914,
+        descricao: 'Remessa de mercadoria ou bem p/ exposição ou feira'
+      }, {
+        numero: 6915,
+        descricao: 'Remessa de mercadoria ou bem p/ conserto ou reparo'
+      }, {
+        numero: 6916,
+        descricao: 'Retorno de mercadoria ou bem recebido p/ conserto ou reparo'
+      }, {
+        numero: 6917,
+        descricao: 'Remessa de mercadoria em consignação mercantil ou industrial'
+      }, {
+        numero: 6918,
+        descricao: 'Devolução de mercadoria recebida em consignação mercantil ou industrial'
+      }, {
+        numero: 6919,
+        descricao: 'Devolução simbólica de mercadoria vendida ou utilizada em processo industrial, recebida anteriormente em consignação mercantil ou industrial'
+      }, {
+        numero: 6920,
+        descricao: 'Remessa de vasilhame ou sacaria'
+      }, {
+        numero: 6921,
+        descricao: 'Devolução de vasilhame ou sacaria'
+      }, {
+        numero: 6922,
+        descricao: 'Lançamento efetuado a título de simples faturamento decorrente de venda p/ entrega futura'
+      }, {
+        numero: 6923,
+        descricao: 'Remessa de mercadoria por conta e ordem de terceiros, em venda à ordem ou em operações com armazém geral ou depósito fechado'
+      }, {
+        numero: 6924,
+        descricao: 'Remessa p/ industrialização por conta e ordem do adquirente da mercadoria, quando esta não transitar pelo estabelecimento do adquirente'
+      }, {
+        numero: 6925,
+        descricao: 'Retorno de mercadoria recebida p/ industrialização por conta e ordem do adquirente da mercadoria, quando aquela não transitar pelo estabelecimento do adquirente'
+      }, {
+        numero: 6929,
+        descricao: 'Lançamento efetuado em decorrência de emissão de documento fiscal relativo a operação ou prestação também registrada em equipamento Emissor de Cupom Fiscal - ECF'
+      }, {
+        numero: 6931,
+        descricao: 'Lançamento efetuado em decorrência da responsabilidade de retenção do imposto por substituição tributária, atribuída ao remetente ou alienante da mercadoria, pelo serviço de transporte realizado por transportador autônomo ou por transportador não inscrito na UF onde iniciado o serviço'
+      }, {
+        numero: 6932,
+        descricao: 'Prestação de serviço de transporte iniciada em UF diversa daquela onde inscrito o prestador'
+      }, {
+        numero: 6933,
+        descricao: 'Prestação de serviço tributado pelo Imposto Sobre Serviços de Qualquer Natureza'
+      }, {
+        numero: 6934,
+        descricao: 'Remessa simbólica de mercadoria depositada em armazém geral ou depósito fechado'
+      }, {
+        numero: 6949,
+        descricao: 'Outra saída de mercadoria ou prestação de serviço não especificado'
+      }, {
+        numero: 7000,
+        descricao: "SAÍDAS OU PRESTAÇÕES DE SERVIÇOS PARA O EXTERIOR",
+        "disabled": true
+      }, {
+        numero: 7101,
+        descricao: 'Venda de produção do estabelecimento'
+      }, {
+        numero: 7102,
+        descricao: 'Venda de mercadoria adquirida ou recebida de terceiros'
+      }, {
+        numero: 7105,
+        descricao: 'Venda de produção do estabelecimento, que não deva por ele transitar'
+      }, {
+        numero: 7106,
+        descricao: 'Venda de mercadoria adquirida ou recebida de terceiros, que não deva por ele transitar'
+      }, {
+        numero: 7127,
+        descricao: 'Venda de produção do estabelecimento sob o regime de drawback'
+      }, {
+        numero: 7129,
+        descricao: 'Venda de produção do estabelecimento ao mercado externo de mercadoria industrializada sob o amparo do Regime Aduaneiro Especial de Entreposto Industrial (Recof-Sped)'
+      }, {
+        numero: 7201,
+        descricao: 'Devolução de compra p/ industrialização ou produção rural'
+      }, {
+        numero: 7202,
+        descricao: 'Devolução de compra p/ comercialização'
+      }, {
+        numero: 7205,
+        descricao: 'Anulação de valor relativo à aquisição de serviço de comunicação'
+      }, {
+        numero: 7206,
+        descricao: 'Anulação de valor relativo a aquisição de serviço de transporte'
+      }, {
+        numero: 7207,
+        descricao: 'Anulação de valor relativo à compra de energia elétrica'
+      }, {
+        numero: 7210,
+        descricao: 'Devolução de compra p/ utilização na prestação de serviço'
+      }, {
+        numero: 7211,
+        descricao: 'Devolução de compras p/ industrialização sob o regime de drawback'
+      }, {
+        numero: 7212,
+        descricao: 'Devolução de compras para industrialização sob o regime de Regime Aduaneiro Especial de Entreposto Industrial (Recof-Sped)'
+      }, {
+        numero: 7251,
+        descricao: 'Venda de energia elétrica p/ o exterior'
+      }, {
+        numero: 7301,
+        descricao: 'Prestação de serviço de comunicação p/ execução de serviço da mesma natureza'
+      }, {
+        numero: 7358,
+        descricao: 'Prestação de serviço de transporte'
+      }, {
+        numero: 7501,
+        descricao: 'Exportação de mercadorias recebidas com fim específico de exportação'
+      }, {
+        numero: 7551,
+        descricao: 'Venda de bem do ativo imobilizado'
+      }, {
+        numero: 7553,
+        descricao: 'Devolução de compra de bem p/ o ativo imobilizado'
+      }, {
+        numero: 7556,
+        descricao: 'Devolução de compra de material de uso ou consumo'
+      }, {
+        numero: 7651,
+        descricao: 'Venda de combustível ou lubrificante de produção do estabelecimento'
+      }, {
+        numero: 7654,
+        descricao: 'Venda de combustível ou lubrificante adquiridos ou recebidos de terceiros'
+      }, {
+        numero: 7667,
+        descricao: 'Venda de combustível ou lubrificante a consumidor ou usuário final'
+      }, {
+        numero: 7930,
+        descricao: 'Lançamento efetuado a título de devolução de bem cuja entrada tenha ocorrido sob amparo de regime especial aduaneiro de admissão temporária'
+      }, {
+        numero: 7949,
+        descricao: 'Outra saída de mercadoria ou prestação de serviço não especificado'
+      }, {
+        numero: "",
+        descricao: '',
+        disabled: true
+      }]
+    };
+  }
+});
+
+/***/ }),
+
 /***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/Steppers.vue?vue&type=script&lang=js":
 /*!**************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/Steppers.vue?vue&type=script&lang=js ***!
@@ -19282,9 +20983,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var vuetify_labs_VStepper__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vuetify/labs/VStepper */ "./node_modules/vuetify/lib/labs/VStepper/VStepper.mjs");
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var vuetify_labs_VStepper__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! vuetify/labs/VStepper */ "./node_modules/vuetify/lib/labs/VStepper/VStepper.mjs");
+/* harmony import */ var _Cfop_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Cfop.vue */ "./resources/js/components/Cfop.vue");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_1__);
+
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
@@ -19292,29 +20995,34 @@ __webpack_require__.r(__webpack_exports__);
     pedidos: Array
   },
   components: {
-    VStepper: vuetify_labs_VStepper__WEBPACK_IMPORTED_MODULE_1__.VStepper
+    VStepper: vuetify_labs_VStepper__WEBPACK_IMPORTED_MODULE_2__.VStepper,
+    Cfop: _Cfop_vue__WEBPACK_IMPORTED_MODULE_0__["default"]
   },
   data: function data() {
     return {
-      http: axios__WEBPACK_IMPORTED_MODULE_0___default().create({
+      http: axios__WEBPACK_IMPORTED_MODULE_1___default().create({
         headers: {
           'Authorization': 'Bearer YDWauEpovnjBQ-YDVPOPAh4ta.E-YDhdCjkazwv6A'
         }
       }),
       load: false,
       prod: null,
-      produtos: [],
+      produtos: null,
       todos: false,
       AltProdutos: false,
+      codigo: null,
       complementares: false,
       download: false,
       simulacao: null,
+      cfop: null,
       AltValor: false,
       condicao: "",
       PrecoVenda: 0,
+      natureza_operacao: null,
       Steps: ["Simulação do tributei", "Dados complementares", "Emissão"]
     };
   },
+  mounted: function mounted() {},
   watch: {
     prod: function prod() {
       if (this.prod) {
@@ -19329,29 +21037,27 @@ __webpack_require__.r(__webpack_exports__);
       }
     },
     simulacao: function simulacao() {
-      // this.load = true
+      var _this = this;
+      this.load = true;
       // this.produto = []
       this.PrecoVenda = this.formatReal(this.simulacao.total_pedido);
       // console.log(this.simulacao)
-      // this.http.get(`https://apisaidas.tributei.net/api/05995840000155/simulador/pedidos/produtos/${this.simulacao.id}`)
-      //     .then(response => {
-      //         // Acesse os dados da resposta aqui
-      //         this.produtos = response.data.data; // Ou ajuste conforme a estrutura da resposta
-      //         this.gerarOpcoesProdutos
-      //     })
-      //     .catch(error => {
-      //         console.error('Erro na requisição:', error);
-      //     });
+      this.http.get("https://apisaidas.tributei.net/api/00104603000303/simulador/pedidos/produtos/".concat(this.simulacao.id)).then(function (response) {
+        // Acesse os dados da resposta aqui
+        _this.produtos = response.data.data; // Ou ajuste conforme a estrutura da resposta
+        _this.gerarOpcoesProdutos;
+      })["catch"](function (error) {
+        console.error('Erro na requisição:', error);
+      });
     }
   },
-
   computed: {
     gerarOpcoesPedidos: function gerarOpcoesPedidos() {
-      var _this = this;
+      var _this2 = this;
       return this.pedidos.map(function (pedido) {
         return {
           value: pedido,
-          text: "".concat(pedido.cliente.nome, " | ").concat(pedido.cliente.estado, " | Valor: ").concat(_this.formatReal(pedido.total_pedido))
+          text: "".concat(pedido.cliente.nome, " | ").concat(pedido.cliente.estado, " | Valor: ").concat(_this2.formatReal(pedido.total_pedido))
         };
       });
     },
@@ -19369,7 +21075,28 @@ __webpack_require__.r(__webpack_exports__);
   methods: {
     Emitir: function Emitir() {
       this.download = true;
-      console.log(this.simulacao);
+      var simulacao = this.simulacao;
+      var produtos = this.produtos;
+      console.log({
+        simulacao: simulacao,
+        "cfop": this.cfop,
+        "user_id": this.$page.props.user.data.id,
+        "natureza_operacao": this.natureza_operacao,
+        "produtos": produtos
+      });
+      // this.http.post("http://127.0.0.1:8000/api/emitir-nfe", {
+      //     simulacao,
+      //     "cfop": this.cfop,
+      //     "user_id": this.$page.props.user.id,
+      //     "natureza_operacao": this.natureza_operacao,
+      //     "produtos": produtos
+
+      // }).then(response => {
+      //     this.download = false
+      //     location.reload();
+      // }).catch(error => {
+      //     console.error('Erro na requisição:', error);
+      // });
     },
     formatReal: function formatReal(valor) {
       if (typeof valor !== 'number') {
@@ -19797,9 +21524,7 @@ var _hoisted_29 = /*#__PURE__*/_withScopeId(function () {
     "class": "text-center"
   }, " Empresa "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("th", {
     "class": "text-center"
-  }, " Fornecedor "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("th", {
-    "class": "text-center"
-  }, " Valor da NFe "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("th", {
+  }, " Fornecedor "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <th class=\"text-center\">\n                                                Valor da NFe\n                                            </th> "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("th", {
     "class": "text-center"
   }, " Pedido "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("th", {
     "class": "text-center"
@@ -19808,7 +21533,7 @@ var _hoisted_29 = /*#__PURE__*/_withScopeId(function () {
     style: {
       "max-width": "90px"
     }
-  }, " DOWNLOAD NFe ")])], -1 /* HOISTED */);
+  }, " DOWNLOADS ")])], -1 /* HOISTED */);
 });
 var _hoisted_30 = {
   "class": "text-center"
@@ -19826,9 +21551,6 @@ var _hoisted_34 = {
   "class": "text-center"
 };
 var _hoisted_35 = {
-  "class": "text-center"
-};
-var _hoisted_36 = {
   "class": "h-25 w-50 ml-auto d-flex justify-content-end"
 };
 function render(_ctx, _cache, $props, $setup, $data, $options) {
@@ -19909,8 +21631,9 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
                             }),
                             variant: "text"
                           }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_steppers, {
-                            pedidos: $data.pedidos
-                          }, null, 8 /* PROPS */, ["pedidos"])])];
+                            pedidos: $data.pedidos,
+                            user_id: _ctx.$page.props.user.data.id
+                          }, null, 8 /* PROPS */, ["pedidos", "user_id"])])];
                         }),
                         _: 1 /* STABLE */
                       }, 8 /* PROPS */, ["modelValue"])];
@@ -20473,7 +22196,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
                       return [_hoisted_29, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("tbody", null, [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($options.filteredItems, function (item) {
                         return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("tr", {
                           key: item.name
-                        }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", _hoisted_30, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(item.empresa), 1 /* TEXT */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", _hoisted_31, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(item.fornecedores), 1 /* TEXT */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", _hoisted_32, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(item.valorNFe), 1 /* TEXT */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", _hoisted_33, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(item.pedido), 1 /* TEXT */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", _hoisted_34, [item.color === 'red' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(_component_v_tooltip, {
+                        }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", _hoisted_30, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(item.empresa), 1 /* TEXT */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", _hoisted_31, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(item.fornecedor), 1 /* TEXT */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <td class=\"text-center\">{{ item.valorNFe }}</td> "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", _hoisted_32, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(item.pedido_id), 1 /* TEXT */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", _hoisted_33, [item.color === 'red' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(_component_v_tooltip, {
                           key: 0,
                           text: item.error,
                           location: "top"
@@ -20483,7 +22206,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
                             return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_v_chip, (0,vue__WEBPACK_IMPORTED_MODULE_0__.mergeProps)({
                               "class": "ma-2 text-white"
                             }, props, {
-                              color: item.color
+                              color: item.status != 'autorizado' ? 'green' : 'red'
                             }), {
                               "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
                                 return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)((0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(item.status), 1 /* TEXT */)];
@@ -20496,31 +22219,48 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
                         }, 1032 /* PROPS, DYNAMIC_SLOTS */, ["text"])) : ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(_component_v_chip, {
                           key: 1,
                           "class": "ma-2 text-white",
-                          color: item.color
+                          style: {
+                            "text-transform": "capitalize"
+                          },
+                          color: item.status === 'autorizado' ? 'green' : 'red'
                         }, {
                           "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
                             return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)((0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(item.status), 1 /* TEXT */)];
                           }),
 
                           _: 2 /* DYNAMIC */
-                        }, 1032 /* PROPS, DYNAMIC_SLOTS */, ["color"]))]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", _hoisted_35, [item.color === 'green' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(_component_v_btn, {
+                        }, 1032 /* PROPS, DYNAMIC_SLOTS */, ["color"]))]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", _hoisted_34, [item.status === 'autorizado' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(_component_v_btn, {
                           key: 0,
                           icon: "",
+                          href: item.link_xml,
                           variant: "plain"
                         }, {
                           "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
                             return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_v_icon, {
-                              color: "green",
-                              icon: "mdi-progress-download"
+                              color: "#00796B",
+                              icon: "mdi-file-code-outline"
                             })];
                           }),
-                          _: 1 /* STABLE */
-                        })) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), item.color === 'orange' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(_component_v_icon, {
+                          _: 2 /* DYNAMIC */
+                        }, 1032 /* PROPS, DYNAMIC_SLOTS */, ["href"])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), item.status === 'autorizado' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(_component_v_btn, {
                           key: 1,
+                          icon: "",
+                          href: item.link_danfe,
+                          variant: "plain"
+                        }, {
+                          "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
+                            return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_v_icon, {
+                              color: "#00796B",
+                              icon: "mdi-file-pdf-box"
+                            })];
+                          }),
+                          _: 2 /* DYNAMIC */
+                        }, 1032 /* PROPS, DYNAMIC_SLOTS */, ["href"])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), item.color === 'orange' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(_component_v_icon, {
+                          key: 2,
                           color: "orange",
                           icon: "mdi-alert"
                         })) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), item.color === 'red' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(_component_v_icon, {
-                          key: 2,
+                          key: 3,
                           color: "red",
                           icon: "mdi-cancel"
                         })) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)])]);
@@ -20528,7 +22268,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
                     }),
 
                     _: 1 /* STABLE */
-                  })]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("section", _hoisted_36, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_v_pagination, {
+                  })]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("section", _hoisted_35, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_v_pagination, {
                     modelValue: $data.page,
                     "onUpdate:modelValue": _cache[24] || (_cache[24] = function ($event) {
                       return $data.page = $event;
@@ -22666,6 +24406,67 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
 
 /***/ }),
 
+/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/Cfop.vue?vue&type=template&id=b1a8bb22":
+/*!**************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/Cfop.vue?vue&type=template&id=b1a8bb22 ***!
+  \**************************************************************************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   render: () => (/* binding */ render)
+/* harmony export */ });
+/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
+
+function render(_ctx, _cache, $props, $setup, $data, $options) {
+  var _component_v_divider = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("v-divider");
+  var _component_v_list_item = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("v-list-item");
+  var _component_v_list = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("v-list");
+  var _component_v_autocomplete = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("v-autocomplete");
+  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(_component_v_autocomplete, {
+    variant: "outlined",
+    items: $data.cfops,
+    "item-title": "numero",
+    "item-subtitle": "descricao",
+    "item-value": "numero",
+    label: "CFOP"
+  }, {
+    item: (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function (_ref) {
+      var _item$raw;
+      var props = _ref.props,
+        item = _ref.item;
+      return [item !== null && item !== void 0 && (_item$raw = item.raw) !== null && _item$raw !== void 0 && _item$raw.disabled ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(_component_v_divider, {
+        key: 0
+      })) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_v_list, {
+        "class": "w-100",
+        lines: "dwo",
+        style: {
+          "max-width": "476px !important"
+        }
+      }, {
+        "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
+          var _item$raw2, _item$raw3, _item$raw4;
+          return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_v_list_item, (0,vue__WEBPACK_IMPORTED_MODULE_0__.mergeProps)(props, {
+            disabled: item === null || item === void 0 || (_item$raw2 = item.raw) === null || _item$raw2 === void 0 ? void 0 : _item$raw2.disabled,
+            style: {
+              "max-width": "476px !important"
+            },
+            "class": "w-100",
+            title: item === null || item === void 0 || (_item$raw3 = item.raw) === null || _item$raw3 === void 0 ? void 0 : _item$raw3.numero,
+            subtitle: item === null || item === void 0 || (_item$raw4 = item.raw) === null || _item$raw4 === void 0 ? void 0 : _item$raw4.descricao
+          }), null, 16 /* FULL_PROPS */, ["disabled", "title", "subtitle"])];
+        }),
+        _: 2 /* DYNAMIC */
+      }, 1024 /* DYNAMIC_SLOTS */)];
+    }),
+
+    _: 1 /* STABLE */
+  }, 8 /* PROPS */, ["items"]);
+}
+
+/***/ }),
+
 /***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/Steppers.vue?vue&type=template&id=5fe5982d&scoped=true":
 /*!******************************************************************************************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/Steppers.vue?vue&type=template&id=5fe5982d&scoped=true ***!
@@ -22726,36 +24527,58 @@ var _hoisted_7 = {
   }
 };
 var _hoisted_8 = {
-  "class": ""
+  "class": "pa-3 w-100"
 };
 var _hoisted_9 = {
-  key: 0
+  "class": "d-flex"
 };
 var _hoisted_10 = {
+  "class": "w-100"
+};
+var _hoisted_11 = {
+  "class": ""
+};
+var _hoisted_12 = {
+  key: 0
+};
+var _hoisted_13 = {
   "class": "ml-4 font-weight-bold",
   style: {
     "font-family": "'Roboto', sans-serif",
     "font-size": "17px"
   }
 };
-var _hoisted_11 = {
+var _hoisted_14 = {
   "class": "font-weight-light"
 };
-var _hoisted_12 = {
+var _hoisted_15 = {
   key: 1
 };
-var _hoisted_13 = {
+var _hoisted_16 = {
   "class": "w-50 px-3"
 };
-var _hoisted_14 = /*#__PURE__*/_withScopeId(function () {
+var _hoisted_17 = {
+  "class": "w-100 h-100",
+  style: {
+    "z-index": "4",
+    "position": "absolute",
+    "text-align": "center",
+    "display": "flex",
+    "align-items": "center",
+    "backdrop-filter": "blur(2px)",
+    "background": "#fff0",
+    "justify-content": "center"
+  }
+};
+var _hoisted_18 = /*#__PURE__*/_withScopeId(function () {
   return /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h3", {
     "class": "text-h5"
   }, "Emissão NFe", -1 /* HOISTED */);
 });
-var _hoisted_15 = {
+var _hoisted_19 = {
   "class": "d-flex justify-content-center flex-wrap w-100 my-8"
 };
-var _hoisted_16 = {
+var _hoisted_20 = {
   "class": ""
 };
 function render(_ctx, _cache, $props, $setup, $data, $options) {
@@ -22764,8 +24587,13 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
   var _component_v_card_title = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("v-card-title");
   var _component_v_select = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("v-select");
   var _component_v_card = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("v-card");
-  var _component_v_btn = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("v-btn");
+  var _component_Cfop = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("Cfop");
+  var _component_v_col = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("v-col");
   var _component_v_text_field = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("v-text-field");
+  var _component_v_card_subtile = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("v-card-subtile");
+  var _component_v_row = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("v-row");
+  var _component_v_divider = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("v-divider");
+  var _component_v_btn = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("v-btn");
   var _component_v_stepper = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("v-stepper");
   return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(_component_v_stepper, {
     "prev-text": "voltar",
@@ -22817,7 +24645,63 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     }),
 
     "item.2": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
-      return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("section", _hoisted_7, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("section", _hoisted_8, [$data.AltValor === false ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_9, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_v_card_title, null, {
+      return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("section", _hoisted_7, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_8, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("section", _hoisted_9, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_10, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_v_row, null, {
+        "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
+          return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_v_col, {
+            cols: "6",
+            "class": ""
+          }, {
+            "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
+              return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Cfop, {
+                modelValue: $data.cfop,
+                "onUpdate:modelValue": _cache[1] || (_cache[1] = function ($event) {
+                  return $data.cfop = $event;
+                })
+              }, null, 8 /* PROPS */, ["modelValue"])];
+            }),
+            _: 1 /* STABLE */
+          }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_v_col, {
+            cols: "6",
+            "class": ""
+          }, {
+            "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
+              return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_v_text_field, {
+                label: "Natureza da operação",
+                modelValue: $data.natureza_operacao,
+                "onUpdate:modelValue": _cache[2] || (_cache[2] = function ($event) {
+                  return $data.natureza_operacao = $event;
+                }),
+                variant: "outlined"
+              }, null, 8 /* PROPS */, ["modelValue"])];
+            }),
+            _: 1 /* STABLE */
+          }), ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($data.produtos, function (produto) {
+            return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(_component_v_col, {
+              cols: "6"
+            }, {
+              "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
+                return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_v_card_subtile, null, {
+                  "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
+                    return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)((0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(produto.produto.nome_produto), 1 /* TEXT */)];
+                  }),
+
+                  _: 2 /* DYNAMIC */
+                }, 1024 /* DYNAMIC_SLOTS */), ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(_component_v_text_field, {
+                  onInput: function onInput(event) {
+                    return produto.codigo_produto = event.target.value;
+                  },
+                  key: produto.id,
+                  label: "Codigo do produto",
+                  variant: "outlined"
+                }, null, 8 /* PROPS */, ["onInput"]))];
+              }),
+              _: 2 /* DYNAMIC */
+            }, 1024 /* DYNAMIC_SLOTS */);
+          }), 256 /* UNKEYED_FRAGMENT */))];
+        }),
+
+        _: 1 /* STABLE */
+      })])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_v_divider), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("section", _hoisted_11, [$data.AltValor === false ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_12, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_v_card_title, null, {
         "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
           return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Deseja alterar o preço de venda? "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_v_card_subtitle, {
             "class": "pa-0"
@@ -22830,10 +24714,10 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
         }),
 
         _: 1 /* STABLE */
-      }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", _hoisted_10, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("Valor Atual: "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", _hoisted_11, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.PrecoVenda), 1 /* TEXT */)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_v_btn, {
+      }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", _hoisted_13, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("Valor Atual: "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", _hoisted_14, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.PrecoVenda), 1 /* TEXT */)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_v_btn, {
         "class": "text-white ml-3",
         color: "#02a996f4",
-        onClick: _cache[1] || (_cache[1] = function ($event) {
+        onClick: _cache[3] || (_cache[3] = function ($event) {
           return $data.AltValor = true;
         })
       }, {
@@ -22841,7 +24725,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
           return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("Sim")];
         }),
         _: 1 /* STABLE */
-      })])) : ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_12, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_v_card_title, null, {
+      })])) : ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_15, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_v_card_title, null, {
         "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
           return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Alterar preço de venda "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_v_card_subtitle, {
             "class": "pa-0"
@@ -22854,18 +24738,18 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
         }),
 
         _: 1 /* STABLE */
-      }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("section", _hoisted_13, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_v_text_field, {
+      }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("section", _hoisted_16, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_v_text_field, {
         clearable: "",
         variant: "outlined",
         label: "Valor",
         modelValue: $data.PrecoVenda,
-        "onUpdate:modelValue": _cache[2] || (_cache[2] = function ($event) {
+        "onUpdate:modelValue": _cache[4] || (_cache[4] = function ($event) {
           return $data.PrecoVenda = $event;
         })
       }, null, 8 /* PROPS */, ["modelValue"])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_v_btn, {
         "class": "text-white ml-3",
         color: "red",
-        onClick: _cache[3] || (_cache[3] = function ($event) {
+        onClick: _cache[5] || (_cache[5] = function ($event) {
           return $data.AltValor = false;
         })
       }, {
@@ -22873,19 +24757,25 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
           return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("Fechar")];
         }),
         _: 1 /* STABLE */
-      })]))]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <v-divider></v-divider> "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <v-card >\n                <section>\n                    <div v-if=\"complementares === false\">\n                        <v-card-title>\n                            Deseja adicionar dados complementares?\n                            <v-card-subtitle class=\"pa-0\">\n                                Se não, avance\n                            </v-card-subtitle>\n                        </v-card-title>\n                        <p class=\"ml-4 font-weight-medium\" style=\"font-family: 'Roboto', sans-serif; font-size: 17px;\">\n                            Exemplos: <v-card-subtitle class=\"font-weight-light pa-0\">Marca, Produção, Altura,\n                                Largura...</v-card-subtitle></p>\n                        <v-btn class=\"text-white ml-3\" color=\"#02a996f4\" @click=\"complementares = true\">Sim</v-btn>\n                    </div>\n                    <div v-else>\n                        <v-card-title>\n                            <v-text-field label=\"Marca\" variant=\"outlined\"></v-text-field>\n                            <v-text-field label=\"Produção\" variant=\"outlined\"></v-text-field>\n                            <v-text-field label=\"Altura\" variant=\"outlined\"></v-text-field>\n                            <v-text-field label=\"Largura\" variant=\"outlined\"></v-text-field>\n                        </v-card-title>\n                        <section class=\"w-50 px-3\">\n                            <v-btn class=\"text-white ml-3\" color=\"red\" @click=\"complementares = false\">Fechar</v-btn>\n                        </section>\n\n                    </div>\n\n                </section>\n            </v-card> ")])];
+      })]))])])];
     }),
+
     "item.3": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
       return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_v_card, {
         "class": "pa-5 text-center"
       }, {
         "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
-          return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_v_card_title, null, {
+          return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_17, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_v_progress_circular, {
+            size: 70,
+            width: 7,
+            color: "green",
+            indeterminate: ""
+          })], 512 /* NEED_PATCH */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vShow, $data.download]]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_v_card_title, null, {
             "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
-              return [_hoisted_14];
+              return [_hoisted_18];
             }),
             _: 1 /* STABLE */
-          }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("section", _hoisted_15, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_16, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_v_btn, {
+          }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("section", _hoisted_19, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_20, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_v_btn, {
             "append-icon": "mdi-receipt-text-plus",
             size: "large",
             color: $data.download === true ? 'green' : '#02a996f4',
@@ -35124,6 +37014,34 @@ if (false) {}
 
 /***/ }),
 
+/***/ "./resources/js/components/Cfop.vue":
+/*!******************************************!*\
+  !*** ./resources/js/components/Cfop.vue ***!
+  \******************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _Cfop_vue_vue_type_template_id_b1a8bb22__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Cfop.vue?vue&type=template&id=b1a8bb22 */ "./resources/js/components/Cfop.vue?vue&type=template&id=b1a8bb22");
+/* harmony import */ var _Cfop_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Cfop.vue?vue&type=script&lang=js */ "./resources/js/components/Cfop.vue?vue&type=script&lang=js");
+/* harmony import */ var _node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
+
+
+
+
+;
+const __exports__ = /*#__PURE__*/(0,_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__["default"])(_Cfop_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"], [['render',_Cfop_vue_vue_type_template_id_b1a8bb22__WEBPACK_IMPORTED_MODULE_0__.render],['__file',"resources/js/components/Cfop.vue"]])
+/* hot reload */
+if (false) {}
+
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__exports__);
+
+/***/ }),
+
 /***/ "./resources/js/components/Steppers.vue":
 /*!**********************************************!*\
   !*** ./resources/js/components/Steppers.vue ***!
@@ -35219,6 +37137,22 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/js/components/Cfop.vue?vue&type=script&lang=js":
+/*!******************************************************************!*\
+  !*** ./resources/js/components/Cfop.vue?vue&type=script&lang=js ***!
+  \******************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* reexport safe */ _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_Cfop_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_0__["default"])
+/* harmony export */ });
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_Cfop_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./Cfop.vue?vue&type=script&lang=js */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/Cfop.vue?vue&type=script&lang=js");
+ 
+
+/***/ }),
+
 /***/ "./resources/js/components/Steppers.vue?vue&type=script&lang=js":
 /*!**********************************************************************!*\
   !*** ./resources/js/components/Steppers.vue?vue&type=script&lang=js ***!
@@ -35295,6 +37229,22 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   render: () => (/* reexport safe */ _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_Show_vue_vue_type_template_id_58ff2308__WEBPACK_IMPORTED_MODULE_0__.render)
 /* harmony export */ });
 /* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_Show_vue_vue_type_template_id_58ff2308__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../../node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!../../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./Show.vue?vue&type=template&id=58ff2308 */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Pages/User/Show.vue?vue&type=template&id=58ff2308");
+
+
+/***/ }),
+
+/***/ "./resources/js/components/Cfop.vue?vue&type=template&id=b1a8bb22":
+/*!************************************************************************!*\
+  !*** ./resources/js/components/Cfop.vue?vue&type=template&id=b1a8bb22 ***!
+  \************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   render: () => (/* reexport safe */ _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_Cfop_vue_vue_type_template_id_b1a8bb22__WEBPACK_IMPORTED_MODULE_0__.render)
+/* harmony export */ });
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_Cfop_vue_vue_type_template_id_b1a8bb22__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./Cfop.vue?vue&type=template&id=b1a8bb22 */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/Cfop.vue?vue&type=template&id=b1a8bb22");
 
 
 /***/ }),

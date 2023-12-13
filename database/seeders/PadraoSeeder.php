@@ -38,7 +38,7 @@ class PadraoSeeder extends Seeder
         ]);
 
         Empresas::create([
-            'razão_social' => "TESTE MT",
+            'razao_social' => "TESTE MT",
             'nome_fantasia' => "TESTE MT",
             'cnpj' => "05995840000155",
             'user_id' => "1",

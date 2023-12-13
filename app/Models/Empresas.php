@@ -12,7 +12,7 @@ class Empresas extends Model
     use HasFactory;
 
     protected $fillable = [
-        'razão_social',
+        'razao_social',
         'nome_fantasia',
         'cnpj',
         'user_id',

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Resources\UserResourse;
+use App\Models\EmissoesFocus;
 use App\Models\User;
 use GuzzleHttp\Client;
 use Illuminate\Http\Request;
@@ -27,6 +28,12 @@ class HomeController extends Controller
         $clientes = "";
         $produtos = "";
         $pedidos = "";
+        $emissoes = EmissoesFocus::where('user_id', $id)->get();
+        foreach($emissoes as $emissao){
+            if($emissao->link_xml === null){
+                $this->getNota($emissao->ref, "I9XYti94ZVr0g7t3jR7NhvHPILRUe0Ib", $emissao->id);
+            }
+        }
         
         // REQUEST TRIBUTEI SAÍDAS 
         if($user->api_token_tributei != null){
@@ -59,7 +66,42 @@ class HomeController extends Controller
             ])->getBody()->getContents();
         }
         //  dd( ['clientes' => json_decode($clientes), 'produtos' => json_decode($produtos), 'pedidos' => json_decode($pedidos), 'user' => $user]);
-        return Inertia::render('Home', ['clientes' => json_decode($clientes), 'produtos' => json_decode($produtos), 'pedidos' => json_decode($pedidos), 'user' => $user]);
+        return Inertia::render('Home', ['emissoes' => $emissoes ,'clientes' => json_decode($clientes), 'produtos' => json_decode($produtos), 'pedidos' => json_decode($pedidos), 'user' => $user]);
         
+    }
+    public function getNota($ref, $token, $id)
+    {
+        $this->http = new Client([
+            'http-errors' => false
+        ]);
+        $this->baseURLH = "https://homologacao.focusnfe.com.br";
+        try {
+            $response = $this->http->get($this->baseURLH . "/v2/nfe/" . $ref, [
+                'headers' => [
+                    'Accept' => '*/*',
+                    'Content-Type' => 'application/json',
+
+                ],
+                "query" => ['token' => 'I9XYti94ZVr0g7t3jR7NhvHPILRUe0Ib', 'ref' => $ref],
+            ]);
+           
+            if ($response->getStatusCode() === 200) {
+                $dados = json_decode($response->getBody()->getContents());
+                    $emissao = EmissoesFocus::find($id);
+                    $emissao->update([
+                        "status" => $dados->status,
+                        "mensagem" => $dados->mensagem_sefaz,
+                        "link_xml" => $this->baseURLH . $dados->caminho_xml_nota_fiscal,
+                        "link_danfe" => $this->baseURLH . $dados->caminho_danfe
+                    ]);
+                
+               
+                return response()->json([
+                    'message' => $response->getBody()->getContents()
+                ], 200);
+            }
+        } catch (\Throwable $th) {
+            throw $th;
+        }
     }
 }

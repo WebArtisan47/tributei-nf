@@ -63,72 +63,69 @@
 
 
         </template>
-        <template v-slot:item.2  >
+        <template v-slot:item.2>
             <section style="max-height: 350px !important; overflow-y: auto;">
-                <section class="">
-                <div v-if="AltValor === false">
-                    <v-card-title>
-                        Deseja alterar o preço de venda?
-                        <v-card-subtitle class="pa-0">
-                            Se não, avance
-                        </v-card-subtitle>
-                    </v-card-title>
-                    <p class="ml-4 font-weight-bold" style="font-family: 'Roboto', sans-serif; font-size: 17px;">Valor
-                        Atual: <span class="font-weight-light">{{ PrecoVenda }}</span></p>
-                    <v-btn class="text-white ml-3" color="#02a996f4" @click="AltValor = true">Sim</v-btn>
-                </div>
-                <div v-else>
-                    <v-card-title>
-                        Alterar preço de venda
-                        <v-card-subtitle class="pa-0">
-                            Isso irá alterar o preço da venda do produto na NFe
-                        </v-card-subtitle>
-                    </v-card-title>
-                    <section class="w-50 px-3">
-                        <v-text-field clearable variant="outlined" label="Valor" v-model="PrecoVenda"></v-text-field>
+                <div class="pa-3 w-100">
+                    <section class="d-flex">
+                        <div class="w-100">
+                            <v-row>
+                                <v-col cols="6" class="">
+                                    <Cfop v-model="cfop" />
+                                </v-col>
+                                <v-col cols="6" class="">
+                                    <v-text-field label="Natureza da operação" v-model="natureza_operacao"
+                                        variant="outlined"></v-text-field>
+                                </v-col>
+                                <v-col cols="6" v-for="produto in produtos">
+                                    <v-card-subtile>{{ produto.produto.nome_produto }}</v-card-subtile>
+                                    <v-text-field @input="event => produto.codigo_produto = event.target.value"
+                                        :key="produto.id" label="Codigo do produto" variant="outlined"></v-text-field>
+                                </v-col>
+                            </v-row>
+                        </div>
                     </section>
-                    <v-btn class="text-white ml-3" color="red" @click="AltValor = false">Fechar</v-btn>
                 </div>
-
-            </section>
-
-
-            <!-- <v-divider></v-divider> -->
-            <!-- <v-card >
-                <section>
-                    <div v-if="complementares === false">
+                <v-divider></v-divider>
+                <section class="">
+                    <div v-if="AltValor === false">
                         <v-card-title>
-                            Deseja adicionar dados complementares?
+                            Deseja alterar o preço de venda?
                             <v-card-subtitle class="pa-0">
                                 Se não, avance
                             </v-card-subtitle>
                         </v-card-title>
-                        <p class="ml-4 font-weight-medium" style="font-family: 'Roboto', sans-serif; font-size: 17px;">
-                            Exemplos: <v-card-subtitle class="font-weight-light pa-0">Marca, Produção, Altura,
-                                Largura...</v-card-subtitle></p>
-                        <v-btn class="text-white ml-3" color="#02a996f4" @click="complementares = true">Sim</v-btn>
+                        <p class="ml-4 font-weight-bold" style="font-family: 'Roboto', sans-serif; font-size: 17px;">Valor
+                            Atual: <span class="font-weight-light">{{ PrecoVenda }}</span></p>
+                        <v-btn class="text-white ml-3" color="#02a996f4" @click="AltValor = true">Sim</v-btn>
                     </div>
                     <div v-else>
                         <v-card-title>
-                            <v-text-field label="Marca" variant="outlined"></v-text-field>
-                            <v-text-field label="Produção" variant="outlined"></v-text-field>
-                            <v-text-field label="Altura" variant="outlined"></v-text-field>
-                            <v-text-field label="Largura" variant="outlined"></v-text-field>
+                            Alterar preço de venda
+                            <v-card-subtitle class="pa-0">
+                                Isso irá alterar o preço da venda do produto na NFe
+                            </v-card-subtitle>
                         </v-card-title>
                         <section class="w-50 px-3">
-                            <v-btn class="text-white ml-3" color="red" @click="complementares = false">Fechar</v-btn>
+                            <v-text-field clearable variant="outlined" label="Valor" v-model="PrecoVenda"></v-text-field>
                         </section>
-
+                        <v-btn class="text-white ml-3" color="red" @click="AltValor = false">Fechar</v-btn>
                     </div>
 
                 </section>
-            </v-card> -->
+
+
+
+
             </section>
-          
+
         </template>
 
         <template v-slot:item.3>
             <v-card class="pa-5 text-center">
+                <div v-show="download" class="w-100 h-100"
+                    style="z-index: 4; position: absolute; text-align: center; display: flex; align-items: center; backdrop-filter: blur(2px); background: #fff0; justify-content: center;">
+                    <v-progress-circular :size="70" :width="7" color="green" indeterminate></v-progress-circular>
+                </div>
                 <v-card-title>
                     <h3 class="text-h5">Emissão NFe</h3>
                 </v-card-title>
@@ -136,8 +133,7 @@
                     <div class="">
                         <div>
                             <v-btn append-icon="mdi-receipt-text-plus" size="large"
-                                :color="download === true ? 'green' : '#02a996f4'" @click="Emitir"
-                                class="ml-2 text-white">
+                                :color="download === true ? 'green' : '#02a996f4'" @click="Emitir" class="ml-2 text-white">
                                 Emitir
                             </v-btn>
                         </div>
@@ -158,6 +154,7 @@
 </style>
 <script>
 import { VStepper } from 'vuetify/labs/VStepper'
+import Cfop from './Cfop.vue';
 import axios from 'axios';
 
 export default {
@@ -166,6 +163,7 @@ export default {
     },
     components: {
         VStepper,
+        Cfop
     },
     data() {
         return {
@@ -174,15 +172,18 @@ export default {
             }),
             load: false,
             prod: null,
-            produtos: [],
+            produtos: null,
             todos: false,
             AltProdutos: false,
+            codigo: null,
             complementares: false,
             download: false,
             simulacao: null,
+            cfop: null,
             AltValor: false,
             condicao: "",
             PrecoVenda: 0,
+            natureza_operacao: null,
             Steps: [
                 "Simulação do tributei",
                 "Dados complementares",
@@ -190,9 +191,12 @@ export default {
             ]
         }
     },
+    mounted() {
+    },
     watch: {
         prod() {
             if (this.prod) {
+
                 if (this.prod.length <= this.produtos.length) {
 
                     this.todos = false
@@ -206,19 +210,19 @@ export default {
             }
         },
         simulacao() {
-            // this.load = true
+            this.load = true
             // this.produto = []
             this.PrecoVenda = this.formatReal(this.simulacao.total_pedido)
             // console.log(this.simulacao)
-            // this.http.get(`https://apisaidas.tributei.net/api/05995840000155/simulador/pedidos/produtos/${this.simulacao.id}`)
-            //     .then(response => {
-            //         // Acesse os dados da resposta aqui
-            //         this.produtos = response.data.data; // Ou ajuste conforme a estrutura da resposta
-            //         this.gerarOpcoesProdutos
-            //     })
-            //     .catch(error => {
-            //         console.error('Erro na requisição:', error);
-            //     });
+            this.http.get(`https://apisaidas.tributei.net/api/00104603000303/simulador/pedidos/produtos/${this.simulacao.id}`)
+                .then(response => {
+                    // Acesse os dados da resposta aqui
+                    this.produtos = response.data.data; // Ou ajuste conforme a estrutura da resposta
+                    this.gerarOpcoesProdutos
+                })
+                .catch(error => {
+                    console.error('Erro na requisição:', error);
+                });
         }
 
     },
@@ -241,9 +245,29 @@ export default {
     },
 
     methods: {
-        Emitir(){
+        Emitir() {
             this.download = true
-            console.log(this.simulacao)
+            let simulacao = this.simulacao;
+            let produtos = this.produtos;
+            console.log({simulacao,
+                "cfop": this.cfop,
+                "user_id": this.$page.props.user.data.id,
+                "natureza_operacao": this.natureza_operacao,
+                "produtos": produtos})
+            // this.http.post("http://127.0.0.1:8000/api/emitir-nfe", {
+            //     simulacao,
+            //     "cfop": this.cfop,
+            //     "user_id": this.$page.props.user.id,
+            //     "natureza_operacao": this.natureza_operacao,
+            //     "produtos": produtos
+
+            // }).then(response => {
+            //     this.download = false
+            //     location.reload();
+            // }).catch(error => {
+            //     console.error('Erro na requisição:', error);
+            // });
+
         },
         formatReal(valor) {
             if (typeof valor !== 'number') {
