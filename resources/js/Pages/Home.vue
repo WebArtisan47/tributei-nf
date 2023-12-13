@@ -333,10 +333,10 @@
                                             </td>
                                             <td class="text-center">
                                                 <v-btn icon v-if="item.status === 'autorizado'" :href="item.link_xml" variant="plain">
-                                                    <v-icon color="#00796B" icon="mdi-file-code-outline"></v-icon>
+                                                    <v-icon color="#00aa44" icon="mdi-file-code-outline"></v-icon>
                                                 </v-btn>
                                                 <v-btn icon v-if="item.status === 'autorizado'" :href="item.link_danfe" variant="plain">
-                                                    <v-icon color="#00796B" icon="mdi-file-pdf-box"></v-icon>
+                                                    <v-icon color="#00aa44" icon="mdi-file-pdf-box"></v-icon>
                                                 </v-btn>
                                                 <v-icon v-if="item.color === 'orange'" color="orange"
                                                     icon="mdi-alert"></v-icon>

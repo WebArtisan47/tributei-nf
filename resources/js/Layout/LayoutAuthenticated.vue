@@ -2,7 +2,7 @@
   <v-app id="inspire">
     <v-layout>
       <header>
-        <v-navigation-drawer elevation="2" color="#00796B" class="mx-2 my-2" rounded="1" expand-on-hover :rail="rail"
+        <v-navigation-drawer elevation="2" color="#00aa44" class="mx-2 my-2" rounded="1" expand-on-hover :rail="rail"
           :permanent="!rail" style="z-index: 2; border-right-color: transparent ;">
 
 
@@ -21,15 +21,15 @@
         </v-navigation-drawer>
 
         <v-app-bar class="ml-2" style=" z-index: 1; border: none; background-color: transparent; box-shadow: none; ">
-          <v-card elevation="2" scroll-threshold="0" color="#00796B" class="ml-2 mr-3">
+          <v-card elevation="2" scroll-threshold="0" color="#00aa44" class="ml-2 mr-3">
             <v-app-bar-nav-icon @click="rail = !rail" color="#FAFAFA" style="width: 55px !important;" />
           </v-card>
 
-          <v-card class="w-25 h-75 mx-auto text-center pt-2" color="#00796B">
+          <v-card class="w-25 h-75 mx-auto text-center pt-2" color="#00aa44">
             <h2 class="text-white font-weight-bold" style="font-family: 'Roboto', sans-serif;">NFExpress</h2>
           </v-card>
 
-          <v-card class="w-25 h-75 text-center mr-4 d-flex align-center px-2" color="#00796B" style="font-size: 15px;"
+          <v-card class="w-25 h-75 text-center mr-4 d-flex align-center px-2" color="#00aa44" style="font-size: 15px;"
             max-width="100">
             <v-row>
               <v-col cols="5" class="d-flex align-center">
