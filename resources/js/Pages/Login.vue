@@ -1,6 +1,7 @@
 <template>
     <v-app id="inspire">
         <v-layout>
+            <title>Tributei | Login</title>
             <v-main class="h-screen d-flex" style="background-color: #f3f1f1;">
                 <div class="" style="width: 70%;">
                     <div class="w-100 ">
@@ -460,7 +461,7 @@
                     <v-card class="w-100 h-100" >
                         <div class="d-flex w-100 h-100 flex-column align-center justify-content-center">
                             <div class="w-75 mb-5" >
-                                <h2 class="font-weight-bold mb-1" style="font-family: 'Montserrat', sans-serif;">Bem vindo ao <br> <span class="constraste">Emissor de nota do Tributei!👋</span>  </h2>
+                                <h2 class="font-weight-bold mb-1">Bem vindo ao <br> <span class="constraste">Emissor de nota Tributei!👋</span>  </h2>
                                 <p class="mb-2 card-text">Faça o login para continuar</p>
                             </div>
 
@@ -546,6 +547,11 @@ export default {
     background: linear-gradient(118deg,#0a4 7.55%,#0a8 91.23%);
     color: #fff;
     font-weight: 700;
+}
+body {
+    font-family: 'Montserrat', sans-serif !important;
+    color: #000000 !important;
+    font-weight: 500;
 }
 .input-icons {
     display: flex;

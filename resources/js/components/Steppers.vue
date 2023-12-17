@@ -73,10 +73,10 @@
                                     <Cfop v-model="cfop" />
                                 </v-col>
                                 <v-col cols="6" class="">
-                                    <v-text-field label="Natureza da operação" v-model="natureza_operacao"
-                                        variant="outlined"></v-text-field>
+                                    <v-select label="Natureza da operação" :items="[ 'Remessas','Devoluções de produtos',
+                                    'Exportação ou importação de bens', 'Transferências', 'Consignações' ]" v-model="natureza_operacao" variant="outlined"></v-select>
                                 </v-col>
-                                <v-col cols="6" v-for="produto in produtos">
+                                <v-col cols="6" v-for="produto in produtos" :key="produto.index">
                                     <v-card-subtile>{{ produto.produto.nome_produto }}</v-card-subtile>
                                     <v-text-field @input="event => produto.codigo_produto = event.target.value"
                                         :key="produto.id" label="Codigo do produto" variant="outlined"></v-text-field>
@@ -183,7 +183,7 @@ export default {
             AltValor: false,
             condicao: "",
             PrecoVenda: 0,
-            natureza_operacao: null,
+            natureza_operacao: 'Remessa',
             Steps: [
                 "Simulação do tributei",
                 "Dados complementares",
@@ -249,24 +249,20 @@ export default {
             this.download = true
             let simulacao = this.simulacao;
             let produtos = this.produtos;
-            console.log({simulacao,
-                "cfop": this.cfop,
-                "user_id": this.$page.props.user.data.id,
-                "natureza_operacao": this.natureza_operacao,
-                "produtos": produtos})
-            // this.http.post("http://127.0.0.1:8000/api/emitir-nfe", {
-            //     simulacao,
-            //     "cfop": this.cfop,
-            //     "user_id": this.$page.props.user.id,
-            //     "natureza_operacao": this.natureza_operacao,
-            //     "produtos": produtos
 
-            // }).then(response => {
-            //     this.download = false
-            //     location.reload();
-            // }).catch(error => {
-            //     console.error('Erro na requisição:', error);
-            // });
+            this.http.post("http://127.0.0.1:8000/api/emitir-nfe", {
+                simulacao,
+                "cfop": this.cfop,
+                "user_id": this.$page.props.user.id,
+                "natureza_operacao": this.natureza_operacao,
+                "produtos": produtos
+
+            }).then(response => {
+                this.download = false
+                location.reload();
+            }).catch(error => {
+                console.error('Erro na requisição:', error);
+            });
 
         },
         formatReal(valor) {

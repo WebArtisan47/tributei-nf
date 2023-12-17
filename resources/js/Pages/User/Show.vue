@@ -1,12 +1,12 @@
 <template>
-    <v-responsive>
-        <LayoutAuthenticated>
+    <Layout>
+        <v-responsive class="h-100">
             <section class="my-1 ml-3 w-100 h-100 overflow-y-auto">
                 <h3 class="text-h4 ml-8 mb-0">Usuario</h3>
                 <div class="w-100 px-15 my-3 " style="height: 90%;">
                     <section class="w-100 h-100 d-grid align-center" color="transparent"
-                        style="border: none !important; position: relative;">
-                        <v-card class="w-50 h-100 " id="card1" max-width="310" style=" z-index: 4; position: absolute;">
+                        style="border: none !important; position: relative; font-weight: 600 !important;">
+                        <v-card class="w-50 h-100 " id="card1" max-width="310" style=" z-index: 4; position: absolute; font-weight: 600 !important;">
                             <v-row class="">
                                 <v-col cols="12">
                                     <v-card-title class="text-h5 text-center mt-3"
@@ -16,7 +16,7 @@
                                 </v-col>
                                 <v-col cols="12" max-height="182" class="text-center pt-0">
                                     <v-avatar color="success" size="150">
-                                        <v-img  src="/img/tributei.png"></v-img>
+                                        <v-img src="/img/tributei.png"></v-img>
                                     </v-avatar>
                                 </v-col>
                                 <v-col cols="12" max-height="48" class="text-start pt-0">
@@ -97,12 +97,12 @@
 
                         </v-card>
                         <v-card class="h-100 pa-8" id="card2"
-                            :style="`height: calc(${cardH}px - 79px ) !important; z-index: 2; padding-left: 350px !important;`">
-                            <v-row justify="cennter"  class="h-100">
+                            :style="`height: calc(${cardH}px - 79px ) !important; z-index: 2; padding-left: 350px !important; font-weight: 600 !important;`">
+                            <v-row justify="cennter" class="h-100">
                                 <v-col cols="2">
                                     <v-card class="w-100 h-100 " color="#06bba5" style="z-index: 3;">
                                         <v-card-tiltle class="pa-3 text-h5">
-                                            Emissões        
+                                            Emissões
                                         </v-card-tiltle>
                                     </v-card>
                                 </v-col>
@@ -116,7 +116,7 @@
                                 <v-col cols="3">
                                     <v-card class="w-100 h-100" color="#06bba5" style="z-index: 3;">
                                         <v-card-tiltle class="pa-3 text-h5">
-                                            Emissões        
+                                            Emissões
                                         </v-card-tiltle>
                                     </v-card>
                                 </v-col>
@@ -140,14 +140,17 @@
                 </div>
 
             </section>
-        </LayoutAuthenticated>
-    </v-responsive>
+
+        </v-responsive>
+    </Layout>
 </template>
 <script>
-import LayoutAuthenticated from '../../Layout/LayoutAuthenticated.vue';
+import Layout from '../Layout/Layout.vue';
+
+
 export default {
     components: {
-        LayoutAuthenticated,
+        Layout
     },
     data: () => ({
         cardH: null,
@@ -159,3 +162,8 @@ export default {
 }
 
 </script>
+<style scoped>
+.body{
+    
+}
+</style>

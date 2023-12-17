@@ -28,7 +28,7 @@ class HomeController extends Controller
         $clientes = "";
         $produtos = "";
         $pedidos = "";
-        $emissoes = EmissoesFocus::where('user_id', $id)->get();
+        $emissoes = EmissoesFocus::where('user_id', $id)->orderBy('id', 'DESC')->get();
         foreach($emissoes as $emissao){
             if($emissao->link_xml === null){
                 $this->getNota($emissao->ref, "I9XYti94ZVr0g7t3jR7NhvHPILRUe0Ib", $emissao->id);
@@ -66,7 +66,7 @@ class HomeController extends Controller
             ])->getBody()->getContents();
         }
         //  dd( ['clientes' => json_decode($clientes), 'produtos' => json_decode($produtos), 'pedidos' => json_decode($pedidos), 'user' => $user]);
-        return Inertia::render('Home', ['emissoes' => $emissoes ,'clientes' => json_decode($clientes), 'produtos' => json_decode($produtos), 'pedidos' => json_decode($pedidos), 'user' => $user]);
+        return Inertia::render('LayoutAuthenticated.vue', ['emissoes' => $emissoes ,'clientes' => json_decode($clientes), 'produtos' => json_decode($produtos), 'pedidos' => json_decode($pedidos), 'user' => $user]);
         
     }
     public function getNota($ref, $token, $id)
@@ -76,24 +76,30 @@ class HomeController extends Controller
         ]);
         $this->baseURLH = "https://homologacao.focusnfe.com.br";
         try {
+            
             $response = $this->http->get($this->baseURLH . "/v2/nfe/" . $ref, [
                 'headers' => [
                     'Accept' => '*/*',
                     'Content-Type' => 'application/json',
 
                 ],
-                "query" => ['token' => 'I9XYti94ZVr0g7t3jR7NhvHPILRUe0Ib', 'ref' => $ref],
+                "query" => ['token' => 'lj0iXg9ifG0uksmvjaRDfNBnnlVbCCOY', 'ref' => $ref],
             ]);
            
             if ($response->getStatusCode() === 200) {
                 $dados = json_decode($response->getBody()->getContents());
                     $emissao = EmissoesFocus::find($id);
-                    $emissao->update([
+                    $update = [
                         "status" => $dados->status,
-                        "mensagem" => $dados->mensagem_sefaz,
-                        "link_xml" => $this->baseURLH . $dados->caminho_xml_nota_fiscal,
-                        "link_danfe" => $this->baseURLH . $dados->caminho_danfe
-                    ]);
+                        "mensagem" => $dados->mensagem_sefaz??null,
+                    ];
+                    if(isset($dados->caminho_xml_nota_fiscal)){
+                        $update += ["link_xml" => $this->baseURLH . $dados->caminho_xml_nota_fiscal??null,];
+                    }
+                    if(isset($dados->caminho_danfe)){
+                        $update += ["link_danfe" => $this->baseURLH . $dados->caminho_danfe??null];
+                    }
+                    $emissao->update($update);
                 
                
                 return response()->json([
