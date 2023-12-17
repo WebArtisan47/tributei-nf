@@ -1,5 +1,6 @@
 <template>
     <Layout>
+        <title>Tributei | Usuário</title>
         <v-responsive class="h-100">
             <section class="my-1 ml-3 w-100 h-100 overflow-y-auto">
                 <h3 class="text-h4 ml-8 mb-0">Usuario</h3>

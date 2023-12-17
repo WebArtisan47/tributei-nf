@@ -1,4 +1,5 @@
 <template>
+    <title>Tributei | Simulador</title>
     <section class="my-1 w-100 h-screen">
         <div class="overflow-y-auto" style="height: 90% !important;">
             <section class="px-7 mt-3">

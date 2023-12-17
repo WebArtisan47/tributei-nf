@@ -1,6 +1,5 @@
 <template>
-    <title>Tributei | Emissões</title>
-
+    
     <v-window v-model="tab">
         <v-window-item :value="1">
             <Emissor />

@@ -1,4 +1,5 @@
 <template>
+    <title>Tributei | Emissor</title>
     <section class="w-100 h-screen overflow-y-auto">
         <v-card-title class="pl-7 "
             style="font-family: 'Montserrat', sans-serif !important; font-size: 28px; font-weight: 500;">
